@@ -1,0 +1,6 @@
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Dominio\bin\Debug\LaTienda.Dominio.dll
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Dominio\bin\Debug\LaTienda.Dominio.pdb
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Dominio\obj\Debug\LaTienda.Dominio.csprojAssemblyReference.cache
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Dominio\obj\Debug\LaTienda.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Dominio\obj\Debug\LaTienda.Dominio.dll
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Dominio\obj\Debug\LaTienda.Dominio.pdb

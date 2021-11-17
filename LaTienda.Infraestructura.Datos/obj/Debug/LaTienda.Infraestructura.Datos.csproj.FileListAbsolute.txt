@@ -1,0 +1,14 @@
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\bin\Debug\LaTienda.Infraestructura.Datos.dll.config
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\bin\Debug\LaTienda.Infraestructura.Datos.dll
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\bin\Debug\LaTienda.Infraestructura.Datos.pdb
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\bin\Debug\EntityFramework.dll
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\bin\Debug\LaTienda.Dominio.dll
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\bin\Debug\LaTienda.Dominio.pdb
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\bin\Debug\EntityFramework.xml
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\obj\Debug\LaTienda.Infraestructura.Datos.csprojAssemblyReference.cache
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\obj\Debug\LaTienda.Infraestructura.Datos.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\obj\Debug\LaTienda.Infraestructura.Datos.csproj.CopyComplete
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\obj\Debug\LaTienda.Infraestructura.Datos.dll
+C:\Users\Mauricio\source\repos\LaTienda\LaTienda.Infraestructura.Datos\obj\Debug\LaTienda.Infraestructura.Datos.pdb
