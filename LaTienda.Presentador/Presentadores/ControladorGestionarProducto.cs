@@ -27,8 +27,7 @@ namespace LaTienda.Presentador
             var talle = _persistencia.ObtenerTalle(codigoTalle);
             var marca = _persistencia.ObtenerMarca(codigoMarca);
             var porcentajeDeIva = ReglaDeNegocio.PorcentajeDeIVA;
-            var producto = new Producto(descripcion, color, talle, 
-                marca, costo, porcentajeDeIva, margenGanancia);
+            var producto = new Producto(descripcion, marca, costo, porcentajeDeIva, margenGanancia);
             var rubro = _persistencia.ObtenerRubro(codigoRubro);
             rubro.AgregarProducto(producto);
         }
@@ -48,7 +47,7 @@ namespace LaTienda.Presentador
             var talle = _persistencia.ObtenerTalle(codigoTalle);
             var marca = _persistencia.ObtenerMarca(codigoMarca);
             var rubro = _persistencia.ObtenerRubro(codigoRubro);
-            _productoActual.ActualizarProducto(descripcion, marca, color, talle, costo, margenDeGanancia);
+            _productoActual.ActualizarProducto(descripcion, marca, costo, margenDeGanancia);
             rubro.AgregarProducto(_productoActual);
         }
         #endregion

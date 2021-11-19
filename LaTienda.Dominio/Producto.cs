@@ -16,17 +16,13 @@ namespace LaTienda.Dominio
         public double IVA { get; set; }
         public double PrecioDeVenta { get; set; }
 
-        //public Color Color { get; set; }
-        //public Talle Talle { get; set; }
         public Marca Marca { get; set; }
         public double PorcentajeDeIva { get; set; }
 
-        public Producto(string descripcion, //Color color, Talle talle,
+        public Producto(string descripcion, 
             Marca marca, double costo, double porcentajeIVA, double margenDeGanancia)
         {
             Descripcion = descripcion;
-            //Color = color;
-            //Talle = talle;
             Marca = marca;
             Costo = costo;
             PorcentajeDeIva = porcentajeIVA;
@@ -52,13 +48,11 @@ namespace LaTienda.Dominio
             PrecioDeVenta = NetoGravado + IVA;
         }
 
-        public void ActualizarProducto(string descripcion, Marca marca, //Color color, Talle talle,
+        public void ActualizarProducto(string descripcion, Marca marca,
             double costo, double margenDeGanancia)
         {
             Descripcion = descripcion;
             Marca = marca;
-            //Color = color;
-            //Talle = talle;
             Costo = costo;
             MargenDeGanancia = margenDeGanancia;
             CalcularNeto();

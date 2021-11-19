@@ -10,8 +10,8 @@ namespace LaTienda.Presentador
     public class ControladorRegistrarVenta
     {
         private Venta _venta;
-        private readonly IRepositorio _repositorio;
-        private readonly IRegistrarVentaVista _vista;
+        private IRepositorio _repositorio;
+        private IRegistrarVentaVista _vista;
         private Producto _productoActual;
 
         public void IniciarVenta(IRepositorio repositorio, IRegistrarVentaVista vista)
