@@ -8,23 +8,23 @@ namespace LaTienda.Dominio
 {
     public class LineaDeVenta
     {
-        private Producto _producto;
-        private Color _color;
-        private Talle _talle;
+        public Producto Producto { get; private set; }
+        public Color Color { get; private set; }
+        public Talle Talle { get; private set; }
         public int Cantidad { get; set; }
 
 
         public LineaDeVenta(Producto producto, Color color, Talle talle, int cantidad)
         {
-            _producto = producto;
-            _color = color;
-            _talle = talle;
+            Producto = producto;
+            Color = color;
+            Talle = talle;
             Cantidad = cantidad;
         }
 
         public double ObtenerSubTotal()
         {
-            return _producto.PrecioDeVenta * Cantidad;
+            return Producto.PrecioDeVenta * Cantidad;
         }
     }
 }
