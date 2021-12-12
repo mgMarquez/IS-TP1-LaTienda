@@ -51,11 +51,12 @@ namespace LaTienda.Dominio
         }
 
         public void ActualizarProducto(string descripcion, Marca marca,
-            double costo, double margenDeGanancia)
+            double costo, double porcentajeIVA, double margenDeGanancia)
         {
             Descripcion = descripcion;
             Marca = marca;
             Costo = costo;
+            PorcentajeDeIva = porcentajeIVA;
             MargenDeGanancia = margenDeGanancia;
             CalcularNeto();
             CalcularIVA();
