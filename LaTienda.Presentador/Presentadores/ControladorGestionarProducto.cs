@@ -40,15 +40,12 @@ namespace LaTienda.Presentador
             _productoActual = producto;
         }
 
-        public void ModificarProducto(string descripcion, int codigoMarca, int codigoRubro, 
-            int codigoColor, int codigoTalle, double costo, double margenDeGanancia)
+        public void ModificarProducto(string descripcion, int codigoMarca, 
+            double costo, double porcentajeIVA, double margenDeGanancia)
         {
-            var color = _persistencia.ObtenerColor(codigoColor);
-            var talle = _persistencia.ObtenerTalle(codigoTalle);
             var marca = _persistencia.ObtenerMarca(codigoMarca);
-            var rubro = _persistencia.ObtenerRubro(codigoRubro);
-            _productoActual.ActualizarProducto(descripcion, marca, costo, margenDeGanancia);
-            rubro.AgregarProducto(_productoActual);
+            Producto productoActualizado = new Producto(descripcion, marca, costo, porcentajeIVA, margenDeGanancia);
+            _productoActual.ActualizarProducto(productoActualizado);
         }
         #endregion
 

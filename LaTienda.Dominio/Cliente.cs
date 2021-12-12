@@ -12,5 +12,13 @@ namespace LaTienda.Dominio
         public long CUIT { get; set; }
         public string RazonSocial { get; set; }
         public string Domicilio { get; set; }
+
+        public Cliente(int clienteID, long cUIT, string razonSocial, string domicilio)
+        {
+            ClienteID = clienteID;
+            CUIT = cUIT;
+            RazonSocial = razonSocial;
+            Domicilio = domicilio;
+        }
     }
 }

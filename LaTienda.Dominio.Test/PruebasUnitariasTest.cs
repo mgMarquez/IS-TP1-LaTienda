@@ -42,9 +42,9 @@ namespace LaTienda.Dominio.Tests
         {
             // Arrange
             // la instancia de producto se crea en Setup
-            double resultadoEsperado = 130;//Costo + Costo * MargenDeGanancia
+            double resultadoEsperado = 130;
             // Act
-            _producto.CalcularNeto();
+            //Costo + Costo * MargenDeGanancia
             // Assert
             Assert.AreEqual(resultadoEsperado, _producto.NetoGravado, 0.1);
         }
@@ -54,9 +54,9 @@ namespace LaTienda.Dominio.Tests
         {
             // Arrange
             // la instancia de producto se crea en Setup
-            double resultadoEsperado = 13;//IVA = NetoGravado * PorcentajeDeIva
+            double resultadoEsperado = 13;
             // Act
-            _producto.CalcularIVA();
+            //IVA = NetoGravado * PorcentajeDeIva
             // Assert
             Assert.AreEqual(resultadoEsperado, _producto.IVA, 0.1);
         }
@@ -66,9 +66,9 @@ namespace LaTienda.Dominio.Tests
         {
             // Arrange
             // la instancia de producto se crea en Setup
-            double resultadoEsperado = 143;//IVA = NetoGravado * PorcentajeDeIva
+            double resultadoEsperado = 143;
             // Act
-            _producto.CalcularPrecioVenta();
+            //IVA = NetoGravado * PorcentajeDeIva
             // Assert
             Assert.AreEqual(resultadoEsperado, _producto.PrecioDeVenta, 0.1);
         }

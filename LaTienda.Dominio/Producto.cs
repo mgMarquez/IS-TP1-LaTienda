@@ -12,11 +12,12 @@ namespace LaTienda.Dominio
         public string Descripcion { get; set; }
         public double Costo { get; set; }
         public double MargenDeGanancia { get; set; }
-        public double NetoGravado { get; set; }
-        public double IVA { get; set; }
-        public double PrecioDeVenta { get; set; }
+        public double NetoGravado => Costo + Costo * MargenDeGanancia;
+        public double IVA => NetoGravado * PorcentajeDeIva;
+        public double PrecioDeVenta => NetoGravado + IVA;
 
         public Marca Marca { get; set; }
+        public List<Stock> DetalleDeStock { get; private set; }
         public double PorcentajeDeIva { get; set; }
 
         public Producto(string descripcion, 
@@ -27,37 +28,17 @@ namespace LaTienda.Dominio
             Costo = costo;
             PorcentajeDeIva = porcentajeIVA;
             MargenDeGanancia = margenDeGanancia;
-            CalcularPrecioVenta();
+            DetalleDeStock = new List<Stock>();
         }
 
-        public void CalcularNeto()
+        
+        public void ActualizarProducto(Producto productoActualizado)
         {
-            NetoGravado = Costo + Costo * MargenDeGanancia;
-        }
-
-        public void CalcularIVA()
-        {
-            CalcularNeto();
-            IVA = NetoGravado * PorcentajeDeIva;
-        }
-
-        public void CalcularPrecioVenta()
-        {
-            CalcularNeto();
-            CalcularIVA();
-            PrecioDeVenta = NetoGravado + IVA;
-        }
-
-        public void ActualizarProducto(string descripcion, Marca marca,
-            double costo, double margenDeGanancia)
-        {
-            Descripcion = descripcion;
-            Marca = marca;
-            Costo = costo;
-            MargenDeGanancia = margenDeGanancia;
-            CalcularNeto();
-            CalcularIVA();
-            CalcularPrecioVenta();
+            Descripcion = productoActualizado.Descripcion;
+            Marca = productoActualizado.Marca;
+            Costo = productoActualizado.Costo;
+            PorcentajeDeIva = productoActualizado.PorcentajeDeIva;
+            MargenDeGanancia = productoActualizado.MargenDeGanancia;
         }
     }
 }
