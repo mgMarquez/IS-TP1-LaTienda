@@ -17,6 +17,7 @@ namespace LaTienda.Dominio
         public double PrecioDeVenta { get; set; }
 
         public Marca Marca { get; set; }
+        public List<Stock> DetalleDeStock { get; private set; }
         public double PorcentajeDeIva { get; set; }
 
         public Producto(string descripcion, 
@@ -27,6 +28,7 @@ namespace LaTienda.Dominio
             Costo = costo;
             PorcentajeDeIva = porcentajeIVA;
             MargenDeGanancia = margenDeGanancia;
+            DetalleDeStock = new List<Stock>();
             CalcularPrecioVenta();
         }
 
