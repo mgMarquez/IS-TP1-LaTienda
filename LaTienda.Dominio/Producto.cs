@@ -12,9 +12,9 @@ namespace LaTienda.Dominio
         public string Descripcion { get; set; }
         public double Costo { get; set; }
         public double MargenDeGanancia { get; set; }
-        public double NetoGravado { get; set; }
-        public double IVA { get; set; }
-        public double PrecioDeVenta { get; set; }
+        public double NetoGravado => Costo + Costo * MargenDeGanancia;
+        public double IVA => NetoGravado * PorcentajeDeIva;
+        public double PrecioDeVenta => NetoGravado + IVA;
 
         public Marca Marca { get; set; }
         public List<Stock> DetalleDeStock { get; private set; }
@@ -29,27 +29,9 @@ namespace LaTienda.Dominio
             PorcentajeDeIva = porcentajeIVA;
             MargenDeGanancia = margenDeGanancia;
             DetalleDeStock = new List<Stock>();
-            CalcularPrecioVenta();
         }
 
-        public void CalcularNeto()
-        {
-            NetoGravado = Costo + Costo * MargenDeGanancia;
-        }
-
-        public void CalcularIVA()
-        {
-            CalcularNeto();
-            IVA = NetoGravado * PorcentajeDeIva;
-        }
-
-        public void CalcularPrecioVenta()
-        {
-            CalcularNeto();
-            CalcularIVA();
-            PrecioDeVenta = NetoGravado + IVA;
-        }
-
+        
         public void ActualizarProducto(string descripcion, Marca marca,
             double costo, double porcentajeIVA, double margenDeGanancia)
         {
@@ -58,9 +40,6 @@ namespace LaTienda.Dominio
             Costo = costo;
             PorcentajeDeIva = porcentajeIVA;
             MargenDeGanancia = margenDeGanancia;
-            CalcularNeto();
-            CalcularIVA();
-            CalcularPrecioVenta();
         }
     }
 }
