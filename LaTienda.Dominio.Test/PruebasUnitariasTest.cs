@@ -14,6 +14,7 @@ namespace LaTienda.Dominio.Tests
         private Color _colorRojo;
         private Talle _talleXS;
         private Marca _marcaZ;
+        private Rubro _rubro;
         private double _costo;
         private double _tasaInteres;
         private double _margenGanancia;
@@ -25,6 +26,7 @@ namespace LaTienda.Dominio.Tests
             _colorRojo = new Color(1, "rojo");
             _talleXS = new Talle(1, "XS");
             _marcaZ = new Marca(1, "Zeta");
+            _rubro = new Rubro(10, "rubro1");
             _costo = 100;
             _tasaInteres = 0.1;
             _margenGanancia = 0.3;
@@ -32,6 +34,7 @@ namespace LaTienda.Dominio.Tests
             _producto = new Producto(
                 "producto",
                 _marcaZ,
+                _rubro,
                 _costo,
                 _tasaInteres,
                 _margenGanancia);
