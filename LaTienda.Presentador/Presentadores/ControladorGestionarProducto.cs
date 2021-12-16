@@ -23,13 +23,12 @@ namespace LaTienda.Presentador
         public void IngresarNuevoProducto(int codigo, string descripcion,
             double costo, int codigoTalle, int codigoColor, int codigoMarca, int codigoRubro, double margenGanancia)
         {
-            var color = _persistencia.ObtenerColor(codigoColor);
-            var talle = _persistencia.ObtenerTalle(codigoTalle);
-            var marca = _persistencia.ObtenerMarca(codigoMarca);
-            var porcentajeDeIva = ReglaDeNegocio.PorcentajeDeIVA;
-            var producto = new Producto(descripcion, marca, costo, porcentajeDeIva, margenGanancia);
-            var rubro = _persistencia.ObtenerRubro(codigoRubro);
-            rubro.AgregarProducto(producto);
+            //var color = _persistencia.ObtenerColor(codigoColor);
+            //var talle = _persistencia.ObtenerTalle(codigoTalle);
+            //var marca = _persistencia.ObtenerMarca(codigoMarca);
+            //var porcentajeDeIva = ReglaDeNegocio.PorcentajeDeIVA;
+            //var producto = new Producto(descripcion, marca, costo, porcentajeDeIva, margenGanancia);
+            //var rubro = _persistencia.ObtenerRubro(codigoRubro);
         }
         #endregion
 
@@ -43,9 +42,9 @@ namespace LaTienda.Presentador
         public void ModificarProducto(string descripcion, int codigoMarca, 
             double costo, double porcentajeIVA, double margenDeGanancia)
         {
-            var marca = _persistencia.ObtenerMarca(codigoMarca);
-            Producto productoActualizado = new Producto(descripcion, marca, costo, porcentajeIVA, margenDeGanancia);
-            _productoActual.ActualizarProducto(productoActualizado);
+            //var marca = _persistencia.ObtenerMarca(codigoMarca);
+            //Producto productoActualizado = new Producto(descripcion, marca, costo, porcentajeIVA, margenDeGanancia);
+            //_productoActual.ActualizarProducto(productoActualizado);
         }
         #endregion
 
