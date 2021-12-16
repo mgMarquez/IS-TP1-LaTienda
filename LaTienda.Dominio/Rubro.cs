@@ -11,5 +11,10 @@ namespace LaTienda.Dominio
         public int RubroID { get; set; }
         public string Descripcion { get; set; }
 
+        public Rubro(int rubroID, string descripcion)
+        {
+            RubroID = rubroID;
+            Descripcion = descripcion;
+        }
     }
 }
