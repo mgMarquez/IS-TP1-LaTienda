@@ -9,11 +9,11 @@ namespace LaTienda.Presentador
 {
     public class ControladorGestionarProducto
     {
-        private readonly IRepositorio _persistencia;
+        private readonly IRepositorio<Producto> _persistencia;
         private readonly IGestionarProductoVista _vista;
         private Producto _productoActual;
 
-        public ControladorGestionarProducto(IRepositorio repositorio, IGestionarProductoVista vista)
+        public ControladorGestionarProducto(IRepositorio<Producto> repositorio, IGestionarProductoVista vista)
         {
             _persistencia = repositorio;
             _vista = vista;
@@ -35,7 +35,7 @@ namespace LaTienda.Presentador
         #region Modificar producto
         public void BuscarProducto(int codigo)
         {
-            var producto = _persistencia.ObtenerProducto(codigo);
+            var producto = _persistencia.BuscarPorId(codigo);
             _productoActual = producto;
         }
 
@@ -51,7 +51,7 @@ namespace LaTienda.Presentador
         #region Eliminar producto
         public void EliminarProducto(int codigoProducto)
         {
-            _persistencia.EliminarProducto(codigoProducto);
+            //_persistencia.Eliminar(codigoProducto);
         }
         #endregion
     }

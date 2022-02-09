@@ -10,30 +10,30 @@ namespace LaTienda.Presentador
     public class ControladorRegistrarVenta
     {
         private Venta _venta;
-        private IRepositorio _repositorio;
+       // private IRepositorio _repositorio;
         private IRegistrarVentaVista _vista;
         private Producto _productoActual;
 
-        public void IniciarVenta(IRepositorio repositorio, IRegistrarVentaVista vista)
+        public void IniciarVenta()//IRepositorio repositorio, IRegistrarVentaVista vista)
         {
-            _repositorio = repositorio;
-            _vista = vista;
+            //_repositorio = repositorio;
+            //_vista = vista;
             var empleado = Sesion.Empleado;
             _venta = new Venta(empleado);
         }
 
         public void IngresarProducto(int codigo)
         {
-            var producto = _repositorio.ObtenerProducto(codigo);
-            _productoActual = producto;
+            //var producto = _repositorio.ObtenerProducto(codigo);
+            //_productoActual = producto;
         }
 
         public void SeleccionarDetalleProducto(int codigoColor, int codigoTalle, int cantidad)
         {
-            var color = _repositorio.ObtenerColor(codigoColor);
-            var talle = _repositorio.ObtenerTalle(codigoTalle);
-            var lineaDeVenta = new LineaDeVenta(_productoActual, color, talle, cantidad);
-            _venta.AgregarLineaDeVenta(lineaDeVenta);
+            //var color = _repositorio.ObtenerColor(codigoColor);
+            //var talle = _repositorio.ObtenerTalle(codigoTalle);
+            //var lineaDeVenta = new LineaDeVenta(_productoActual, color, talle, cantidad);
+            //_venta.AgregarLineaDeVenta(lineaDeVenta);
             // TODO: Stock - actualizarStock - Paso 5
         }
 

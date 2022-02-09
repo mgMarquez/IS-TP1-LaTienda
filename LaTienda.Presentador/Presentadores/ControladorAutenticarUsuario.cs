@@ -9,10 +9,10 @@ namespace LaTienda.Presentador
 {
     public class ControladorAutenticarUsuario
     {
-        private readonly IRepositorio _presistencia;
+        private readonly IRepositorio<Empleado> _presistencia;
         private readonly IAutenticarUsuarioVista _vista;
 
-        public ControladorAutenticarUsuario(IRepositorio repositorio, IAutenticarUsuarioVista vista)
+        public ControladorAutenticarUsuario(IRepositorio<Empleado> repositorio, IAutenticarUsuarioVista vista)
         {
             _presistencia = repositorio;
             _vista = vista;
@@ -20,7 +20,7 @@ namespace LaTienda.Presentador
 
         public void SolicitarAcceso(int legajo, string contraseña)
         {
-            var empleado = _presistencia.BuscarEmpleado(legajo);
+            var empleado = _presistencia.BuscarPorId(legajo);
             empleado.VerificarContraseña(contraseña);
             Sesion.AsignarEmpleado(empleado);
         }
