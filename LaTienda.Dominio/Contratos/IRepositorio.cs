@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace LaTienda.Dominio
 {
-    public interface IRepositorio
+    public interface IRepositorio<TEntity> where TEntity : class
     {
-        Empleado BuscarEmpleado(int legajo);
-        Talle ObtenerTalle(int codigoTalle);
-        Color ObtenerColor(int codigoColor);
-        Marca ObtenerMarca(int codigoMarca);
-        Rubro ObtenerRubro(int codigoRubro);
-        Producto ObtenerProducto(int codigo);
-        void EliminarProducto(int codigoProducto);
+        IEnumerable<TEntity> Listar();
+        int Modificar(TEntity entidad);
+        int Agregar(TEntity entidad);
+        int Eliminar(TEntity entidad);
+        TEntity BuscarPorId(int id);
     }
 }
