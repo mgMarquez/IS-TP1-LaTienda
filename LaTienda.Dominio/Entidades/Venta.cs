@@ -8,9 +8,9 @@ namespace LaTienda.Dominio
 {
     public class Venta
     {
-        private Empleado _empleado;
+        private readonly Empleado _empleado;
         private List<LineaDeVenta> _detalleVenta;
-        public double Total { get; set; }
+        public double Total => _detalleVenta.Sum(lv => lv.ObtenerSubTotal());
 
         public Venta(Empleado empleado)
         {
@@ -21,10 +21,7 @@ namespace LaTienda.Dominio
         public void AgregarLineaDeVenta(LineaDeVenta lineaDeVenta)
         {
             _detalleVenta.Add(lineaDeVenta);
-            foreach (var ldv in _detalleVenta)
-            {
-                Total += ldv.ObtenerSubTotal();
-            }
+            
         }
 
         public void RegistrarImporteVenta(double importe, double vuelto)
