@@ -10,15 +10,19 @@ namespace LaTienda.Presentador
     public class ControladorRegistrarVenta
     {
         private Venta _venta;
-       // private IRepositorio _repositorio;
-        //private IRegistrarVentaVista _vista;
-        //private Producto _productoActual;
+        private readonly IRepositorio<Venta> _repositorio;
+        private readonly IRegistrarVentaVista _vista;
+        private Empleado empleado;
 
-        public void IniciarVenta()//IRepositorio repositorio, IRegistrarVentaVista vista)
+        public ControladorRegistrarVenta(IRepositorio<Venta> repositorio, IRegistrarVentaVista vista)
         {
-            //_repositorio = repositorio;
-            //_vista = vista;
-            var empleado = Sesion.Empleado;
+            _repositorio = repositorio;
+            _vista = vista;
+        }
+
+        public void IniciarVenta()
+        {
+            empleado = Sesion.Empleado;
             _venta = new Venta(empleado);
         }
 
