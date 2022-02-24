@@ -8,9 +8,13 @@ namespace LaTienda.Dominio
 {
     public class Venta
     {
-        private readonly Empleado _empleado;
-        private List<LineaDeVenta> _detalleVenta;
-        public double Total => _detalleVenta.Sum(lv => lv.ObtenerSubTotal());
+        public Empleado _empleado { get; private set; }
+        public DateTime FechaVenta { get; private set; }
+        public List<LineaDeVenta> _detalleVenta { get; private set; }
+        public Comprobante Comprobante { get; private set; }
+        public double Total => _detalleVenta.Sum(lv => lv.SubTotal);
+        public double NetoGravado => _detalleVenta.Sum(lv => lv.NetoGravadoTotal);
+        public double IVA => _detalleVenta.Sum(lv => lv.IVATotal);
 
         public Venta(Empleado empleado)
         {
@@ -20,14 +24,14 @@ namespace LaTienda.Dominio
 
         public void AgregarLineaDeVenta(LineaDeVenta lineaDeVenta)
         {
-            _detalleVenta.Add(lineaDeVenta);
-            
+            _detalleVenta.Add(lineaDeVenta);            
+        }        
+
+        public void FinalizarVenta()
+        {
+            FechaVenta = new DateTime();
         }
 
-        public void RegistrarImporteVenta(double importe, double vuelto)
-        {
-            // TODO: Registrar imoprte de venta
-            throw new NotImplementedException();
-        }
+
     }
 }
