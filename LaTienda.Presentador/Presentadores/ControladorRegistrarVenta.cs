@@ -10,35 +10,39 @@ namespace LaTienda.Presentador
     public class ControladorRegistrarVenta
     {
         private Venta _venta;
-        private readonly IRepositorio<Venta> _repositorio;
+        private readonly IRepositorio<Venta> _repositorioVenta;
+        private readonly IRepositorio<Producto> _repositorioProducto;
         private readonly IRegistrarVentaVista _vista;
-        private Empleado empleado;
+        private Producto _productoActual;
+        private Vendedor _vendedor;
 
-        public ControladorRegistrarVenta(IRepositorio<Venta> repositorio, IRegistrarVentaVista vista)
+        public ControladorRegistrarVenta(IRepositorio<Venta> repositorio,
+            IRepositorio<Producto> repositorioProducto, IRegistrarVentaVista vista)
         {
-            _repositorio = repositorio;
+            _repositorioVenta = repositorio;
+            _repositorioProducto = repositorioProducto;
             _vista = vista;
         }
 
         public void IniciarVenta()
         {
-            empleado = Sesion.Empleado;
-            _venta = new Venta(empleado);
+            _vendedor = Sesion.Empleado as Vendedor;
+            _venta = new Venta(_vendedor);
         }
 
-        public void IngresarProducto(int codigo)
+        public void BuscarProducto(int codigo)
         {
-            //var producto = _repositorio.ObtenerProducto(codigo);
-            //_productoActual = producto;
+            _productoActual = _repositorioProducto
+                .BuscarPor(p => p.Codigo == codigo)
+                .First();
+            _vista.MostrarProducto(_productoActual);
         }
 
-        public void SeleccionarDetalleProducto(int codigoColor, int codigoTalle, int cantidad)
+        public void AgregarProductoVenta(Color color, Talle talle, int cantidad)
         {
-            //var color = _repositorio.ObtenerColor(codigoColor);
-            //var talle = _repositorio.ObtenerTalle(codigoTalle);
-            //var lineaDeVenta = new LineaDeVenta(_productoActual, color, talle, cantidad);
-            //_venta.AgregarLineaDeVenta(lineaDeVenta);
-            // TODO: Stock - actualizarStock - Paso 5
+            var lineaDeVenta = new LineaDeVenta(_productoActual, color, talle, cantidad);
+            _venta.AgregarLineaDeVenta(lineaDeVenta);
+            _vista.MostrarDetalleDeVenta(_venta._detalleVenta);
         }
 
         public void SeleccionarCondicionTributaria(CondicionTributaria condicion)
@@ -46,21 +50,12 @@ namespace LaTienda.Presentador
             // TODO: Generar el comprobante
         }
 
-        public void IngresarImporte(double importe)
+        public void FinalizarVenta(double importe)
         {
-            var vuelto = CalcularVuelto(importe);
-            _venta.RegistrarImporteVenta(importe, vuelto);
+            if (_vendedor == null) throw new ArgumentNullException();
+            if (_venta._detalleVenta == null) throw new ArgumentNullException();
 
         }
 
-        public void FinalizarVenta()
-        {
-            // TODO: Registrar venta
-        }
-
-        private double CalcularVuelto(double importe)
-        {
-            return 0;
-        }
     }
 }

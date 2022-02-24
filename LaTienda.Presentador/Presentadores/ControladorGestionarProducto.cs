@@ -46,7 +46,7 @@ namespace LaTienda.Presentador
             var productoModificado = new Producto(codigo, descripcion, costo, porcentajeDeIva,
                 margenGanancia, marca, rubro);
             producto.ActualizarProducto(productoModificado);
-            _repositorioProducto.Modificar(producto);
+            _repositorioProducto.Actualizar(producto);
         } 
 
         public void BuscarProducto(int codigo)
