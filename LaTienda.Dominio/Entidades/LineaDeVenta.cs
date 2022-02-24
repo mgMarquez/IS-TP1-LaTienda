@@ -13,6 +13,9 @@ namespace LaTienda.Dominio
         public Talle Talle { get; private set; }
         public int Cantidad { get; set; }
 
+        public double SubTotal => Producto.PrecioDeVenta * Cantidad;
+        public double NetoGravadoTotal => Producto.NetoGravado * Cantidad;
+        public double IVATotal => Producto.IVA * Cantidad;
 
         public LineaDeVenta(Producto producto, Color color, Talle talle, int cantidad)
         {
@@ -22,9 +25,5 @@ namespace LaTienda.Dominio
             Cantidad = cantidad;
         }
 
-        public double ObtenerSubTotal()
-        {
-            return Producto.PrecioDeVenta * Cantidad;
-        }
     }
 }

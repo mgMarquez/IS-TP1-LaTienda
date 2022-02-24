@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LaTienda.Presentador
 {
-    public partial class Form1 : Form
+    public partial class VistaPrincipal : Form
     {
-        public Form1()
+        public VistaPrincipal()
         {
             InitializeComponent();
         }

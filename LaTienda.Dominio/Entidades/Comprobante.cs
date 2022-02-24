@@ -9,6 +9,7 @@ namespace LaTienda.Dominio
     public class Comprobante
     {
         public int ComprobanteID { get; set; }
+        public int NumeroDeComprobante { get; set; }
         public DateTime Fecha { get; set; }
     }
 }

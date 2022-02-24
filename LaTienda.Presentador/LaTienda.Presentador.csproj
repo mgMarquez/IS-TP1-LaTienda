@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="VistaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="VistaPrincipal.Designer.cs">
+      <DependentUpon>VistaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentadores\ControladorAutenticarUsuario.cs" />
     <Compile Include="Presentadores\ControladorGestionarProducto.cs" />
@@ -60,6 +60,9 @@
     <Compile Include="Vista\IAutenticarUsuarioVista.cs" />
     <Compile Include="Vista\IGestionarProductoVista.cs" />
     <Compile Include="Vista\IRegistrarVentaVista.cs" />
+    <EmbeddedResource Include="VistaPrincipal.resx">
+      <DependentUpon>VistaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

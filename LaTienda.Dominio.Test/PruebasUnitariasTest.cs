@@ -32,12 +32,13 @@ namespace LaTienda.Dominio.Tests
             _margenGanancia = 0.3;
             // se crea una instancia de producto
             _producto = new Producto(
+                100,
                 "producto",
-                _marcaZ,
-                _rubro,
                 _costo,
                 _tasaInteres,
-                _margenGanancia);
+                _margenGanancia,
+                _marcaZ,
+                _rubro);
         }
 
         [TestMethod]
@@ -90,7 +91,7 @@ namespace LaTienda.Dominio.Tests
                 cantidadProductos);
             double resultadoEsperado = 1430;//SubTotal = PrecioDeVenta * Cantidad
             // Act
-            double resultadoReal = lineaDeVenta.ObtenerSubTotal();
+            double resultadoReal = lineaDeVenta.SubTotal;
             // Assert
             Assert.AreEqual(resultadoEsperado, resultadoReal, 0.1);
         }
@@ -103,7 +104,7 @@ namespace LaTienda.Dominio.Tests
             int empleadoID = 10;
             int legajo = 999;
             string nombre = "EmpleadoTest";
-            Empleado empleado = new Empleado(
+            Empleado empleado = new Vendedor(
                 empleadoID, 
                 legajo, 
                 nombre);
