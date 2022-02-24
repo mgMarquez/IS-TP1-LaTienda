@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace LaTienda.Dominio
 {
-    public class Empleado
+    public abstract class Empleado
     {
         public int EmpleadoID { get; set; }
         public int Legajo { get; set; }
         public string Nombre { get; set; }
 
-        private string _contraseña;
+        private string _contrasenia;
 
         public Empleado(int empleadoID, int legajo, string nombre)
         {
@@ -21,14 +21,14 @@ namespace LaTienda.Dominio
             Nombre = nombre;
         }
 
-        public Empleado(string contraseña)
+        public void EstablecerContrasenia(string contrasenia)
         {
-            _contraseña = contraseña;
+            _contrasenia = contrasenia;
         }
 
-        public bool VerificarContraseña(string contraseña)
+        public bool VerificarContraseña(string contrasenia)
         {
-            return _contraseña == contraseña;
+            return _contrasenia == contrasenia;
         }
     }
 }
