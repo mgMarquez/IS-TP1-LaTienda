@@ -11,8 +11,8 @@ namespace LaTienda.Presentador
     {
         private Venta _venta;
        // private IRepositorio _repositorio;
-        private IRegistrarVentaVista _vista;
-        private Producto _productoActual;
+        //private IRegistrarVentaVista _vista;
+        //private Producto _productoActual;
 
         public void IniciarVenta()//IRepositorio repositorio, IRegistrarVentaVista vista)
         {
