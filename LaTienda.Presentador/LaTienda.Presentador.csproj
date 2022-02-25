@@ -60,6 +60,12 @@
     <Compile Include="Vista\IAutenticarUsuarioVista.cs" />
     <Compile Include="Vista\IGestionarProductoVista.cs" />
     <Compile Include="Vista\IRegistrarVentaVista.cs" />
+    <Compile Include="Vista\RealizarVentaVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\RealizarVentaVista.Designer.cs">
+      <DependentUpon>RealizarVentaVista.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="VistaPrincipal.resx">
       <DependentUpon>VistaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,6 +78,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\RealizarVentaVista.resx">
+      <DependentUpon>RealizarVentaVista.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\LaTienda.Dominio.Cliente.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Color.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Comprobante.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Empleado.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.LineaDeVenta.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Marca.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Producto.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Proveedor.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.PuntoDeVenta.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.ReglaDeNegocio.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Rubro.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Sesion.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Stock.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Sucursal.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Talle.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Vendedor.datasource" />
+    <None Include="Properties\DataSources\LaTienda.Dominio.Venta.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
