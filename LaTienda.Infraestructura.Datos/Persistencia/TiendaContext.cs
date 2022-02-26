@@ -10,6 +10,14 @@ namespace LaTienda.Infraestructura.Datos
 {
     public class TiendaContext : DbContext
     {
+        public TiendaContext() : base("name=TiendaConnectionString")
+        {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
