@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nudCantidadProductos = new System.Windows.Forms.NumericUpDown();
+            this.btAgregarProducto = new System.Windows.Forms.Button();
+            this.cbColor = new System.Windows.Forms.ComboBox();
+            this.tbStock = new System.Windows.Forms.TextBox();
+            this.cbTalle = new System.Windows.Forms.ComboBox();
+            this.btBuscarProducto = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -43,10 +44,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbMarca = new System.Windows.Forms.TextBox();
+            this.tbDescripcion = new System.Windows.Forms.TextBox();
+            this.tbRubro = new System.Windows.Forms.TextBox();
+            this.tbCodigo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
@@ -55,20 +56,32 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.lineaDeVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionColorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionTalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.netoGravadoTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iVATotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.nudCantidadProductos);
+            this.groupBox1.Controls.Add(this.btAgregarProducto);
+            this.groupBox1.Controls.Add(this.cbColor);
+            this.groupBox1.Controls.Add(this.tbStock);
+            this.groupBox1.Controls.Add(this.cbTalle);
+            this.groupBox1.Controls.Add(this.btBuscarProducto);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
@@ -77,10 +90,10 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbMarca);
+            this.groupBox1.Controls.Add(this.tbDescripcion);
+            this.groupBox1.Controls.Add(this.tbRubro);
+            this.groupBox1.Controls.Add(this.tbCodigo);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(499, 162);
@@ -88,58 +101,63 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
             // 
-            // numericUpDown1
+            // nudCantidadProductos
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(290, 132);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(103, 20);
-            this.numericUpDown1.TabIndex = 0;
+            this.nudCantidadProductos.Enabled = false;
+            this.nudCantidadProductos.Location = new System.Drawing.Point(315, 132);
+            this.nudCantidadProductos.Name = "nudCantidadProductos";
+            this.nudCantidadProductos.Size = new System.Drawing.Size(78, 20);
+            this.nudCantidadProductos.TabIndex = 0;
             // 
-            // button2
+            // btAgregarProducto
             // 
-            this.button2.Location = new System.Drawing.Point(408, 129);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btAgregarProducto.Enabled = false;
+            this.btAgregarProducto.Location = new System.Drawing.Point(408, 129);
+            this.btAgregarProducto.Name = "btAgregarProducto";
+            this.btAgregarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btAgregarProducto.TabIndex = 2;
+            this.btAgregarProducto.Text = "Agregar";
+            this.btAgregarProducto.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cbColor
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(235, 103);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(124, 21);
-            this.comboBox2.TabIndex = 3;
+            this.cbColor.Enabled = false;
+            this.cbColor.FormattingEnabled = true;
+            this.cbColor.Location = new System.Drawing.Point(235, 103);
+            this.cbColor.Name = "cbColor";
+            this.cbColor.Size = new System.Drawing.Size(124, 21);
+            this.cbColor.TabIndex = 3;
             // 
-            // textBox5
+            // tbStock
             // 
-            this.textBox5.Location = new System.Drawing.Point(417, 103);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(66, 20);
-            this.textBox5.TabIndex = 0;
+            this.tbStock.Enabled = false;
+            this.tbStock.Location = new System.Drawing.Point(417, 103);
+            this.tbStock.Name = "tbStock";
+            this.tbStock.Size = new System.Drawing.Size(66, 20);
+            this.tbStock.TabIndex = 0;
             // 
-            // comboBox1
+            // cbTalle
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(52, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cbTalle.Enabled = false;
+            this.cbTalle.FormattingEnabled = true;
+            this.cbTalle.Location = new System.Drawing.Point(52, 103);
+            this.cbTalle.Name = "cbTalle";
+            this.cbTalle.Size = new System.Drawing.Size(124, 21);
+            this.cbTalle.TabIndex = 3;
             // 
-            // button1
+            // btBuscarProducto
             // 
-            this.button1.Location = new System.Drawing.Point(408, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btBuscarProducto.Location = new System.Drawing.Point(408, 22);
+            this.btBuscarProducto.Name = "btBuscarProducto";
+            this.btBuscarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btBuscarProducto.TabIndex = 2;
+            this.btBuscarProducto.Text = "Buscar";
+            this.btBuscarProducto.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(114, 134);
+            this.label8.Location = new System.Drawing.Point(133, 134);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(167, 13);
             this.label8.TabIndex = 1;
@@ -208,33 +226,36 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo";
             // 
-            // textBox3
+            // tbMarca
             // 
-            this.textBox3.Location = new System.Drawing.Point(290, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 20);
-            this.textBox3.TabIndex = 0;
+            this.tbMarca.Enabled = false;
+            this.tbMarca.Location = new System.Drawing.Point(290, 51);
+            this.tbMarca.Name = "tbMarca";
+            this.tbMarca.Size = new System.Drawing.Size(193, 20);
+            this.tbMarca.TabIndex = 0;
             // 
-            // textBox4
+            // tbDescripcion
             // 
-            this.textBox4.Location = new System.Drawing.Point(75, 77);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(408, 20);
-            this.textBox4.TabIndex = 0;
+            this.tbDescripcion.Enabled = false;
+            this.tbDescripcion.Location = new System.Drawing.Point(75, 77);
+            this.tbDescripcion.Name = "tbDescripcion";
+            this.tbDescripcion.Size = new System.Drawing.Size(408, 20);
+            this.tbDescripcion.TabIndex = 0;
             // 
-            // textBox2
+            // tbRubro
             // 
-            this.textBox2.Location = new System.Drawing.Point(52, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(168, 20);
-            this.textBox2.TabIndex = 0;
+            this.tbRubro.Enabled = false;
+            this.tbRubro.Location = new System.Drawing.Point(52, 51);
+            this.tbRubro.Name = "tbRubro";
+            this.tbRubro.Size = new System.Drawing.Size(168, 20);
+            this.tbRubro.TabIndex = 0;
             // 
-            // textBox1
+            // tbCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(52, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(307, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbCodigo.Location = new System.Drawing.Point(52, 24);
+            this.tbCodigo.Name = "tbCodigo";
+            this.tbCodigo.Size = new System.Drawing.Size(307, 20);
+            this.tbCodigo.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -249,7 +270,20 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoProductoDataGridViewTextBoxColumn,
+            this.descripcionProductoDataGridViewTextBoxColumn,
+            this.marcaProductoDataGridViewTextBoxColumn,
+            this.descripcionColorDataGridViewTextBoxColumn,
+            this.descripcionTalleDataGridViewTextBoxColumn,
+            this.precioProductoDataGridViewTextBoxColumn,
+            this.cantidadDataGridViewTextBoxColumn,
+            this.netoGravadoTotalDataGridViewTextBoxColumn,
+            this.iVATotalDataGridViewTextBoxColumn,
+            this.subTotalDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.lineaDeVentaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(9, 48);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(474, 135);
@@ -307,7 +341,80 @@
             this.button6.Text = "Salir";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // RealizarVentaVista
+            // lineaDeVentaBindingSource
+            // 
+            this.lineaDeVentaBindingSource.DataSource = typeof(LaTienda.Dominio.LineaDeVenta);
+            // 
+            // codigoProductoDataGridViewTextBoxColumn
+            // 
+            this.codigoProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoProducto";
+            this.codigoProductoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoProductoDataGridViewTextBoxColumn.Name = "codigoProductoDataGridViewTextBoxColumn";
+            this.codigoProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionProductoDataGridViewTextBoxColumn
+            // 
+            this.descripcionProductoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionProducto";
+            this.descripcionProductoDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionProductoDataGridViewTextBoxColumn.Name = "descripcionProductoDataGridViewTextBoxColumn";
+            this.descripcionProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // marcaProductoDataGridViewTextBoxColumn
+            // 
+            this.marcaProductoDataGridViewTextBoxColumn.DataPropertyName = "MarcaProducto";
+            this.marcaProductoDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaProductoDataGridViewTextBoxColumn.Name = "marcaProductoDataGridViewTextBoxColumn";
+            this.marcaProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionColorDataGridViewTextBoxColumn
+            // 
+            this.descripcionColorDataGridViewTextBoxColumn.DataPropertyName = "DescripcionColor";
+            this.descripcionColorDataGridViewTextBoxColumn.HeaderText = "Color";
+            this.descripcionColorDataGridViewTextBoxColumn.Name = "descripcionColorDataGridViewTextBoxColumn";
+            this.descripcionColorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionTalleDataGridViewTextBoxColumn
+            // 
+            this.descripcionTalleDataGridViewTextBoxColumn.DataPropertyName = "DescripcionTalle";
+            this.descripcionTalleDataGridViewTextBoxColumn.HeaderText = "Talle";
+            this.descripcionTalleDataGridViewTextBoxColumn.Name = "descripcionTalleDataGridViewTextBoxColumn";
+            this.descripcionTalleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precioProductoDataGridViewTextBoxColumn
+            // 
+            this.precioProductoDataGridViewTextBoxColumn.DataPropertyName = "PrecioProducto";
+            this.precioProductoDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioProductoDataGridViewTextBoxColumn.Name = "precioProductoDataGridViewTextBoxColumn";
+            this.precioProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            // 
+            // netoGravadoTotalDataGridViewTextBoxColumn
+            // 
+            this.netoGravadoTotalDataGridViewTextBoxColumn.DataPropertyName = "NetoGravadoTotal";
+            this.netoGravadoTotalDataGridViewTextBoxColumn.HeaderText = "Neto gravado";
+            this.netoGravadoTotalDataGridViewTextBoxColumn.Name = "netoGravadoTotalDataGridViewTextBoxColumn";
+            this.netoGravadoTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iVATotalDataGridViewTextBoxColumn
+            // 
+            this.iVATotalDataGridViewTextBoxColumn.DataPropertyName = "IVATotal";
+            this.iVATotalDataGridViewTextBoxColumn.HeaderText = "IVA";
+            this.iVATotalDataGridViewTextBoxColumn.Name = "iVATotalDataGridViewTextBoxColumn";
+            this.iVATotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subTotalDataGridViewTextBoxColumn
+            // 
+            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
+            this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
+            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
+            this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // RegistrarVentaVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -319,13 +426,14 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Name = "RealizarVentaVista";
+            this.Name = "RegistrarVentaVista";
             this.Text = "La tienda - Venta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,10 +442,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbColor;
+        private System.Windows.Forms.TextBox tbStock;
+        private System.Windows.Forms.ComboBox cbTalle;
+        private System.Windows.Forms.Button btBuscarProducto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
@@ -345,12 +453,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbMarca;
+        private System.Windows.Forms.TextBox tbDescripcion;
+        private System.Windows.Forms.TextBox tbRubro;
+        private System.Windows.Forms.TextBox tbCodigo;
+        private System.Windows.Forms.NumericUpDown nudCantidadProductos;
+        private System.Windows.Forms.Button btAgregarProducto;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -360,5 +468,16 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.BindingSource lineaDeVentaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionColorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionTalleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn netoGravadoTotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iVATotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
     }
 }
