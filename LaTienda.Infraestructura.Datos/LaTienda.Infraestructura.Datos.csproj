@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Persistencia\TiendaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\IGenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LaTienda.Dominio\LaTienda.Dominio.csproj">
@@ -65,7 +66,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositorios\" />
+    <Folder Include="UoW\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
