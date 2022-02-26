@@ -39,7 +39,7 @@ namespace LaTienda.Presentador
 
         public void AgregarProductoVenta(Color color, Talle talle, int cantidad)
         {            
-            _venta.AgregarLineaDeVenta(_productoActual, color, talle, cantidad);
+            _venta.AgregarProducto(_productoActual, color, talle, cantidad);
             _vista.MostrarDetalleDeVenta(_venta._detalleVenta);
         }
 
@@ -50,9 +50,7 @@ namespace LaTienda.Presentador
 
         public void FinalizarVenta(double importe)
         {
-            if (_vendedor == null) throw new ArgumentNullException();
             if (_venta._detalleVenta == null) throw new ArgumentNullException();
-
         }
 
     }
