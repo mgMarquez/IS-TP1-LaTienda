@@ -8,7 +8,7 @@ namespace LaTienda.Dominio
 {
     public class Venta
     {
-        public Empleado _empleado { get; private set; }
+        public Vendedor _vendedor { get; private set; }
         public DateTime FechaVenta { get; private set; }
         public List<LineaDeVenta> _detalleVenta { get; private set; }
         public Comprobante Comprobante { get; private set; }
@@ -16,14 +16,15 @@ namespace LaTienda.Dominio
         public double NetoGravado => _detalleVenta.Sum(lv => lv.NetoGravadoTotal);
         public double IVA => _detalleVenta.Sum(lv => lv.IVATotal);
 
-        public Venta(Empleado empleado)
+        public Venta(Vendedor vendedor)
         {
-            _empleado = empleado;
+            _vendedor = vendedor;
             _detalleVenta = new List<LineaDeVenta>();
         }
 
-        public void AgregarLineaDeVenta(LineaDeVenta lineaDeVenta)
+        public void AgregarLineaDeVenta(Producto producto, Color color, Talle talle, int cantidad)
         {
+            var lineaDeVenta = new LineaDeVenta(producto, color, talle, cantidad);
             _detalleVenta.Add(lineaDeVenta);            
         }        
 

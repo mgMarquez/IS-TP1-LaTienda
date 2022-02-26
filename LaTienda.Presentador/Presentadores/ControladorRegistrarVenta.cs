@@ -14,7 +14,6 @@ namespace LaTienda.Presentador
         private readonly IRepositorio<Producto> _repositorioProducto;
         private readonly IRegistrarVentaVista _vista;
         private Producto _productoActual;
-        private Vendedor _vendedor;
 
         public ControladorRegistrarVenta(IRepositorio<Venta> repositorio,
             IRepositorio<Producto> repositorioProducto, IRegistrarVentaVista vista)
@@ -26,8 +25,8 @@ namespace LaTienda.Presentador
 
         public void IniciarVenta()
         {
-            _vendedor = Sesion.Empleado as Vendedor;
-            _venta = new Venta(_vendedor);
+            var vendedor = Sesion.Empleado as Vendedor;
+            _venta = new Venta(vendedor);
         }
 
         public void BuscarProducto(int codigo)
@@ -39,9 +38,8 @@ namespace LaTienda.Presentador
         }
 
         public void AgregarProductoVenta(Color color, Talle talle, int cantidad)
-        {
-            var lineaDeVenta = new LineaDeVenta(_productoActual, color, talle, cantidad);
-            _venta.AgregarLineaDeVenta(lineaDeVenta);
+        {            
+            _venta.AgregarLineaDeVenta(_productoActual, color, talle, cantidad);
             _vista.MostrarDetalleDeVenta(_venta._detalleVenta);
         }
 
