@@ -60,11 +60,11 @@
     <Compile Include="Vista\IAutenticarUsuarioVista.cs" />
     <Compile Include="Vista\IGestionarProductoVista.cs" />
     <Compile Include="Vista\IRegistrarVentaVista.cs" />
-    <Compile Include="Vista\RealizarVentaVista.cs">
+    <Compile Include="Vista\RegistrarVentaVista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\RealizarVentaVista.Designer.cs">
-      <DependentUpon>RealizarVentaVista.cs</DependentUpon>
+    <Compile Include="Vista\RegistrarVentaVista.Designer.cs">
+      <DependentUpon>RegistrarVentaVista.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="VistaPrincipal.resx">
       <DependentUpon>VistaPrincipal.cs</DependentUpon>
@@ -78,8 +78,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vista\RealizarVentaVista.resx">
-      <DependentUpon>RealizarVentaVista.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\RegistrarVentaVista.resx">
+      <DependentUpon>RegistrarVentaVista.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\LaTienda.Dominio.Cliente.datasource" />
     <None Include="Properties\DataSources\LaTienda.Dominio.Color.datasource" />

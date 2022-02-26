@@ -1,6 +1,6 @@
 ﻿namespace LaTienda.Presentador.Vista
 {
-    partial class RealizarVentaVista
+    partial class RegistrarVentaVista
     {
         /// <summary>
         /// Required designer variable.
