@@ -22,17 +22,26 @@ namespace LaTienda.Dominio
             _detalleVenta = new List<LineaDeVenta>();
         }
 
-        public void AgregarLineaDeVenta(Producto producto, Color color, Talle talle, int cantidad)
+        public void AgregarProducto(Producto producto, Color color, Talle talle, int cantidad)
         {
             var lineaDeVenta = new LineaDeVenta(producto, color, talle, cantidad);
             _detalleVenta.Add(lineaDeVenta);            
-        }        
+        }
+        
+        public void QuitarProducto(Producto producto, Color color, Talle talle)
+        {
+            var lineaDeVenta = _detalleVenta
+                .Find(lv => lv.Producto == producto && lv.Talle == talle && lv.Color == color);
+            if(lineaDeVenta != null)
+            {
+                _detalleVenta.Remove(lineaDeVenta);
+            }
+        }
 
         public void FinalizarVenta()
         {
             FechaVenta = new DateTime();
         }
-
 
     }
 }
