@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Persistencia\TiendaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\GenericRepository.cs" />
     <Compile Include="Repositorio\IGenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
