@@ -8,6 +8,7 @@ namespace LaTienda.Dominio
 {
     public class Stock
     {
+        public int StockID { get; set; }
         public Talle Talle { get; private set; }
         public Color Color { get; private set; }
         public int CantidadEnStock { get; private set; }

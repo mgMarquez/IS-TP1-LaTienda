@@ -51,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202202270057408_NuevasEntidades_Producto_Marca_Rubro.cs" />
+    <Compile Include="Migrations\202202270057408_NuevasEntidades_Producto_Marca_Rubro.designer.cs">
+      <DependentUpon>202202270057408_NuevasEntidades_Producto_Marca_Rubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistencia\TiendaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\GenericRepository.cs" />
@@ -68,7 +73,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202270057408_NuevasEntidades_Producto_Marca_Rubro.resx">
+      <DependentUpon>202202270057408_NuevasEntidades_Producto_Marca_Rubro.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
