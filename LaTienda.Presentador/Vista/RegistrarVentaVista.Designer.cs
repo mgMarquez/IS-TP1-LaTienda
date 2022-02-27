@@ -45,18 +45,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbMarca = new System.Windows.Forms.TextBox();
+            this.bsProducto = new System.Windows.Forms.BindingSource(this.components);
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.tbRubro = new System.Windows.Forms.TextBox();
             this.tbCodigo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.lineaDeVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,11 +61,23 @@
             this.netoGravadoTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iVATotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lineaDeVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.bsRubro = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMarca = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducto)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRubro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -153,6 +159,7 @@
             this.btBuscarProducto.TabIndex = 2;
             this.btBuscarProducto.Text = "Buscar";
             this.btBuscarProducto.UseVisualStyleBackColor = true;
+            this.btBuscarProducto.Click += new System.EventHandler(this.BtBuscarProducto_Click);
             // 
             // label8
             // 
@@ -228,14 +235,20 @@
             // 
             // tbMarca
             // 
+            this.tbMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMarca, "Descripcion", true));
             this.tbMarca.Enabled = false;
             this.tbMarca.Location = new System.Drawing.Point(290, 51);
             this.tbMarca.Name = "tbMarca";
             this.tbMarca.Size = new System.Drawing.Size(193, 20);
             this.tbMarca.TabIndex = 0;
             // 
+            // bsProducto
+            // 
+            this.bsProducto.DataSource = typeof(LaTienda.Dominio.Producto);
+            // 
             // tbDescripcion
             // 
+            this.tbDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProducto, "Descripcion", true));
             this.tbDescripcion.Enabled = false;
             this.tbDescripcion.Location = new System.Drawing.Point(75, 77);
             this.tbDescripcion.Name = "tbDescripcion";
@@ -244,6 +257,7 @@
             // 
             // tbRubro
             // 
+            this.tbRubro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsRubro, "Descripcion", true));
             this.tbRubro.Enabled = false;
             this.tbRubro.Location = new System.Drawing.Point(52, 51);
             this.tbRubro.Name = "tbRubro";
@@ -288,62 +302,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(474, 135);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(365, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Quitar seleccionado";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(327, 375);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(168, 20);
-            this.textBox6.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(281, 378);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Total";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(237, 420);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Aceptar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(330, 420);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Cancelar";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(420, 420);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Salir";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // lineaDeVentaBindingSource
-            // 
-            this.lineaDeVentaBindingSource.DataSource = typeof(LaTienda.Dominio.LineaDeVenta);
             // 
             // codigoProductoDataGridViewTextBoxColumn
             // 
@@ -414,6 +372,70 @@
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
             this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // lineaDeVentaBindingSource
+            // 
+            this.lineaDeVentaBindingSource.DataSource = typeof(LaTienda.Dominio.LineaDeVenta);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(365, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(118, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Quitar seleccionado";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(327, 375);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(168, 20);
+            this.textBox6.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(281, 378);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Total";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(237, 420);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Aceptar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(330, 420);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Cancelar";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(420, 420);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Salir";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // bsRubro
+            // 
+            this.bsRubro.DataSource = typeof(LaTienda.Dominio.Rubro);
+            // 
+            // bsMarca
+            // 
+            this.bsMarca.DataSource = typeof(LaTienda.Dominio.Marca);
+            // 
             // RegistrarVentaVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,9 +453,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducto)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRubro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,5 +504,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn netoGravadoTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iVATotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bsProducto;
+        private System.Windows.Forms.BindingSource bsMarca;
+        private System.Windows.Forms.BindingSource bsRubro;
     }
 }

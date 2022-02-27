@@ -1,4 +1,5 @@
 ﻿using LaTienda.Dominio;
+using LaTienda.Infraestructura.Datos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +10,14 @@ namespace LaTienda.Presentador
 {
     public class ControladorRegistrarVenta
     {
-        private Venta _venta;
-        private readonly IRepositorio<Venta> _repositorioVenta;
-        private readonly IRepositorio<Producto> _repositorioProducto;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IRegistrarVentaVista _vista;
+        private Venta _venta;
         private Producto _productoActual;
 
-        public ControladorRegistrarVenta(IRepositorio<Venta> repositorio,
-            IRepositorio<Producto> repositorioProducto, IRegistrarVentaVista vista)
+        public ControladorRegistrarVenta(IUnitOfWork unitOfWork, IRegistrarVentaVista vista)
         {
-            _repositorioVenta = repositorio;
-            _repositorioProducto = repositorioProducto;
+            _unitOfWork = unitOfWork;
             _vista = vista;
         }
 
@@ -31,8 +29,9 @@ namespace LaTienda.Presentador
 
         public void BuscarProducto(int codigo)
         {
-            _productoActual = _repositorioProducto
-                .BuscarPor(p => p.Codigo == codigo)
+            _productoActual = _unitOfWork
+                .ProductoRepository
+                .Find(producto => producto.Codigo == codigo)
                 .First();
             _vista.MostrarProducto(_productoActual);
         }

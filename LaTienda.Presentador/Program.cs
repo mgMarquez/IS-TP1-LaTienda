@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LaTienda.Infraestructura.Datos;
+using LaTienda.Presentador.Vista;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,9 @@ namespace LaTienda.Presentador
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VistaPrincipal());
+            var context = new TiendaContext();
+            var unitOfWork = new UnitOfWork(context);
+            Application.Run(new RegistrarVentaVista(unitOfWork));
         }
     }
 }

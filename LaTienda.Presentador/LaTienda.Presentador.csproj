@@ -127,6 +127,10 @@
       <Project>{2e87e830-2651-4115-b6f8-5715b4d339ff}</Project>
       <Name>LaTienda.Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LaTienda.Infraestructura.Datos\LaTienda.Infraestructura.Datos.csproj">
+      <Project>{B7B25599-9810-4C3D-85D2-D07E36A425F3}</Project>
+      <Name>LaTienda.Infraestructura.Datos</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contratos\" />

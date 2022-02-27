@@ -11,6 +11,8 @@ namespace LaTienda.Dominio
         public int RubroID { get; set; }
         public string Descripcion { get; set; }
 
+        public virtual ICollection<Producto> Productos { get; set; }
+
         public Rubro(int rubroID, string descripcion)
         {
             RubroID = rubroID;
