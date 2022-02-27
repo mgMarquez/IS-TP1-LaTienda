@@ -8,13 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LaTienda.Dominio;
+using LaTienda.Infraestructura.Datos;
 
 namespace LaTienda.Presentador.Vista
 {
     public partial class RegistrarVentaVista : Form, IRegistrarVentaVista
     {
-        public RegistrarVentaVista()
+        private readonly ControladorRegistrarVenta _controladorRegistrarVenta;
+
+        public RegistrarVentaVista(IUnitOfWork unitOfWork)
         {
+            _controladorRegistrarVenta = new ControladorRegistrarVenta(unitOfWork, this);
             InitializeComponent();
         }
 
@@ -33,14 +37,33 @@ namespace LaTienda.Presentador.Vista
             throw new NotImplementedException();
         }
 
-        public void MostrarProducto(Producto productoActual)
+        public void MostrarProductoEnStock(Producto productoEnStock)
         {
-            throw new NotImplementedException();
+            bsProducto.DataSource = productoEnStock;
+            bsMarca.DataSource = productoEnStock.Marca;
+            bsRubro.DataSource = productoEnStock.Rubro;
+
+            bsStock.DataSource = productoEnStock.DetalleDeStock;
+            cbColor.DataSource = productoEnStock
+                .DetalleDeStock
+                .Select(stock => stock.Color)
+                .ToList();
+
+            cbTalle.DataSource = productoEnStock
+                .DetalleDeStock
+                .Select(stock => stock.Talle)
+                .ToList();            
         }
 
         public void QuitarProducto(Producto producto)
         {
             throw new NotImplementedException();
+        }
+
+        private void BtBuscarProducto_Click(object sender, EventArgs e)
+        {
+            int codigoProducto = Convert.ToInt32(tbCodigo.Text);
+            _controladorRegistrarVenta.BuscarProducto(codigoProducto);
         }
     }
 }

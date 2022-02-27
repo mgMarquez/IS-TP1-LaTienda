@@ -12,7 +12,7 @@ namespace LaTienda.Presentador
         void BuscarProducto(string buscar);
         void AgregarProducto(Producto producto);
         void QuitarProducto(Producto producto);
-        void MostrarProducto(Producto productoActual);
+        void MostrarProductoEnStock(Producto productoEnStock);
         void MostrarDetalleDeVenta(List<LineaDeVenta> detalleVenta);
     }
 }
