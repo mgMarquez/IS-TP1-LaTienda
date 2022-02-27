@@ -45,9 +45,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbMarca = new System.Windows.Forms.TextBox();
-            this.bsProducto = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMarca = new System.Windows.Forms.BindingSource(this.components);
             this.tbDescripcion = new System.Windows.Forms.TextBox();
+            this.bsProducto = new System.Windows.Forms.BindingSource(this.components);
             this.tbRubro = new System.Windows.Forms.TextBox();
+            this.bsRubro = new System.Windows.Forms.BindingSource(this.components);
             this.tbCodigo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -68,16 +70,16 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.bsRubro = new System.Windows.Forms.BindingSource(this.components);
-            this.bsMarca = new System.Windows.Forms.BindingSource(this.components);
+            this.bsStock = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRubro)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRubro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsStock)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -127,7 +129,8 @@
             // 
             // cbColor
             // 
-            this.cbColor.Enabled = false;
+            this.cbColor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStock, "Color", true));
+            this.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbColor.FormattingEnabled = true;
             this.cbColor.Location = new System.Drawing.Point(235, 103);
             this.cbColor.Name = "cbColor";
@@ -136,6 +139,7 @@
             // 
             // tbStock
             // 
+            this.tbStock.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStock, "CantidadEnStock", true));
             this.tbStock.Enabled = false;
             this.tbStock.Location = new System.Drawing.Point(417, 103);
             this.tbStock.Name = "tbStock";
@@ -144,7 +148,8 @@
             // 
             // cbTalle
             // 
-            this.cbTalle.Enabled = false;
+            this.cbTalle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStock, "Talle", true));
+            this.cbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTalle.FormattingEnabled = true;
             this.cbTalle.Location = new System.Drawing.Point(52, 103);
             this.cbTalle.Name = "cbTalle";
@@ -242,9 +247,9 @@
             this.tbMarca.Size = new System.Drawing.Size(193, 20);
             this.tbMarca.TabIndex = 0;
             // 
-            // bsProducto
+            // bsMarca
             // 
-            this.bsProducto.DataSource = typeof(LaTienda.Dominio.Producto);
+            this.bsMarca.DataSource = typeof(LaTienda.Dominio.Marca);
             // 
             // tbDescripcion
             // 
@@ -255,6 +260,10 @@
             this.tbDescripcion.Size = new System.Drawing.Size(408, 20);
             this.tbDescripcion.TabIndex = 0;
             // 
+            // bsProducto
+            // 
+            this.bsProducto.DataSource = typeof(LaTienda.Dominio.Producto);
+            // 
             // tbRubro
             // 
             this.tbRubro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsRubro, "Descripcion", true));
@@ -263,6 +272,10 @@
             this.tbRubro.Name = "tbRubro";
             this.tbRubro.Size = new System.Drawing.Size(168, 20);
             this.tbRubro.TabIndex = 0;
+            // 
+            // bsRubro
+            // 
+            this.bsRubro.DataSource = typeof(LaTienda.Dominio.Rubro);
             // 
             // tbCodigo
             // 
@@ -428,13 +441,9 @@
             this.button6.Text = "Salir";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // bsRubro
+            // bsStock
             // 
-            this.bsRubro.DataSource = typeof(LaTienda.Dominio.Rubro);
-            // 
-            // bsMarca
-            // 
-            this.bsMarca.DataSource = typeof(LaTienda.Dominio.Marca);
+            this.bsStock.DataSource = typeof(LaTienda.Dominio.Stock);
             // 
             // RegistrarVentaVista
             // 
@@ -453,12 +462,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRubro)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRubro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,5 +517,6 @@
         private System.Windows.Forms.BindingSource bsProducto;
         private System.Windows.Forms.BindingSource bsMarca;
         private System.Windows.Forms.BindingSource bsRubro;
+        private System.Windows.Forms.BindingSource bsStock;
     }
 }

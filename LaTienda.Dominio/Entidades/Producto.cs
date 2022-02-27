@@ -19,7 +19,7 @@ namespace LaTienda.Dominio
         public virtual Marca Marca { get; set; }
         public int RubroID { get; set; }
         public virtual Rubro Rubro { get; set; }
-        public List<Stock> DetalleDeStock { get; private set; }
+        public virtual List<Stock> DetalleDeStock { get; private set; }
 
         public double NetoGravado => Costo + Costo * MargenDeGanancia;
         public double IVA => NetoGravado * PorcentajeDeIva;

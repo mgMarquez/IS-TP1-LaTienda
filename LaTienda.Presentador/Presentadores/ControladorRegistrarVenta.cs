@@ -33,7 +33,7 @@ namespace LaTienda.Presentador
                 .ProductoRepository
                 .Find(producto => producto.Codigo == codigo)
                 .First();
-            _vista.MostrarProducto(_productoActual);
+            _vista.MostrarProductoEnStock(_productoActual);
         }
 
         public void AgregarProductoVenta(Color color, Talle talle, int cantidad)

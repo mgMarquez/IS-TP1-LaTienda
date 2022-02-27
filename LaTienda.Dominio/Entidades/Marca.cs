@@ -11,7 +11,12 @@ namespace LaTienda.Dominio
         public int MarcaID { get; set; }
         public string Descripcion { get; set; }
 
-        public virtual ICollection<Producto> Productos { get; set; }
+        public virtual List<Producto> Productos { get; set; }
+
+        public Marca()
+        {
+
+        }
 
         public Marca(int marcaID, string descripcion)
         {

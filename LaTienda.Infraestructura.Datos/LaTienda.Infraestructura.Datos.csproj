@@ -55,6 +55,18 @@
     <Compile Include="Migrations\202202270057408_NuevasEntidades_Producto_Marca_Rubro.designer.cs">
       <DependentUpon>202202270057408_NuevasEntidades_Producto_Marca_Rubro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202270737113_arregloClaveForanea_producto.cs" />
+    <Compile Include="Migrations\202202270737113_arregloClaveForanea_producto.designer.cs">
+      <DependentUpon>202202270737113_arregloClaveForanea_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202272208004_X.cs" />
+    <Compile Include="Migrations\202202272208004_X.designer.cs">
+      <DependentUpon>202202272208004_X.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202272240187_NuevaEntidad-Stocks.cs" />
+    <Compile Include="Migrations\202202272240187_NuevaEntidad-Stocks.designer.cs">
+      <DependentUpon>202202272240187_NuevaEntidad-Stocks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistencia\TiendaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +88,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202270057408_NuevasEntidades_Producto_Marca_Rubro.resx">
       <DependentUpon>202202270057408_NuevasEntidades_Producto_Marca_Rubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202270737113_arregloClaveForanea_producto.resx">
+      <DependentUpon>202202270737113_arregloClaveForanea_producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202272208004_X.resx">
+      <DependentUpon>202202272208004_X.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202272240187_NuevaEntidad-Stocks.resx">
+      <DependentUpon>202202272240187_NuevaEntidad-Stocks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

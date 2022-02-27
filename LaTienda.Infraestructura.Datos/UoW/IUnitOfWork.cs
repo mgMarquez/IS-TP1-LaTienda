@@ -12,6 +12,7 @@ namespace LaTienda.Infraestructura.Datos
         IGenericRepository<Producto> ProductoRepository { get; }
         IGenericRepository<Marca> MarcaRepository { get; }
         IGenericRepository<Rubro> RubroRepository { get; }
+        IGenericRepository<Stock> StockRepository { get; }
         void Save();
     }
 }

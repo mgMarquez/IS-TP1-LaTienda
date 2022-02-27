@@ -37,11 +37,22 @@ namespace LaTienda.Presentador.Vista
             throw new NotImplementedException();
         }
 
-        public void MostrarProducto(Producto productoActual)
+        public void MostrarProductoEnStock(Producto productoEnStock)
         {
-            bsProducto.DataSource = productoActual;
-            bsMarca.DataSource = productoActual.Marca.Descripcion;
-            bsRubro.DataSource = productoActual.Rubro.Descripcion;
+            bsProducto.DataSource = productoEnStock;
+            bsMarca.DataSource = productoEnStock.Marca;
+            bsRubro.DataSource = productoEnStock.Rubro;
+
+            bsStock.DataSource = productoEnStock.DetalleDeStock;
+            cbColor.DataSource = productoEnStock
+                .DetalleDeStock
+                .Select(stock => stock.Color)
+                .ToList();
+
+            cbTalle.DataSource = productoEnStock
+                .DetalleDeStock
+                .Select(stock => stock.Talle)
+                .ToList();            
         }
 
         public void QuitarProducto(Producto producto)

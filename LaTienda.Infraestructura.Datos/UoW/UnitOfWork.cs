@@ -13,6 +13,7 @@ namespace LaTienda.Infraestructura.Datos
         private IGenericRepository<Producto> _productoRepository;
         private IGenericRepository<Marca> _marcaRepository;
         private IGenericRepository<Rubro> _rubroRepository;
+        private IGenericRepository<Stock> _stockRepository;
 
         public UnitOfWork(TiendaContext context)
         {
@@ -52,6 +53,18 @@ namespace LaTienda.Infraestructura.Datos
                     _rubroRepository = new GenericRepository<Rubro>(_context);
                 }
                 return _rubroRepository;
+            }
+        }
+
+        public IGenericRepository<Stock> StockRepository
+        {
+            get
+            {
+                if (_stockRepository == null)
+                {
+                    _stockRepository = new GenericRepository<Stock>(_context);
+                }
+                return _stockRepository;
             }
         }
 

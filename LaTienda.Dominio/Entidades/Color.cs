@@ -11,10 +11,22 @@ namespace LaTienda.Dominio
         public int ColorID { get; set; }
         public string Descripcion { get; set; }
 
+        public virtual List<Stock> Stocks { get; set; }
+
+        public Color()
+        {
+
+        }
+
         public Color(int colorID, string descripcion)
         {
             ColorID = colorID;
             Descripcion = descripcion;
+        }
+
+        public override string ToString()
+        {
+            return Descripcion;
         }
     }
 }
