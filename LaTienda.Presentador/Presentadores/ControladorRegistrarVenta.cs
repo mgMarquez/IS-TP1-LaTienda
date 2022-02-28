@@ -12,7 +12,7 @@ namespace LaTienda.Presentador
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRegistrarVentaVista _vista;
-        private Venta _venta;
+        private Venta _ventaActual;
         private Producto _productoActual;
         private Talle _talleSeleccionado;
         private Stock _stockSeleccionado;
@@ -26,7 +26,7 @@ namespace LaTienda.Presentador
         public void IniciarVenta()
         {
             var vendedor = Sesion.Empleado as Vendedor;
-            _venta = new Venta(vendedor);
+            _ventaActual = new Venta(vendedor);
         }
 
         public void BuscarProducto(int codigo)
@@ -67,8 +67,13 @@ namespace LaTienda.Presentador
 
         public void AgregarProductoVenta(Color color, Talle talle, int cantidad)
         {            
-            _venta.AgregarProducto(_productoActual, color, talle, cantidad);
-            _vista.MostrarDetalleDeVenta(_venta._detalleVenta);
+            _ventaActual.AgregarProducto(_productoActual, color, talle, cantidad);
+            _vista.MostrarDetalleDeVenta(_ventaActual.DetalleVenta);
+
+            var total = _ventaActual.Total;
+            var netoGravado = _ventaActual.NetoGravado;
+            var iva = _ventaActual.IVA;
+            _vista.MostrarTotalAPagar(total, iva, netoGravado);
         }
 
         public void SeleccionarCondicionTributaria(CondicionTributaria condicion)
@@ -78,7 +83,7 @@ namespace LaTienda.Presentador
 
         public void FinalizarVenta(double importe)
         {
-            if (_venta._detalleVenta == null) throw new ArgumentNullException();
+            if (_ventaActual.DetalleVenta == null) throw new ArgumentNullException();
         }
 
     }

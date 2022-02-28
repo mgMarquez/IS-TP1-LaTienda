@@ -19,17 +19,14 @@ namespace LaTienda.Presentador.Vista
         public RegistrarVentaVista(IUnitOfWork unitOfWork)
         {
             _controladorRegistrarVenta = new ControladorRegistrarVenta(unitOfWork, this);
+            _controladorRegistrarVenta.IniciarVenta();
             InitializeComponent();
-        }
-
-        public void AgregarProducto(Producto producto)
-        {
-            throw new NotImplementedException();
         }
 
         public void MostrarDetalleDeVenta(List<LineaDeVenta> detalleVenta)
         {
-            throw new NotImplementedException();
+            dataGVDetalleVenta.DataSource = null;
+            dataGVDetalleVenta.DataSource = detalleVenta;
         }
 
         public void MostrarProductoEnStock(Producto productoEnStock)
@@ -39,28 +36,21 @@ namespace LaTienda.Presentador.Vista
             bsRubro.DataSource = productoEnStock.Rubro;            
         }
 
-        public void QuitarProducto(Producto producto)
-        {
-            throw new NotImplementedException();
-        }
-
         private void BtBuscarProducto_Click(object sender, EventArgs e)
         {
             int codigoProducto = Convert.ToInt32(tbCodigo.Text);
             _controladorRegistrarVenta.BuscarProducto(codigoProducto);
         }
 
-        private void cbTalle_SelectedValueChanged(object sender, EventArgs e)
+        private void CbTalle_SelectedValueChanged(object sender, EventArgs e)
         {
-            var talleSeleccionado = cbTalle.SelectedItem as Talle;
-            if (talleSeleccionado == null) return;
+            if (!(cbTalle.SelectedItem is Talle talleSeleccionado)) return;
             _controladorRegistrarVenta.SeleccionarTalle(talleSeleccionado);
         }
 
-        private void cbColor_SelectedValueChanged(object sender, EventArgs e)
-        {            
-            var colorSeleccionado = cbColor.SelectedItem as Dominio.Color;
-            if (colorSeleccionado == null) return;
+        private void CbColor_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (!(cbColor.SelectedItem is Dominio.Color colorSeleccionado)) return;
             _controladorRegistrarVenta.SeleccionarColor(colorSeleccionado);
         }
 
@@ -77,6 +67,21 @@ namespace LaTienda.Presentador.Vista
         public void MostrarStockSeleccionado(Stock stockSeleccionado)
         {
             bsStock.DataSource = stockSeleccionado;
+        }
+
+        private void BtAgregarProducto_Click(object sender, EventArgs e)
+        {
+            int cantidadAgregar = (int)nudCantidadProductos.Value;
+            var color = cbColor.SelectedItem as Dominio.Color;
+            var talle = cbTalle.SelectedItem as Talle;
+            _controladorRegistrarVenta.AgregarProductoVenta(color, talle, cantidadAgregar);
+        }
+
+        public void MostrarTotalAPagar(double total, double iva, double netoGravado)
+        {
+            tbTotal.Text = Convert.ToString(total);            
+            tbIva.Text = Convert.ToString(iva);            
+            tbNeto.Text = Convert.ToString(netoGravado);
         }
     }
 }

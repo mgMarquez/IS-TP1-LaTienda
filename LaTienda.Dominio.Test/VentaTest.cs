@@ -51,7 +51,7 @@ namespace LaTienda.Dominio.Test
 
             var cantidadLineaVentaEsperada = 2;
 
-            Assert.AreEqual(cantidadLineaVentaEsperada, venta._detalleVenta.Count);
+            Assert.AreEqual(cantidadLineaVentaEsperada, venta.DetalleVenta.Count);
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace LaTienda.Dominio.Test
 
             var cantidadLineaVentaEsperada = 1;
 
-            Assert.AreEqual(cantidadLineaVentaEsperada, venta._detalleVenta.Count);
+            Assert.AreEqual(cantidadLineaVentaEsperada, venta.DetalleVenta.Count);
 
         }
     }

@@ -8,33 +8,33 @@ namespace LaTienda.Dominio
 {
     public class Venta
     {
-        public Vendedor _vendedor { get; private set; }
+        public Vendedor Vendedor { get; private set; }
         public DateTime FechaVenta { get; private set; }
-        public List<LineaDeVenta> _detalleVenta { get; private set; }
+        public List<LineaDeVenta> DetalleVenta { get; private set; }
         public Comprobante Comprobante { get; private set; }
-        public double Total => _detalleVenta.Sum(lv => lv.SubTotal);
-        public double NetoGravado => _detalleVenta.Sum(lv => lv.NetoGravadoTotal);
-        public double IVA => _detalleVenta.Sum(lv => lv.IVATotal);
+        public double Total => DetalleVenta.Sum(lv => lv.SubTotal);
+        public double NetoGravado => DetalleVenta.Sum(lv => lv.NetoGravadoTotal);
+        public double IVA => DetalleVenta.Sum(lv => lv.IVATotal);
 
         public Venta(Vendedor vendedor)
         {
-            _vendedor = vendedor;
-            _detalleVenta = new List<LineaDeVenta>();
+            Vendedor = vendedor;
+            DetalleVenta = new List<LineaDeVenta>();
         }
 
         public void AgregarProducto(Producto producto, Color color, Talle talle, int cantidad)
         {
             var lineaDeVenta = new LineaDeVenta(producto, color, talle, cantidad);
-            _detalleVenta.Add(lineaDeVenta);            
+            DetalleVenta.Add(lineaDeVenta);            
         }
         
         public void QuitarProducto(Producto producto, Color color, Talle talle)
         {
-            var lineaDeVenta = _detalleVenta
+            var lineaDeVenta = DetalleVenta
                 .Find(lv => lv.Producto == producto && lv.Talle == talle && lv.Color == color);
             if(lineaDeVenta != null)
             {
-                _detalleVenta.Remove(lineaDeVenta);
+                DetalleVenta.Remove(lineaDeVenta);
             }
         }
 
