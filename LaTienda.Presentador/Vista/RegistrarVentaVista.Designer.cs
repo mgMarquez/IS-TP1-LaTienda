@@ -33,6 +33,7 @@
             this.nudCantidadProductos = new System.Windows.Forms.NumericUpDown();
             this.btAgregarProducto = new System.Windows.Forms.Button();
             this.cbColor = new System.Windows.Forms.ComboBox();
+            this.bsStock = new System.Windows.Forms.BindingSource(this.components);
             this.tbStock = new System.Windows.Forms.TextBox();
             this.cbTalle = new System.Windows.Forms.ComboBox();
             this.btBuscarProducto = new System.Windows.Forms.Button();
@@ -70,16 +71,15 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.bsStock = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRubro)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsStock)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -136,6 +136,11 @@
             this.cbColor.Name = "cbColor";
             this.cbColor.Size = new System.Drawing.Size(124, 21);
             this.cbColor.TabIndex = 3;
+            this.cbColor.SelectedValueChanged += new System.EventHandler(this.cbColor_SelectedValueChanged);
+            // 
+            // bsStock
+            // 
+            this.bsStock.DataSource = typeof(LaTienda.Dominio.Stock);
             // 
             // tbStock
             // 
@@ -155,6 +160,7 @@
             this.cbTalle.Name = "cbTalle";
             this.cbTalle.Size = new System.Drawing.Size(124, 21);
             this.cbTalle.TabIndex = 3;
+            this.cbTalle.SelectedValueChanged += new System.EventHandler(this.cbTalle_SelectedValueChanged);
             // 
             // btBuscarProducto
             // 
@@ -441,10 +447,6 @@
             this.button6.Text = "Salir";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // bsStock
-            // 
-            this.bsStock.DataSource = typeof(LaTienda.Dominio.Stock);
-            // 
             // RegistrarVentaVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,13 +464,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRubro)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

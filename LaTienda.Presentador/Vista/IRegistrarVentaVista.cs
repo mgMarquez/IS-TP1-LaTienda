@@ -9,10 +9,12 @@ namespace LaTienda.Presentador
 {
     public interface IRegistrarVentaVista
     {
-        void BuscarProducto(string buscar);
         void AgregarProducto(Producto producto);
         void QuitarProducto(Producto producto);
         void MostrarProductoEnStock(Producto productoEnStock);
+        void MostrarStockSeleccionado(Stock stockSeleccionado);
+        void MostrarTallesDisponibles(List<Talle> tallesDisponibles);
+        void MostrarColoresDisponibles(List<Color> coloresDisponibles);
         void MostrarDetalleDeVenta(List<LineaDeVenta> detalleVenta);
     }
 }

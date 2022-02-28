@@ -27,11 +27,6 @@ namespace LaTienda.Presentador.Vista
             throw new NotImplementedException();
         }
 
-        public void BuscarProducto(string buscar)
-        {
-            throw new NotImplementedException();
-        }
-
         public void MostrarDetalleDeVenta(List<LineaDeVenta> detalleVenta)
         {
             throw new NotImplementedException();
@@ -41,18 +36,7 @@ namespace LaTienda.Presentador.Vista
         {
             bsProducto.DataSource = productoEnStock;
             bsMarca.DataSource = productoEnStock.Marca;
-            bsRubro.DataSource = productoEnStock.Rubro;
-
-            bsStock.DataSource = productoEnStock.DetalleDeStock;
-            cbColor.DataSource = productoEnStock
-                .DetalleDeStock
-                .Select(stock => stock.Color)
-                .ToList();
-
-            cbTalle.DataSource = productoEnStock
-                .DetalleDeStock
-                .Select(stock => stock.Talle)
-                .ToList();            
+            bsRubro.DataSource = productoEnStock.Rubro;            
         }
 
         public void QuitarProducto(Producto producto)
@@ -64,6 +48,35 @@ namespace LaTienda.Presentador.Vista
         {
             int codigoProducto = Convert.ToInt32(tbCodigo.Text);
             _controladorRegistrarVenta.BuscarProducto(codigoProducto);
+        }
+
+        private void cbTalle_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var talleSeleccionado = cbTalle.SelectedItem as Talle;
+            if (talleSeleccionado == null) return;
+            _controladorRegistrarVenta.SeleccionarTalle(talleSeleccionado);
+        }
+
+        private void cbColor_SelectedValueChanged(object sender, EventArgs e)
+        {            
+            var colorSeleccionado = cbColor.SelectedItem as Dominio.Color;
+            if (colorSeleccionado == null) return;
+            _controladorRegistrarVenta.SeleccionarColor(colorSeleccionado);
+        }
+
+        public void MostrarTallesDisponibles(List<Talle> tallesDisponibles)
+        {
+            cbTalle.DataSource = tallesDisponibles;
+        }
+
+        public void MostrarColoresDisponibles(List<Dominio.Color> coloresDisponibles)
+        {
+            cbColor.DataSource = coloresDisponibles;
+        }
+
+        public void MostrarStockSeleccionado(Stock stockSeleccionado)
+        {
+            bsStock.DataSource = stockSeleccionado;
         }
     }
 }
