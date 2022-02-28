@@ -304,6 +304,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dataGVDetalleVenta);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Location = new System.Drawing.Point(12, 212);
@@ -315,7 +317,11 @@
             // 
             // dataGVDetalleVenta
             // 
+            this.dataGVDetalleVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGVDetalleVenta.AutoGenerateColumns = false;
+            this.dataGVDetalleVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGVDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGVDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoProductoDataGridViewTextBoxColumn,
@@ -422,37 +428,47 @@
             // codigoProductoDataGridViewTextBoxColumn
             // 
             this.codigoProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoProducto";
+            this.codigoProductoDataGridViewTextBoxColumn.FillWeight = 232.0186F;
             this.codigoProductoDataGridViewTextBoxColumn.HeaderText = "Codigo";
             this.codigoProductoDataGridViewTextBoxColumn.Name = "codigoProductoDataGridViewTextBoxColumn";
             this.codigoProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoProductoDataGridViewTextBoxColumn.Width = 65;
             // 
             // descripcionProductoDataGridViewTextBoxColumn
             // 
             this.descripcionProductoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionProducto";
+            this.descripcionProductoDataGridViewTextBoxColumn.FillWeight = 180.9394F;
             this.descripcionProductoDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionProductoDataGridViewTextBoxColumn.Name = "descripcionProductoDataGridViewTextBoxColumn";
             this.descripcionProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionProductoDataGridViewTextBoxColumn.Width = 88;
             // 
             // marcaProductoDataGridViewTextBoxColumn
             // 
             this.marcaProductoDataGridViewTextBoxColumn.DataPropertyName = "MarcaProducto";
+            this.marcaProductoDataGridViewTextBoxColumn.FillWeight = 141.7122F;
             this.marcaProductoDataGridViewTextBoxColumn.HeaderText = "Marca";
             this.marcaProductoDataGridViewTextBoxColumn.Name = "marcaProductoDataGridViewTextBoxColumn";
             this.marcaProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.marcaProductoDataGridViewTextBoxColumn.Width = 62;
             // 
             // descripcionColorDataGridViewTextBoxColumn
             // 
             this.descripcionColorDataGridViewTextBoxColumn.DataPropertyName = "DescripcionColor";
+            this.descripcionColorDataGridViewTextBoxColumn.FillWeight = 111.587F;
             this.descripcionColorDataGridViewTextBoxColumn.HeaderText = "Color";
             this.descripcionColorDataGridViewTextBoxColumn.Name = "descripcionColorDataGridViewTextBoxColumn";
             this.descripcionColorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionColorDataGridViewTextBoxColumn.Width = 56;
             // 
             // descripcionTalleDataGridViewTextBoxColumn
             // 
             this.descripcionTalleDataGridViewTextBoxColumn.DataPropertyName = "DescripcionTalle";
+            this.descripcionTalleDataGridViewTextBoxColumn.FillWeight = 88.45189F;
             this.descripcionTalleDataGridViewTextBoxColumn.HeaderText = "Talle";
             this.descripcionTalleDataGridViewTextBoxColumn.Name = "descripcionTalleDataGridViewTextBoxColumn";
             this.descripcionTalleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionTalleDataGridViewTextBoxColumn.Width = 55;
             // 
             // iVATotalDataGridViewTextBoxColumn
             // 
@@ -460,9 +476,11 @@
             dataGridViewCellStyle1.Format = "C2";
             dataGridViewCellStyle1.NullValue = null;
             this.iVATotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.iVATotalDataGridViewTextBoxColumn.FillWeight = 70.68504F;
             this.iVATotalDataGridViewTextBoxColumn.HeaderText = "IVA";
             this.iVATotalDataGridViewTextBoxColumn.Name = "iVATotalDataGridViewTextBoxColumn";
             this.iVATotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iVATotalDataGridViewTextBoxColumn.Width = 49;
             // 
             // netoGravadoTotalDataGridViewTextBoxColumn
             // 
@@ -470,9 +488,11 @@
             dataGridViewCellStyle2.Format = "C2";
             dataGridViewCellStyle2.NullValue = null;
             this.netoGravadoTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.netoGravadoTotalDataGridViewTextBoxColumn.FillWeight = 57.10493F;
             this.netoGravadoTotalDataGridViewTextBoxColumn.HeaderText = "Neto gravado";
             this.netoGravadoTotalDataGridViewTextBoxColumn.Name = "netoGravadoTotalDataGridViewTextBoxColumn";
             this.netoGravadoTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.netoGravadoTotalDataGridViewTextBoxColumn.Width = 89;
             // 
             // precioProductoDataGridViewTextBoxColumn
             // 
@@ -480,15 +500,20 @@
             dataGridViewCellStyle3.Format = "C2";
             dataGridViewCellStyle3.NullValue = null;
             this.precioProductoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.precioProductoDataGridViewTextBoxColumn.FillWeight = 46.60554F;
             this.precioProductoDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioProductoDataGridViewTextBoxColumn.Name = "precioProductoDataGridViewTextBoxColumn";
             this.precioProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioProductoDataGridViewTextBoxColumn.Width = 62;
             // 
             // cantidadDataGridViewTextBoxColumn
             // 
             this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.FillWeight = 38.54317F;
             this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadDataGridViewTextBoxColumn.Width = 74;
             // 
             // subTotalDataGridViewTextBoxColumn
             // 
@@ -496,9 +521,11 @@
             dataGridViewCellStyle4.Format = "C2";
             dataGridViewCellStyle4.NullValue = null;
             this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.subTotalDataGridViewTextBoxColumn.FillWeight = 32.3523F;
             this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
             this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.subTotalDataGridViewTextBoxColumn.Width = 75;
             // 
             // lineaDeVentaBindingSource
             // 
