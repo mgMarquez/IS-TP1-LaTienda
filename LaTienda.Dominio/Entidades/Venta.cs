@@ -23,9 +23,19 @@ namespace LaTienda.Dominio
         }
 
         public void AgregarProducto(Producto producto, Color color, Talle talle, int cantidad)
-        {
+        {            
             var lineaDeVenta = new LineaDeVenta(producto, color, talle, cantidad);
-            DetalleVenta.Add(lineaDeVenta);            
+            var yaExiste = DetalleVenta
+                .Find(lv => lv.Producto == producto && lv.Color == color && lv.Talle == talle);
+            if (yaExiste == null)
+            {
+                DetalleVenta.Add(lineaDeVenta);
+
+            }
+            else
+            {
+                yaExiste.IncrementarCantidad(cantidad);
+            }
         }
         
         public void QuitarProducto(Producto producto, Color color, Talle talle)

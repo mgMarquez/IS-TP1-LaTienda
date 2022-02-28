@@ -11,7 +11,7 @@ namespace LaTienda.Dominio
         public Producto Producto { get; private set; }
         public Color Color { get; private set; }
         public Talle Talle { get; private set; }
-        public int Cantidad { get; set; }
+        public int Cantidad { get; private set; }
 
         public int CodigoProducto => Producto.Codigo;
         public string DescripcionProducto => Producto.Descripcion;
@@ -29,6 +29,11 @@ namespace LaTienda.Dominio
             Color = color;
             Talle = talle;
             Cantidad = cantidad;
+        }
+
+        public void IncrementarCantidad(int cantidad)
+        {
+            Cantidad += cantidad;
         }
 
     }
