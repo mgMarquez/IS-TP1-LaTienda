@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\WSAA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WSAFIP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202202270057408_NuevasEntidades_Producto_Marca_Rubro.cs" />
     <Compile Include="Migrations\202202270057408_NuevasEntidades_Producto_Marca_Rubro.designer.cs">
       <DependentUpon>202202270057408_NuevasEntidades_Producto_Marca_Rubro.cs</DependentUpon>
@@ -72,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\GenericRepository.cs" />
     <Compile Include="Repositorio\IGenericRepository.cs" />
+    <Compile Include="Servicio\ServicioAFIP.cs" />
     <Compile Include="UoW\IUnitOfWork.cs" />
     <Compile Include="UoW\UnitOfWork.cs" />
   </ItemGroup>
@@ -82,7 +95,141 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSAA\LaTienda.Infraestructura.Datos.WSAA.Autorizacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAA\LoginService.wsdl" />
+    <None Include="Connected Services\WSAA\LoginService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSAA\LoginService1.wsdl" />
+    <None Include="Connected Services\WSAA\LoginService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSAA\LoginService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.CbteTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.ConceptoTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.DocTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.DummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEAConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEAGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEARegInformativoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEASinMovConsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEASinMovimientoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEASinMovimientoInformarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEASinMovResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEASolicitarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECAESolicitarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECompConsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECompConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECompTotXRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECompUltimoAutorizadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FECotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEDummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEPaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetCotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetPtosVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetTiposCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetTiposConceptoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetTiposDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetTiposIvaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetTiposMonedasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetTiposOpcionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetTiposPaisesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEParamGetTiposTributosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FEPtoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FERecuperaLastCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FERegXReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.FETributoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.IvaTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.MonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\LaTienda.Infraestructura.Datos.WSAFIP.OpcionalTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSAFIP\service.wsdl" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +245,38 @@
     <EmbeddedResource Include="Migrations\202202272240187_NuevaEntidad-Stocks.resx">
       <DependentUpon>202202272240187_NuevaEntidad-Stocks.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WSAA\" />
+    <WCFMetadataStorage Include="Connected Services\WSAFIP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSAA\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSAA\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSAA\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Connected Services\WSAFIP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSAFIP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSAFIP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
