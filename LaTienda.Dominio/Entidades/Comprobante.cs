@@ -11,5 +11,6 @@ namespace LaTienda.Dominio
         public int ComprobanteID { get; set; }
         public int NumeroDeComprobante { get; set; }
         public DateTime Fecha { get; set; }
+        public TipoComprobante TipoComprobante { get; set; }
     }
 }
