@@ -44,7 +44,7 @@
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Color.cs" />
     <Compile Include="Entidades\Comprobante.cs" />
-    <Compile Include="Entidades\CondicionTributaria.cs" />
+    <Compile Include="Enumeradores\CondicionTributaria.cs" />
     <Compile Include="Contratos\IRepositorio.cs" />
     <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\LineaDeVenta.cs" />

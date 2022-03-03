@@ -9,6 +9,7 @@ namespace LaTienda.Dominio
     public class Venta
     {
         public Vendedor Vendedor { get; private set; }
+        public Cliente Cliente { get; set; }
         public DateTime FechaVenta { get; private set; }
         public List<LineaDeVenta> DetalleVenta { get; private set; }
         public Comprobante Comprobante { get; private set; }
@@ -23,10 +24,13 @@ namespace LaTienda.Dominio
         }
 
         public void AgregarProducto(Producto producto, Color color, Talle talle, int cantidad)
-        {            
+        {
+            if (cantidad <= 0) throw new ArgumentOutOfRangeException("Cantidad", "La cantidad debe ser mayor a cero.");
             var lineaDeVenta = new LineaDeVenta(producto, color, talle, cantidad);
             var yaExiste = DetalleVenta
-                .Find(lv => lv.Producto == producto && lv.Color == color && lv.Talle == talle);
+                .Find(lv => lv.Producto == producto && 
+                    lv.Color == color && 
+                    lv.Talle == talle);
             if (yaExiste == null)
             {
                 DetalleVenta.Add(lineaDeVenta);
