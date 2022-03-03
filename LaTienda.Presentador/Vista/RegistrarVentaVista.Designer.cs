@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bsProducto = new System.Windows.Forms.BindingSource(this.components);
@@ -74,9 +74,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btAceptar = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btSalir = new System.Windows.Forms.Button();
             this.tbNeto = new System.Windows.Forms.TextBox();
             this.tbIva = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -405,9 +405,9 @@
             // iVATotalDataGridViewTextBoxColumn
             // 
             this.iVATotalDataGridViewTextBoxColumn.DataPropertyName = "IVATotal";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.iVATotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.iVATotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.iVATotalDataGridViewTextBoxColumn.FillWeight = 70.68504F;
             this.iVATotalDataGridViewTextBoxColumn.HeaderText = "IVA";
             this.iVATotalDataGridViewTextBoxColumn.Name = "iVATotalDataGridViewTextBoxColumn";
@@ -417,9 +417,9 @@
             // netoGravadoTotalDataGridViewTextBoxColumn
             // 
             this.netoGravadoTotalDataGridViewTextBoxColumn.DataPropertyName = "NetoGravadoTotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.netoGravadoTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.netoGravadoTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.netoGravadoTotalDataGridViewTextBoxColumn.FillWeight = 57.10493F;
             this.netoGravadoTotalDataGridViewTextBoxColumn.HeaderText = "Neto gravado";
             this.netoGravadoTotalDataGridViewTextBoxColumn.Name = "netoGravadoTotalDataGridViewTextBoxColumn";
@@ -429,9 +429,9 @@
             // precioProductoDataGridViewTextBoxColumn
             // 
             this.precioProductoDataGridViewTextBoxColumn.DataPropertyName = "PrecioProducto";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.precioProductoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.precioProductoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.precioProductoDataGridViewTextBoxColumn.FillWeight = 46.60554F;
             this.precioProductoDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioProductoDataGridViewTextBoxColumn.Name = "precioProductoDataGridViewTextBoxColumn";
@@ -450,9 +450,9 @@
             // subTotalDataGridViewTextBoxColumn
             // 
             this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.subTotalDataGridViewTextBoxColumn.FillWeight = 32.3523F;
             this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
@@ -474,6 +474,7 @@
             // 
             // tbTotal
             // 
+            this.tbTotal.Enabled = false;
             this.tbTotal.Location = new System.Drawing.Point(404, 434);
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.Size = new System.Drawing.Size(91, 20);
@@ -488,35 +489,38 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Total";
             // 
-            // button4
+            // btAceptar
             // 
-            this.button4.Location = new System.Drawing.Point(237, 479);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Aceptar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btAceptar.Location = new System.Drawing.Point(404, 482);
+            this.btAceptar.Name = "btAceptar";
+            this.btAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btAceptar.TabIndex = 2;
+            this.btAceptar.Text = "Aceptar";
+            this.btAceptar.UseVisualStyleBackColor = true;
+            this.btAceptar.Click += new System.EventHandler(this.BtAceptar_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(330, 479);
+            this.button5.Location = new System.Drawing.Point(306, 482);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 2;
             this.button5.Text = "Cancelar";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btSalir
             // 
-            this.button6.Location = new System.Drawing.Point(420, 479);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Salir";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btSalir.Location = new System.Drawing.Point(21, 482);
+            this.btSalir.Name = "btSalir";
+            this.btSalir.Size = new System.Drawing.Size(75, 23);
+            this.btSalir.TabIndex = 2;
+            this.btSalir.Text = "Salir";
+            this.btSalir.UseVisualStyleBackColor = true;
+            this.btSalir.Click += new System.EventHandler(this.BtSalir_Click);
             // 
             // tbNeto
             // 
+            this.tbNeto.Enabled = false;
             this.tbNeto.Location = new System.Drawing.Point(259, 434);
             this.tbNeto.Name = "tbNeto";
             this.tbNeto.Size = new System.Drawing.Size(100, 20);
@@ -524,6 +528,7 @@
             // 
             // tbIva
             // 
+            this.tbIva.Enabled = false;
             this.tbIva.Location = new System.Drawing.Point(75, 434);
             this.tbIva.Name = "tbIva";
             this.tbIva.Size = new System.Drawing.Size(100, 20);
@@ -560,9 +565,9 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btSalir);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btAceptar);
             this.Name = "RegistrarVentaVista";
             this.Text = "La tienda - Venta";
             this.groupBox1.ResumeLayout(false);
@@ -606,9 +611,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox tbTotal;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btAceptar;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btSalir;
         private System.Windows.Forms.BindingSource lineaDeVentaBindingSource;
         private System.Windows.Forms.BindingSource bsProducto;
         private System.Windows.Forms.BindingSource bsMarca;

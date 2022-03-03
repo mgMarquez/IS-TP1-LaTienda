@@ -83,5 +83,15 @@ namespace LaTienda.Presentador.Vista
             tbIva.Text = Convert.ToString(iva);            
             tbNeto.Text = Convert.ToString(netoGravado);
         }
+
+        private void BtSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void BtAceptar_Click(object sender, EventArgs e)
+        {
+            _controladorRegistrarVenta.FinalizarVenta();
+        }
     }
 }
