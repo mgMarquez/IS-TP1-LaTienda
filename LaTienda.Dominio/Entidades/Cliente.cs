@@ -9,18 +9,13 @@ namespace LaTienda.Dominio
     public class Cliente
     {
         public int ClienteID { get; set; }
-        public long CUIT { get; set; }
-        public string RazonSocial { get; set; }
-        public string Domicilio { get; set; }
-        public CondicionTributaria CondicionTributaria { get; set; }
+        public TipoDocumento TipoDocumento { get; set; } = TipoDocumento.CUIT;
+        // tipoDoc 80 y NroDoc 23000000000 - no categorizado - documentación
+        // no se toma en cuenta la validación del doc.
+        public long NroDocumento { get; set; } = 23000000000; 
+        public string RazonSocial { get; set; } = "Anónimo";
+        public string Domicilio { get; set; } = "Anónimo";
+        public CondicionTributaria CondicionTributaria { get; set; } = CondicionTributaria.ConsumidorFinal;
 
-        public Cliente(int clienteID, long cuit, string razonSocial, string domicilio, CondicionTributaria condicionTributaria)
-        {
-            ClienteID = clienteID;
-            CUIT = cuit;
-            RazonSocial = razonSocial;
-            Domicilio = domicilio;
-            CondicionTributaria = CondicionTributaria;
-        }
     }
 }
