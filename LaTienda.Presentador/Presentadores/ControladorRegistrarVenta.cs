@@ -26,7 +26,14 @@ namespace LaTienda.Presentador
         public void IniciarVenta()
         {
             var vendedor = Sesion.Empleado as Vendedor;
-            _ventaActual = new Venta(vendedor);
+            _ventaActual = new Venta(vendedor)
+            {
+                PuntoDeVenta = new PuntoDeVenta()
+                {
+                    NumeroPDV = ReglaDeNegocio.NroPuntoDeVenta,
+                    HabilitacionAFIP = ReglaDeNegocio.HabilitacionAFIP
+                }
+            };
         }
 
         public void BuscarProducto(int codigo)
@@ -81,9 +88,17 @@ namespace LaTienda.Presentador
             // TODO: Generar el comprobante
         }
 
-        public void FinalizarVenta(double importe)
+        public void FinalizarVenta()
         {
             if (_ventaActual.DetalleVenta == null) throw new ArgumentNullException();
+            var limite = ReglaDeNegocio.LimiteComprobanteAnonimo;
+            if (_ventaActual.Total > limite && _ventaActual.Cliente.NroDocumento == 23000000000)
+            {
+                // TODO: registrar cliente en venta
+            }
+
+            _ventaActual.FinalizarVenta();
+            ServicioAFIP.SolicitarAutorizacionComprobante(_ventaActual.Comprobante);
         }
 
     }

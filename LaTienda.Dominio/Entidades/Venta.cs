@@ -16,10 +16,13 @@ namespace LaTienda.Dominio
         public double Total => DetalleVenta.Sum(lv => lv.SubTotal);
         public double NetoGravado => DetalleVenta.Sum(lv => lv.NetoGravadoTotal);
         public double IVA => DetalleVenta.Sum(lv => lv.IVATotal);
+        public PuntoDeVenta PuntoDeVenta { get; set; }
 
         public Venta(Vendedor vendedor)
         {
             Vendedor = vendedor;
+            Cliente = new Cliente();
+            FechaVenta = new DateTime();
             DetalleVenta = new List<LineaDeVenta>();
         }
 
@@ -55,7 +58,25 @@ namespace LaTienda.Dominio
         public void FinalizarVenta()
         {
             FechaVenta = new DateTime();
+            Comprobante = GenerarComprobate();
         }
 
+        private Comprobante GenerarComprobate()
+        {
+            return new Comprobante()
+            {
+                HabilitacionPDV = PuntoDeVenta.HabilitacionAFIP,
+                NumeroPDV = PuntoDeVenta.NumeroPDV,
+                TipoComprobante = TipoComprobante.FacturaB, // TODO: arreglar
+                DocumentoTipoCliente = Cliente.TipoDocumento,
+                NumeroDocumentoCliente = Cliente.NroDocumento,
+                ImporteTotal = Total,
+                ImpTotConc = 0, // neto no gravado - el importe total de los productos sin IVA
+                ImpNeto = NetoGravado,
+                ImpOpEx = 0, // importe excento
+                ImpIVA = IVA,
+                ImpTrib = 0 // Suma de los importes del array de tributos
+            };
+        }
     }
 }

@@ -19,8 +19,9 @@ namespace LaTienda.Dominio
         public double ImpOpEx { get; set; } // Importe exento
         public double ImpIVA { get; set; } // Suma de los importes del array de IVA
         public double ImpTrib { get; set; } // Suma de los importes del array de tributos
-
-        public int PuntoDeVenta { get; set; }
+        public string CAE { get; set; }
+        public int NumeroPDV { get; set; }
+        public Guid HabilitacionPDV { get; set; }
         public TipoComprobante TipoComprobante { get; set; }
 
         public void AsignarNumeroComprobante(int ultimoNumeroComprobante)

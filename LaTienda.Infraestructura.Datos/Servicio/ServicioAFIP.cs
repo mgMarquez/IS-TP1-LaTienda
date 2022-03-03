@@ -6,15 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LaTienda.Infraestructura.Datos.Servicio
+namespace LaTienda.Infraestructura.Datos
 {
     public static class ServicioAFIP
     {
 
         public static void SolicitarAutorizacionComprobante(Comprobante comprobante)
         {
-            var auth = ObtenerAutorizacion();
-            int puntoVenta = comprobante.PuntoDeVenta;
+            var auth = ObtenerAutorizacion(comprobante.HabilitacionPDV);
+            int puntoVenta = comprobante.NumeroPDV;
             int comprobanteTipo = (int)comprobante.TipoComprobante;
 
             var servicioAfip = new WSAFIP.ServiceSoapClient();
@@ -30,18 +30,17 @@ namespace LaTienda.Infraestructura.Datos.Servicio
             };
 
             WSAFIP.FECAEResponse feCAESolicitar = servicioAfip.FECAESolicitar(auth, feCAEReq);
-
-            // TODO: continuar con lo que sigue de la autorización
+            comprobante.CAE = feCAESolicitar.FeDetResp[0].CAE;
         }
 
         #region Autorización y autenticación con web service cliente
-        private static WSAFIP.FEAuthRequest ObtenerAutorizacion()
+        private static WSAFIP.FEAuthRequest ObtenerAutorizacion(Guid codigoAutorizacion)
         {
             // web service de autorización y autenticación
             var servicioAutorizacion = new WSAA.LoginServiceClient();
             // solicitud de autorización al servicio externo
             var certificadoAutorizacion = servicioAutorizacion
-                .SolicitarAutorizacion("C116B5BE-3AE2-4C89-B1C7-424A4A842D48");
+                .SolicitarAutorizacion(codigoAutorizacion.ToString());
             // adapta el certificado de autorización
             var auth = new WSAFIP.FEAuthRequest()
             {
@@ -61,7 +60,7 @@ namespace LaTienda.Infraestructura.Datos.Servicio
             {
                 CantReg = 1,
                 CbteTipo = (int)comprobante.TipoComprobante,
-                PtoVta = comprobante.PuntoDeVenta
+                PtoVta = comprobante.NumeroPDV
             };
         }
 

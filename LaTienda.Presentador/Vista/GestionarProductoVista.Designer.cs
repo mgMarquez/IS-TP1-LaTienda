@@ -89,11 +89,11 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(218, 13);
+            this.label5.Location = new System.Drawing.Point(229, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 20);
+            this.label5.Size = new System.Drawing.Size(142, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Gestionar producto";
+            this.label5.Text = "Alta de producto";
             // 
             // tableLayoutPanel2
             // 
@@ -104,7 +104,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel2.Controls.Add(this.comboBox2, 3, 5);
             this.tableLayoutPanel2.Controls.Add(this.label10, 2, 5);
             this.tableLayoutPanel2.Controls.Add(this.label11, 0, 5);

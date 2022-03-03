@@ -8,7 +8,7 @@ namespace LaTienda.Dominio
 {
     public class PuntoDeVenta
     {
-        public int PuntoDeVentaID { get; set; }
         public int NumeroPDV { get; set; }
+        public Guid HabilitacionAFIP { get; set; }
     }
 }
