@@ -20,7 +20,6 @@ namespace LaTienda.Presentador
             Application.SetCompatibleTextRenderingDefault(false);
             var context = new TiendaContext();
             var unitOfWork = new UnitOfWork(context);
-            //ServicioAFIP.SolicitarAutorizacionComprobante(new Dominio.Comprobante());
             Application.Run(new RegistrarVentaVista(unitOfWork));
         }
     }

@@ -57,7 +57,7 @@ namespace LaTienda.Dominio
 
         public void FinalizarVenta()
         {
-            FechaVenta = new DateTime();
+            FechaVenta = DateTime.Now;
             Comprobante = GenerarComprobate();
         }
 
@@ -65,6 +65,7 @@ namespace LaTienda.Dominio
         {
             return new Comprobante()
             {
+                Fecha = FechaVenta,
                 HabilitacionPDV = PuntoDeVenta.HabilitacionAFIP,
                 NumeroPDV = PuntoDeVenta.NumeroPDV,
                 TipoComprobante = TipoComprobante.FacturaB, // TODO: arreglar
@@ -75,7 +76,7 @@ namespace LaTienda.Dominio
                 ImpNeto = NetoGravado,
                 ImpOpEx = 0, // importe excento
                 ImpIVA = IVA,
-                ImpTrib = 0 // Suma de los importes del array de tributos
+                ImpTrib = NetoGravado // Suma de los importes del array de tributos
             };
         }
     }

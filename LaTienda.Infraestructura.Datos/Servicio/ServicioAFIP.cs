@@ -84,6 +84,15 @@ namespace LaTienda.Infraestructura.Datos
                     ImpTrib = comprobante.ImpTrib,
                     MonId = "PES", // Código de moneda del comprobante - PES para pesos argentinos
                     MonCotiz = 1, // para pesos argentinos es 1
+                    Iva = new AlicIva[]
+                    {
+                        new AlicIva
+                        {
+                            Id = 5,
+                            BaseImp = comprobante.ImpNeto,
+                            Importe = comprobante.ImpIVA
+                        }
+                    }
                 }
             };
         }
