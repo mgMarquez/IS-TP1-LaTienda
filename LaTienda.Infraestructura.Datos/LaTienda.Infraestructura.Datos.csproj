@@ -79,6 +79,10 @@
     <Compile Include="Migrations\202202272240187_NuevaEntidad-Stocks.designer.cs">
       <DependentUpon>202202272240187_NuevaEntidad-Stocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203042025287_NuevaEntidad_Cliente.cs" />
+    <Compile Include="Migrations\202203042025287_NuevaEntidad_Cliente.designer.cs">
+      <DependentUpon>202203042025287_NuevaEntidad_Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistencia\TiendaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202272240187_NuevaEntidad-Stocks.resx">
       <DependentUpon>202202272240187_NuevaEntidad-Stocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203042025287_NuevaEntidad_Cliente.resx">
+      <DependentUpon>202203042025287_NuevaEntidad_Cliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
