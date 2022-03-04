@@ -73,10 +73,10 @@ namespace LaTienda.Dominio
                 NumeroDocumentoCliente = Cliente.NroDocumento,
                 ImporteTotal = Total,
                 ImpTotConc = 0, // neto no gravado - el importe total de los productos sin IVA
-                ImpNeto = NetoGravado,
+                ImpNeto = NetoGravado, // importe neto gravado
                 ImpOpEx = 0, // importe excento
                 ImpIVA = IVA,
-                ImpTrib = NetoGravado // Suma de los importes del array de tributos
+                ImpTrib = 0 // Suma de los importes del array de tributos
             };
         }
     }
