@@ -85,9 +85,9 @@
     <Compile Include="Vista\GestionarProductoVista.Designer.cs">
       <DependentUpon>GestionarProductoVista.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\IAutenticarUsuarioVista.cs" />
-    <Compile Include="Vista\IGestionarProductoVista.cs" />
-    <Compile Include="Vista\IRegistrarVentaVista.cs" />
+    <Compile Include="Contratos\IAutenticarUsuarioVista.cs" />
+    <Compile Include="Contratos\IGestionarProductoVista.cs" />
+    <Compile Include="Contratos\IRegistrarVentaVista.cs" />
     <Compile Include="Vista\RegistrarVentaVista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,9 +245,7 @@
       <Name>LaTienda.Infraestructura.Datos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Contratos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
