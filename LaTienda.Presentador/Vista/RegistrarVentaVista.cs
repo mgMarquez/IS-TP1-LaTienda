@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using LaTienda.Dominio;
 using LaTienda.Infraestructura.Datos;
 
-namespace LaTienda.Presentador.Vista
+namespace LaTienda.Presentador
 {
     public partial class RegistrarVentaVista : Form, IRegistrarVentaVista
     {

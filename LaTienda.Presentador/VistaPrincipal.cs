@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaTienda.Infraestructura.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,24 @@ namespace LaTienda.Presentador
         public VistaPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var vista = new GestionarClienteVista(new UnitOfWork(new TiendaContext()));
+            vista.ShowDialog();
+        }
+
+        private void NuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var vista = new RegistrarVentaVista(new UnitOfWork(new TiendaContext()));
+            vista.ShowDialog();
+        }
+
+        private void ProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var vista = new GestionarProductoVista(new UnitOfWork(new TiendaContext()));
+            vista.ShowDialog();
         }
     }
 }

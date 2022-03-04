@@ -1,4 +1,4 @@
-﻿namespace LaTienda.Presentador.Vista
+﻿namespace LaTienda.Presentador
 {
     partial class GestionarProductoVista
     {

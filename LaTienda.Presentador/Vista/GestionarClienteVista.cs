@@ -15,31 +15,53 @@ namespace LaTienda.Presentador
     public partial class GestionarClienteVista : Form, IGestionarClienteVista
     {
         private readonly ControladorGestionarCliente _controlador;
+        private Cliente _cliente;
+        public int IdClienteGestionar { private get; set; }
 
         public GestionarClienteVista(IUnitOfWork unitOfWork)
         {
             _controlador = new ControladorGestionarCliente(unitOfWork, this);
             InitializeComponent();
+            CbCondicionTributaria.DataSource = Enum.GetValues(typeof(CondicionTributaria));
+            CbTipoDocumento.DataSource = Enum.GetValues(typeof(TipoDocumento));
+            _controlador.Iniciar(IdClienteGestionar);
         }
 
         public void MostrarCliente(Cliente cliente)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                _cliente = cliente ?? throw new ArgumentNullException();
+                BsCliente.DataSource = _cliente;
+            }
+            catch (Exception ex)
+            {
 
-        private void BtAceptar_Click(object sender, EventArgs e)
-        {
-
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void BtCancelar_Click(object sender, EventArgs e)
         {
-
+            _cliente = new Cliente();
         }
 
         private void BtSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void BtBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _cliente = _controlador.BuscarClientePorNroDocumento(Convert.ToInt64(TbNroDocumento.Text));
+                BsCliente.DataSource = _cliente;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se encontro ningun cliente con ese nro de documento.", ex.Message);
+            }
         }
     }
 }

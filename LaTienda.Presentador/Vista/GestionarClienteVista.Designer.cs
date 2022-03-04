@@ -34,21 +34,21 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.BtAceptar = new System.Windows.Forms.Button();
             this.BtCancelar = new System.Windows.Forms.Button();
+            this.BtSalir = new System.Windows.Forms.Button();
             this.groupBoxCliente = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.TbNroDocumento = new System.Windows.Forms.TextBox();
+            this.BsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CbTipoDocumento = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TbRazonSocial = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TbDomicilio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CbCondicionTributaria = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TbDomicilio = new System.Windows.Forms.TextBox();
+            this.CbTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.BtBuscar = new System.Windows.Forms.Button();
-            this.BtSalir = new System.Windows.Forms.Button();
-            this.BsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBoxCliente.SuspendLayout();
@@ -109,7 +109,6 @@
             this.BtAceptar.TabIndex = 3;
             this.BtAceptar.Text = "Aceptar";
             this.BtAceptar.UseVisualStyleBackColor = true;
-            this.BtAceptar.Click += new System.EventHandler(this.BtAceptar_Click);
             // 
             // BtCancelar
             // 
@@ -121,6 +120,17 @@
             this.BtCancelar.Text = "Cancelar";
             this.BtCancelar.UseVisualStyleBackColor = true;
             this.BtCancelar.Click += new System.EventHandler(this.BtCancelar_Click);
+            // 
+            // BtSalir
+            // 
+            this.BtSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtSalir.Location = new System.Drawing.Point(12, 11);
+            this.BtSalir.Name = "BtSalir";
+            this.BtSalir.Size = new System.Drawing.Size(75, 23);
+            this.BtSalir.TabIndex = 0;
+            this.BtSalir.Text = "Salir";
+            this.BtSalir.UseVisualStyleBackColor = true;
+            this.BtSalir.Click += new System.EventHandler(this.BtSalir_Click);
             // 
             // groupBoxCliente
             // 
@@ -172,6 +182,10 @@
             this.TbNroDocumento.Size = new System.Drawing.Size(180, 20);
             this.TbNroDocumento.TabIndex = 0;
             // 
+            // BsCliente
+            // 
+            this.BsCliente.DataSource = typeof(LaTienda.Dominio.Cliente);
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -181,27 +195,6 @@
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nro documento";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(299, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tipo de documento";
-            // 
-            // CbTipoDocumento
-            // 
-            this.CbTipoDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CbTipoDocumento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "TipoDocumento", true));
-            this.CbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbTipoDocumento.FormattingEnabled = true;
-            this.CbTipoDocumento.Location = new System.Drawing.Point(404, 55);
-            this.CbTipoDocumento.Name = "CbTipoDocumento";
-            this.CbTipoDocumento.Size = new System.Drawing.Size(181, 21);
-            this.CbTipoDocumento.TabIndex = 2;
             // 
             // label3
             // 
@@ -221,25 +214,6 @@
             this.TbRazonSocial.Name = "TbRazonSocial";
             this.TbRazonSocial.Size = new System.Drawing.Size(180, 20);
             this.TbRazonSocial.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(349, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Domicilio";
-            // 
-            // TbDomicilio
-            // 
-            this.TbDomicilio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbDomicilio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "Domicilio", true));
-            this.TbDomicilio.Location = new System.Drawing.Point(404, 101);
-            this.TbDomicilio.Name = "TbDomicilio";
-            this.TbDomicilio.Size = new System.Drawing.Size(181, 20);
-            this.TbDomicilio.TabIndex = 0;
             // 
             // label5
             // 
@@ -262,6 +236,46 @@
             this.CbCondicionTributaria.Size = new System.Drawing.Size(180, 21);
             this.CbCondicionTributaria.TabIndex = 2;
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(349, 104);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Domicilio";
+            // 
+            // TbDomicilio
+            // 
+            this.TbDomicilio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbDomicilio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "Domicilio", true));
+            this.TbDomicilio.Location = new System.Drawing.Point(404, 101);
+            this.TbDomicilio.Name = "TbDomicilio";
+            this.TbDomicilio.Size = new System.Drawing.Size(181, 20);
+            this.TbDomicilio.TabIndex = 0;
+            // 
+            // CbTipoDocumento
+            // 
+            this.CbTipoDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CbTipoDocumento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "TipoDocumento", true));
+            this.CbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbTipoDocumento.FormattingEnabled = true;
+            this.CbTipoDocumento.Location = new System.Drawing.Point(404, 55);
+            this.CbTipoDocumento.Name = "CbTipoDocumento";
+            this.CbTipoDocumento.Size = new System.Drawing.Size(181, 21);
+            this.CbTipoDocumento.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(299, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tipo de documento";
+            // 
             // BtBuscar
             // 
             this.BtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -271,21 +285,7 @@
             this.BtBuscar.TabIndex = 3;
             this.BtBuscar.Text = "Buscar";
             this.BtBuscar.UseVisualStyleBackColor = true;
-            // 
-            // BtSalir
-            // 
-            this.BtSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtSalir.Location = new System.Drawing.Point(12, 11);
-            this.BtSalir.Name = "BtSalir";
-            this.BtSalir.Size = new System.Drawing.Size(75, 23);
-            this.BtSalir.TabIndex = 0;
-            this.BtSalir.Text = "Salir";
-            this.BtSalir.UseVisualStyleBackColor = true;
-            this.BtSalir.Click += new System.EventHandler(this.BtSalir_Click);
-            // 
-            // BsCliente
-            // 
-            this.BsCliente.DataSource = typeof(LaTienda.Dominio.Cliente);
+            this.BtBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
             // 
             // GestionarClienteVista
             // 
