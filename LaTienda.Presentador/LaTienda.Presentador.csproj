@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Presentadores\ControladorGestionarCliente.cs" />
     <Compile Include="VistaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +95,7 @@
     <Compile Include="Contratos\IAutenticarUsuarioVista.cs" />
     <Compile Include="Contratos\IGestionarProductoVista.cs" />
     <Compile Include="Contratos\IRegistrarVentaVista.cs" />
+    <Compile Include="Contratos\IGestionarClienteVista.cs" />
     <Compile Include="Vista\RegistrarVentaVista.cs">
       <SubType>Form</SubType>
     </Compile>
