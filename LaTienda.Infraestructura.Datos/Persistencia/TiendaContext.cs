@@ -17,6 +17,7 @@ namespace LaTienda.Infraestructura.Datos
         public virtual DbSet<Marca> Marcas { get; set; }
         public virtual DbSet<Rubro> Rubros { get; set; }
         public virtual DbSet<Stock> Stocks { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -25,7 +26,7 @@ namespace LaTienda.Infraestructura.Datos
             modelBuilder.Entity<Marca>().ToTable("Marcas");
             modelBuilder.Entity<Rubro>().ToTable("Rubros");
             modelBuilder.Entity<Stock>().ToTable("Stocks");
-
+            modelBuilder.Entity<Cliente>().ToTable("Clientes");
 
             base.OnModelCreating(modelBuilder);
         }

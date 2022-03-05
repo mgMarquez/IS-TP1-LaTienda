@@ -31,14 +31,16 @@ namespace LaTienda.Dominio.Tests
             _tasaInteres = 0.1;
             _margenGanancia = 0.3;
             // se crea una instancia de producto
-            _producto = new Producto(
-                100,
-                "producto",
-                _costo,
-                _tasaInteres,
-                _margenGanancia,
-                _marcaZ,
-                _rubro);
+            _producto = new Producto()
+            {
+                Codigo = 100,
+                Descripcion = "producto",
+                Costo = _costo,
+                PorcentajeDeIva = _tasaInteres,
+                MargenDeGanancia = _margenGanancia,
+                Marca = _marcaZ,
+                Rubro = _rubro
+            };
         }
 
         [TestMethod]
@@ -85,9 +87,9 @@ namespace LaTienda.Dominio.Tests
             // la instancia de producto se crea en Setup
             int cantidadProductos = 10;
             LineaDeVenta lineaDeVenta = new LineaDeVenta(
-                _producto, 
-                _colorRojo, 
-                _talleXS, 
+                _producto,
+                _colorRojo,
+                _talleXS,
                 cantidadProductos);
             double resultadoEsperado = 1430;//SubTotal = PrecioDeVenta * Cantidad
             // Act
@@ -105,8 +107,8 @@ namespace LaTienda.Dominio.Tests
             int legajo = 999;
             string nombre = "EmpleadoTest";
             Empleado empleado = new Vendedor(
-                empleadoID, 
-                legajo, 
+                empleadoID,
+                legajo,
                 nombre);
             // Act
             Sesion.AsignarEmpleado(empleado);

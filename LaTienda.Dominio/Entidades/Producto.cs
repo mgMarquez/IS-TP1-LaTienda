@@ -19,32 +19,17 @@ namespace LaTienda.Dominio
         public virtual Marca Marca { get; set; }
         public int RubroID { get; set; }
         public virtual Rubro Rubro { get; set; }
-        public virtual List<Stock> DetalleDeStock { get; private set; }
+        public virtual List<Stock> DetalleDeStock { get; private set; } = new List<Stock>();
 
         public double NetoGravado => Costo + Costo * MargenDeGanancia;
         public double IVA => NetoGravado * PorcentajeDeIva;
         public double PrecioDeVenta => NetoGravado + IVA;
 
-        public Producto() { }
-
-        public Producto(int codigo, string descripcion, double costo, double porcentajeIVA, 
-            double margenDeGanancia, Marca marca, Rubro rubro)
-        {
-            Codigo = codigo;
-            Descripcion = descripcion;
-            Marca = marca;
-            Rubro = rubro;
-            Costo = costo;
-            PorcentajeDeIva = porcentajeIVA;
-            MargenDeGanancia = margenDeGanancia;
-            DetalleDeStock = new List<Stock>();
-        }
-
-        
         public void ActualizarProducto(Producto productoActualizado)
         {
             Descripcion = productoActualizado.Descripcion;
             Marca = productoActualizado.Marca;
+            Rubro = productoActualizado.Rubro;
             Costo = productoActualizado.Costo;
             PorcentajeDeIva = productoActualizado.PorcentajeDeIva;
             MargenDeGanancia = productoActualizado.MargenDeGanancia;

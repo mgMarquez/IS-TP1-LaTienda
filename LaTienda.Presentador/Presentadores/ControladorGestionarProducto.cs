@@ -1,4 +1,5 @@
 ﻿using LaTienda.Dominio;
+using LaTienda.Infraestructura.Datos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,57 +10,68 @@ namespace LaTienda.Presentador
 {
     public class ControladorGestionarProducto
     {
-        private readonly IRepositorio<Producto> _repositorioProducto;
-        private readonly IRepositorio<Marca> _repositorioMarca;
-        private readonly IRepositorio<Rubro> _repositorioRubro;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IGestionarProductoVista _vista;
         private Producto _productoActual;
 
-        public ControladorGestionarProducto(IRepositorio<Producto> repositorioProducto, 
-            IRepositorio<Marca> repositorioMarca,
-            IRepositorio<Rubro> repositorioRubro,
-            IGestionarProductoVista vista)
+        public ControladorGestionarProducto(IUnitOfWork unitOfWork, IGestionarProductoVista vista)
         {
-            _repositorioProducto = repositorioProducto;
-            _repositorioMarca = repositorioMarca;
-            _repositorioRubro = repositorioRubro;
+            _unitOfWork = unitOfWork;
             _vista = vista;
         }
 
-        public void IngresarNuevoProducto(int codigo, string descripcion, double costo, 
+        public void IngresarNuevoProducto(int codigo, string descripcion, double costo,
             double porcentajeDeIVA, double margenGanancia, int codigoMarca, int codigoRubro)
         {
-            var marca = _repositorioMarca.BuscarPorId(codigoMarca);
-            var rubro = _repositorioRubro.BuscarPorId(codigoRubro);
+            var marca = _unitOfWork.MarcaRepository.GetById(codigoMarca);
+            var rubro = _unitOfWork.RubroRepository.GetById(codigoRubro);
             var porcentajeDeIva = ReglaDeNegocio.PorcentajeDeIVA;
-            var producto = new Producto(codigo, descripcion, costo, porcentajeDeIva, 
-                margenGanancia, marca, rubro);
-            _repositorioProducto.Agregar(producto);
+            var producto = new Producto()
+            {
+                Codigo = codigo,
+                Descripcion = descripcion,
+                Costo = costo,
+                PorcentajeDeIva = porcentajeDeIva,
+                MargenDeGanancia = margenGanancia,
+                Marca = marca,
+                Rubro = rubro
+            };
+            _unitOfWork.ProductoRepository.Create(producto);
+            _unitOfWork.Save();
         }
 
-        public void ModificarProducto(int productoId, int codigo, string descripcion, double costo, double porcentajeDeIva, 
+        public void ModificarProducto(int productoId, int codigo, string descripcion, double costo, double porcentajeDeIva,
             double margenGanancia, int codigoMarca, int codigoRubro)
         {
-            var producto = _repositorioProducto.BuscarPorId(productoId);
-            var marca = _repositorioMarca.BuscarPorId(codigoMarca);
-            var rubro = _repositorioRubro.BuscarPorId(codigoRubro);
-            var productoModificado = new Producto(codigo, descripcion, costo, porcentajeDeIva,
-                margenGanancia, marca, rubro);
+            var producto = _unitOfWork.ProductoRepository.GetById(productoId);
+            var marca = _unitOfWork.MarcaRepository.GetById(codigoMarca);
+            var rubro = _unitOfWork.RubroRepository.GetById(codigoRubro);
+            var productoModificado = new Producto()
+            {
+                Codigo = codigo,
+                Descripcion = descripcion,
+                Costo = costo,
+                PorcentajeDeIva = porcentajeDeIva,
+                MargenDeGanancia = margenGanancia,
+                Marca = marca,
+                Rubro = rubro
+            };
             producto.ActualizarProducto(productoModificado);
-            _repositorioProducto.Actualizar(producto);
-        } 
+            _unitOfWork.ProductoRepository.Update(producto);
+            _unitOfWork.Save();
+        }
 
         public void BuscarProducto(int codigo)
         {
-            var producto = _repositorioProducto.BuscarPorId(codigo);
+            var producto = _unitOfWork.ProductoRepository.GetById(codigo);
             _productoActual = producto;
         }
 
 
         public void EliminarProducto(int codigoProducto)
         {
-            var producto = _repositorioProducto.BuscarPorId(codigoProducto);
-            _repositorioProducto.Eliminar(producto);
+            var producto = _unitOfWork.ProductoRepository.GetById(codigoProducto);
+            _unitOfWork.ProductoRepository.Delete(producto);
         }
 
     }

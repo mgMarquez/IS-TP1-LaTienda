@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaTienda.Infraestructura.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LaTienda.Presentador.Vista
+namespace LaTienda.Presentador
 {
-    public partial class GestionarProductoVista : Form
+    public partial class GestionarProductoVista : Form, IGestionarProductoVista
     {
-        public GestionarProductoVista()
+        private readonly ControladorGestionarProducto _controladorGestionarProducto;
+
+        public GestionarProductoVista(IUnitOfWork unitOfWork)
         {
+            _controladorGestionarProducto = new ControladorGestionarProducto(unitOfWork, this);
             InitializeComponent();
         }
+
+
     }
 }
