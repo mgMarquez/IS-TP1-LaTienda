@@ -32,14 +32,16 @@ namespace LaTienda.Dominio.Test
             _tasaInteres = 0.1;
             _margenGanancia = 0.3;
             // se crea una instancia de producto
-            _producto = new Producto(
-                100,
-                "producto",
-                _costo,
-                _tasaInteres,
-                _margenGanancia,
-                _marcaZ,
-                _rubro);
+            _producto = new Producto()
+            {
+                Codigo = 100,
+                Descripcion = "producto",
+                Costo = _costo,
+                PorcentajeDeIva = _tasaInteres,
+                MargenDeGanancia = _margenGanancia,
+                Marca = _marcaZ,
+                Rubro = _rubro
+            };
         }
 
         [TestMethod]
