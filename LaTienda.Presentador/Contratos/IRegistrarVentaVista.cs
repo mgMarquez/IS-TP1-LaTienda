@@ -14,6 +14,6 @@ namespace LaTienda.Presentador
         void MostrarTallesDisponibles(List<Talle> tallesDisponibles);
         void MostrarColoresDisponibles(List<Color> coloresDisponibles);
         void MostrarDetalleDeVenta(List<LineaDeVenta> detalleVenta);
-        void MostrarTotalAPagar(double total, double iva, double netoGravado);
+        void MostrarTotalAPagar(Venta venta);
     }
 }

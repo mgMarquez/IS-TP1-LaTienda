@@ -77,11 +77,13 @@ namespace LaTienda.Presentador
             _controladorRegistrarVenta.AgregarProductoVenta(color, talle, cantidadAgregar);
         }
 
-        public void MostrarTotalAPagar(double total, double iva, double netoGravado)
+        public void MostrarTotalAPagar(Venta venta)
         {
-            tbTotal.Text = Convert.ToString(total);            
-            tbIva.Text = Convert.ToString(iva);            
-            tbNeto.Text = Convert.ToString(netoGravado);
+            //tbTotal.Text = Convert.ToString(total);            
+            //tbIva.Text = Convert.ToString(iva);            
+            //tbNeto.Text = Convert.ToString(netoGravado);
+            BsVenta.DataSource = venta;
+            BsVenta.ResetBindings(false);
         }
 
         private void BtSalir_Click(object sender, EventArgs e)
