@@ -95,9 +95,21 @@ namespace LaTienda.Presentador
 
         public void FinalizarVenta()
         {
-            if (_ventaActual.DetalleVenta == null) throw new ArgumentNullException();
-            GenerarComprobante();
-            ServicioAFIP.SolicitarAutorizacionComprobante(_ventaActual.Comprobante);
+
+            try
+            {
+                if (_ventaActual.DetalleVenta == null) throw new ArgumentNullException();
+                GenerarComprobante();
+                ServicioAFIP.SolicitarAutorizacionComprobante(_ventaActual.Comprobante);
+                if (_ventaActual.Comprobante.CAE == "") return; // TODO: lanzar excepción
+                _unitOfWork.ComprobanteRepository.Create(_ventaActual.Comprobante);
+                _unitOfWork.Save();
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
         }
 
         public void GenerarComprobante()
