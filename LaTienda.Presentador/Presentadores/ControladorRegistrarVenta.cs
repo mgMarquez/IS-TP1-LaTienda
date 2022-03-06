@@ -30,10 +30,8 @@ namespace LaTienda.Presentador
             {
                 Cliente = new Cliente()
                 {
-                    TipoDocumento = TipoDocumento.CUIT,
-                    NroDocumento = 20111111112,
+                    TipoDocumento = TipoDocumento.Otro,
                     RazonSocial = "Anónimo",
-                    Domicilio = "Anónimo",
                     CondicionTributaria = CondicionTributaria.ConsumidorFinal
                 },
                 PuntoDeVenta = new PuntoDeVenta()
