@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace LaTienda.Infraestructura.Datos
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         private readonly TiendaContext _context;
         private readonly DbSet<TEntity> _dbSet;
 
-        public GenericRepository(TiendaContext context)
+        public Repository(TiendaContext context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();
