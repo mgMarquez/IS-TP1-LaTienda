@@ -83,6 +83,10 @@
     <Compile Include="Migrations\202203042025287_NuevaEntidad_Cliente.designer.cs">
       <DependentUpon>202203042025287_NuevaEntidad_Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203060035554_NuevaEntidad-Comprobante.cs" />
+    <Compile Include="Migrations\202203060035554_NuevaEntidad-Comprobante.designer.cs">
+      <DependentUpon>202203060035554_NuevaEntidad-Comprobante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistencia\TiendaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -251,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203042025287_NuevaEntidad_Cliente.resx">
       <DependentUpon>202203042025287_NuevaEntidad_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203060035554_NuevaEntidad-Comprobante.resx">
+      <DependentUpon>202203060035554_NuevaEntidad-Comprobante.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

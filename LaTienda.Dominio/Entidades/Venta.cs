@@ -13,7 +13,7 @@ namespace LaTienda.Dominio
         public DateTime FechaVenta { get; private set; }
         public List<LineaDeVenta> DetalleVenta { get; private set; }
         public Comprobante Comprobante { get; private set; }
-        public double Total => DetalleVenta.Sum(lv => lv.SubTotal);
+        public double Total => Math.Round(DetalleVenta.Sum(lv => lv.SubTotal), 2);
         public double NetoGravado => DetalleVenta.Sum(lv => lv.NetoGravadoTotal);
         public double IVA => DetalleVenta.Sum(lv => lv.IVATotal);
         public PuntoDeVenta PuntoDeVenta { get; set; }
@@ -21,7 +21,6 @@ namespace LaTienda.Dominio
         public Venta(Vendedor vendedor)
         {
             Vendedor = vendedor;
-            Cliente = new Cliente();
             FechaVenta = new DateTime();
             DetalleVenta = new List<LineaDeVenta>();
         }
@@ -55,20 +54,20 @@ namespace LaTienda.Dominio
             }
         }
 
-        public void FinalizarVenta()
+        public void FinalizarVenta(TipoComprobante tipoComprobante)
         {
             FechaVenta = DateTime.Now;
-            Comprobante = GenerarComprobate();
+            Comprobante = GenerarComprobate(tipoComprobante);
         }
 
-        private Comprobante GenerarComprobate()
+        private Comprobante GenerarComprobate(TipoComprobante tipoComprobante)
         {
             return new Comprobante()
             {
                 Fecha = FechaVenta,
                 HabilitacionPDV = PuntoDeVenta.HabilitacionAFIP,
                 NumeroPDV = PuntoDeVenta.NumeroPDV,
-                TipoComprobante = TipoComprobante.FacturaB, // TODO: arreglar
+                TipoComprobante = tipoComprobante,
                 DocumentoTipoCliente = Cliente.TipoDocumento,
                 NumeroDocumentoCliente = Cliente.NroDocumento,
                 ImporteTotal = Total,

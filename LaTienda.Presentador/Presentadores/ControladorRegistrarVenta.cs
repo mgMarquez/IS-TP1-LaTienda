@@ -28,6 +28,14 @@ namespace LaTienda.Presentador
             var vendedor = Sesion.Empleado as Vendedor;
             _ventaActual = new Venta(vendedor)
             {
+                Cliente = new Cliente()
+                {
+                    TipoDocumento = TipoDocumento.CUIT,
+                    NroDocumento = 20111111112,
+                    RazonSocial = "Anónimo",
+                    Domicilio = "Anónimo",
+                    CondicionTributaria = CondicionTributaria.ConsumidorFinal
+                },
                 PuntoDeVenta = new PuntoDeVenta()
                 {
                     NumeroPDV = ReglaDeNegocio.NroPuntoDeVenta,
@@ -67,38 +75,67 @@ namespace LaTienda.Presentador
         {
             _stockSeleccionado = _productoActual
                 .DetalleDeStock
-                .FirstOrDefault(s => _talleSeleccionado.TalleID  == s.TalleID &&
+                .FirstOrDefault(s => _talleSeleccionado.TalleID == s.TalleID &&
                     s.ColorID == color.ColorID);
             _vista.MostrarStockSeleccionado(_stockSeleccionado);
         }
 
         public void AgregarProductoVenta(Color color, Talle talle, int cantidad)
-        {            
+        {
             _ventaActual.AgregarProducto(_productoActual, color, talle, cantidad);
             _vista.MostrarDetalleDeVenta(_ventaActual.DetalleVenta);
 
             var total = _ventaActual.Total;
             var netoGravado = _ventaActual.NetoGravado;
             var iva = _ventaActual.IVA;
-            _vista.MostrarTotalAPagar(total, iva, netoGravado);
+            _vista.MostrarTotalAPagar(_ventaActual);
         }
 
-        public void SeleccionarCondicionTributaria(CondicionTributaria condicion)
-        {
-            // TODO: Generar el comprobante
-        }
+
 
         public void FinalizarVenta()
         {
-            if (_ventaActual.DetalleVenta == null) throw new ArgumentNullException();
-            var limite = ReglaDeNegocio.LimiteComprobanteAnonimo;
-            if (_ventaActual.Total > limite && _ventaActual.Cliente.NroDocumento == 23000000000)
+
+            try
             {
-                // TODO: registrar cliente en venta
+                if (_ventaActual.DetalleVenta == null) throw new ArgumentNullException();
+                GenerarComprobante();
+                ServicioAFIP.SolicitarAutorizacionComprobante(_ventaActual.Comprobante);
+                if (_ventaActual.Comprobante.CAE == "") return; // TODO: lanzar excepción
+                _unitOfWork.ComprobanteRepository.Create(_ventaActual.Comprobante);
+                _unitOfWork.Save();
+            }
+            catch (Exception ex)
+            {
+                
             }
 
-            _ventaActual.FinalizarVenta();
-            ServicioAFIP.SolicitarAutorizacionComprobante(_ventaActual.Comprobante);
+        }
+
+        public void GenerarComprobante()
+        {
+            var limite = ReglaDeNegocio.LimiteComprobanteAnonimo;
+            if (_ventaActual.Total > limite)
+            {
+                _ventaActual.FinalizarVenta(TipoComprobante.FacturaA);
+            }
+            else
+            {
+                switch (_ventaActual.Cliente.CondicionTributaria)
+                {
+                    case CondicionTributaria.ResponsableInscripto:
+                    case CondicionTributaria.Monotributo:
+                        _ventaActual.FinalizarVenta(TipoComprobante.FacturaA);
+                        break;
+                    case CondicionTributaria.Exento:
+                    case CondicionTributaria.NoResponsable:
+                    case CondicionTributaria.ConsumidorFinal:
+                    default:
+                        _ventaActual.FinalizarVenta(TipoComprobante.FacturaB);
+                        break;
+                }
+
+            }
         }
 
     }

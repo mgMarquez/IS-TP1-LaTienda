@@ -15,6 +15,7 @@ namespace LaTienda.Infraestructura.Datos
         private IGenericRepository<Rubro> _rubroRepository;
         private IGenericRepository<Stock> _stockRepository;
         private IGenericRepository<Cliente> _clienteRepository;
+        private IGenericRepository<Comprobante> _comprobanteRepository;
 
         public UnitOfWork(TiendaContext context)
         {
@@ -27,7 +28,7 @@ namespace LaTienda.Infraestructura.Datos
             {
                 if (_productoRepository == null)
                 {
-                    _productoRepository = new GenericRepository<Producto>(_context);
+                    _productoRepository = new Repository<Producto>(_context);
                 }
                 return _productoRepository;
             }
@@ -39,7 +40,7 @@ namespace LaTienda.Infraestructura.Datos
             {
                 if (_marcaRepository == null)
                 {
-                    _marcaRepository = new GenericRepository<Marca>(_context);
+                    _marcaRepository = new Repository<Marca>(_context);
                 }
                 return _marcaRepository;
             }
@@ -51,7 +52,7 @@ namespace LaTienda.Infraestructura.Datos
             {
                 if (_rubroRepository == null)
                 {
-                    _rubroRepository = new GenericRepository<Rubro>(_context);
+                    _rubroRepository = new Repository<Rubro>(_context);
                 }
                 return _rubroRepository;
             }
@@ -63,7 +64,7 @@ namespace LaTienda.Infraestructura.Datos
             {
                 if (_stockRepository == null)
                 {
-                    _stockRepository = new GenericRepository<Stock>(_context);
+                    _stockRepository = new Repository<Stock>(_context);
                 }
                 return _stockRepository;
             }
@@ -75,9 +76,17 @@ namespace LaTienda.Infraestructura.Datos
             {
                 if (_clienteRepository == null)
                 {
-                    _clienteRepository = new GenericRepository<Cliente>(_context);
+                    _clienteRepository = new Repository<Cliente>(_context);
                 }
                 return _clienteRepository;
+            }
+        }
+
+        public IGenericRepository<Comprobante> ComprobanteRepository
+        {
+            get
+            {
+                return _comprobanteRepository = _comprobanteRepository ?? new Repository<Comprobante>(_context);
             }
         }
 

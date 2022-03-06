@@ -53,7 +53,7 @@ namespace LaTienda.Infraestructura.Datos
         #endregion
 
 
-        #region Información del comprobante - cabecera y detalle
+        #region Información del comprobante - cabecera        
         private static FECAECabRequest CrearCabeceraDeComprobante(Comprobante comprobante)
         {
             return new FECAECabRequest()
@@ -63,7 +63,9 @@ namespace LaTienda.Infraestructura.Datos
                 PtoVta = comprobante.NumeroPDV
             };
         }
+        #endregion
 
+        #region Información del comprobante - detalle
         private static FECAEDetRequest[] CrearDetalleDelComprobante(Comprobante comprobante)
         {
             return new FECAEDetRequest[]
@@ -73,8 +75,8 @@ namespace LaTienda.Infraestructura.Datos
                     Concepto = 1, // Concepto del Comprobante - 1 Productos
                     DocTipo = (int)comprobante.DocumentoTipoCliente, // Código de documento identificatorio del comprador
                     DocNro = comprobante.NumeroDocumentoCliente, // Nro. De identificación del comprador
-                    CbteDesde = 1,
-                    CbteHasta = 1,
+                    CbteDesde = comprobante.NumeroDeComprobante,
+                    CbteHasta = comprobante.NumeroDeComprobante,
                     CbteFch = comprobante.FechaString, // formato yyyyMMdd
                     ImpTotal = comprobante.ImporteTotal,
                     ImpTotConc = comprobante.ImpTotConc,
