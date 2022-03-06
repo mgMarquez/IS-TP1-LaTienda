@@ -95,5 +95,10 @@ namespace LaTienda.Presentador
         {
             _controladorRegistrarVenta.FinalizarVenta();
         }
+
+        public void MostrarCliente(Cliente cliente)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

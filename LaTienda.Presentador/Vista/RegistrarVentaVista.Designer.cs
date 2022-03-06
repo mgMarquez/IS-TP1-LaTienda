@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxProducto = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@
             this.lineaDeVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.tbTotal = new System.Windows.Forms.TextBox();
+            this.BsVenta = new System.Windows.Forms.BindingSource(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.tbNeto = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -84,7 +85,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btSalir = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.BsVenta = new System.Windows.Forms.BindingSource(this.components);
+            this.BsCliente = new System.Windows.Forms.BindingSource(this.components);
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.LbVenta = new System.Windows.Forms.Label();
             this.groupBoxProducto.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).BeginInit();
@@ -96,8 +99,10 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVDetalleVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BsVenta)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BsCliente)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxProducto
@@ -105,9 +110,9 @@
             this.groupBoxProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxProducto.Controls.Add(this.tableLayoutPanel1);
-            this.groupBoxProducto.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxProducto.Location = new System.Drawing.Point(12, 56);
             this.groupBoxProducto.Name = "groupBoxProducto";
-            this.groupBoxProducto.Size = new System.Drawing.Size(872, 194);
+            this.groupBoxProducto.Size = new System.Drawing.Size(872, 150);
             this.groupBoxProducto.TabIndex = 0;
             this.groupBoxProducto.TabStop = false;
             this.groupBoxProducto.Text = "Producto";
@@ -128,7 +133,6 @@
             this.tableLayoutPanel1.Controls.Add(this.nudCantidadProductos, 4, 4);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.tbCodigo, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.tbStock, 5, 3);
             this.tableLayoutPanel1.Controls.Add(this.cbColor, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.label10, 3, 2);
@@ -143,6 +147,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tbDescripcion, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btBuscarProducto, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 2, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -151,14 +156,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(860, 175);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(860, 132);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 11);
+            this.label1.Location = new System.Drawing.Point(77, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 1;
@@ -167,9 +172,9 @@
             // btAgregarProducto
             // 
             this.btAgregarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btAgregarProducto.Location = new System.Drawing.Point(738, 146);
+            this.btAgregarProducto.Location = new System.Drawing.Point(738, 107);
             this.btAgregarProducto.Name = "btAgregarProducto";
-            this.btAgregarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btAgregarProducto.Size = new System.Drawing.Size(75, 22);
             this.btAgregarProducto.TabIndex = 2;
             this.btAgregarProducto.Text = "Agregar";
             this.btAgregarProducto.UseVisualStyleBackColor = true;
@@ -178,7 +183,7 @@
             // nudCantidadProductos
             // 
             this.nudCantidadProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nudCantidadProductos.Location = new System.Drawing.Point(593, 147);
+            this.nudCantidadProductos.Location = new System.Drawing.Point(593, 108);
             this.nudCantidadProductos.Name = "nudCantidadProductos";
             this.nudCantidadProductos.Size = new System.Drawing.Size(78, 20);
             this.nudCantidadProductos.TabIndex = 0;
@@ -189,7 +194,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.textBox1, 2);
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProducto, "PrecioDeVenta", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(575, 77);
+            this.textBox1.Location = new System.Drawing.Point(575, 55);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(282, 20);
             this.textBox1.TabIndex = 5;
@@ -202,7 +207,7 @@
             // 
             this.tbCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.tbCodigo, 2);
-            this.tbCodigo.Location = new System.Drawing.Point(123, 7);
+            this.tbCodigo.Location = new System.Drawing.Point(123, 3);
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.Size = new System.Drawing.Size(280, 20);
             this.tbCodigo.TabIndex = 0;
@@ -211,9 +216,10 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(452, 144);
+            this.tableLayoutPanel1.SetColumnSpan(this.label8, 2);
+            this.label8.Location = new System.Drawing.Point(402, 111);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 26);
+            this.label8.Size = new System.Drawing.Size(167, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "Agregar la cantidad de productos:";
             // 
@@ -222,7 +228,7 @@
             this.tbStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbStock.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStock, "CantidadEnStock", true));
             this.tbStock.Enabled = false;
-            this.tbStock.Location = new System.Drawing.Point(695, 112);
+            this.tbStock.Location = new System.Drawing.Point(695, 81);
             this.tbStock.Name = "tbStock";
             this.tbStock.Size = new System.Drawing.Size(162, 20);
             this.tbStock.TabIndex = 0;
@@ -237,7 +243,7 @@
             this.cbColor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStock, "Color", true));
             this.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbColor.FormattingEnabled = true;
-            this.cbColor.Location = new System.Drawing.Point(409, 112);
+            this.cbColor.Location = new System.Drawing.Point(409, 81);
             this.cbColor.Name = "cbColor";
             this.cbColor.Size = new System.Drawing.Size(160, 21);
             this.cbColor.TabIndex = 3;
@@ -247,7 +253,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(487, 81);
+            this.label10.Location = new System.Drawing.Point(487, 58);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 4;
@@ -257,7 +263,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(654, 116);
+            this.label7.Location = new System.Drawing.Point(654, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 1;
@@ -269,7 +275,7 @@
             this.cbTalle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStock, "Talle", true));
             this.cbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTalle.FormattingEnabled = true;
-            this.cbTalle.Location = new System.Drawing.Point(123, 112);
+            this.cbTalle.Location = new System.Drawing.Point(123, 81);
             this.cbTalle.Name = "cbTalle";
             this.cbTalle.Size = new System.Drawing.Size(160, 21);
             this.cbTalle.TabIndex = 3;
@@ -279,7 +285,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(372, 116);
+            this.label6.Location = new System.Drawing.Point(372, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 1;
@@ -289,7 +295,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 46);
+            this.label2.Location = new System.Drawing.Point(81, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 1;
@@ -301,7 +307,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.tbRubro, 2);
             this.tbRubro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsRubro, "Descripcion", true));
             this.tbRubro.Enabled = false;
-            this.tbRubro.Location = new System.Drawing.Point(123, 42);
+            this.tbRubro.Location = new System.Drawing.Point(123, 29);
             this.tbRubro.Name = "tbRubro";
             this.tbRubro.Size = new System.Drawing.Size(280, 20);
             this.tbRubro.TabIndex = 0;
@@ -314,7 +320,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(532, 46);
+            this.label3.Location = new System.Drawing.Point(532, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 1;
@@ -326,7 +332,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.tbMarca, 2);
             this.tbMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMarca, "Descripcion", true));
             this.tbMarca.Enabled = false;
-            this.tbMarca.Location = new System.Drawing.Point(575, 42);
+            this.tbMarca.Location = new System.Drawing.Point(575, 29);
             this.tbMarca.Name = "tbMarca";
             this.tbMarca.Size = new System.Drawing.Size(282, 20);
             this.tbMarca.TabIndex = 0;
@@ -339,7 +345,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(87, 116);
+            this.label5.Location = new System.Drawing.Point(87, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 1;
@@ -349,7 +355,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 81);
+            this.label4.Location = new System.Drawing.Point(54, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 1;
@@ -361,7 +367,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.tbDescripcion, 2);
             this.tbDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProducto, "Descripcion", true));
             this.tbDescripcion.Enabled = false;
-            this.tbDescripcion.Location = new System.Drawing.Point(123, 77);
+            this.tbDescripcion.Location = new System.Drawing.Point(123, 55);
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Size = new System.Drawing.Size(280, 20);
             this.tbDescripcion.TabIndex = 0;
@@ -369,9 +375,9 @@
             // btBuscarProducto
             // 
             this.btBuscarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btBuscarProducto.Location = new System.Drawing.Point(451, 6);
+            this.btBuscarProducto.Location = new System.Drawing.Point(451, 3);
             this.btBuscarProducto.Name = "btBuscarProducto";
-            this.btBuscarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btBuscarProducto.Size = new System.Drawing.Size(75, 20);
             this.btBuscarProducto.TabIndex = 2;
             this.btBuscarProducto.Text = "Buscar";
             this.btBuscarProducto.UseVisualStyleBackColor = true;
@@ -496,9 +502,9 @@
             // iVATotalDataGridViewTextBoxColumn
             // 
             this.iVATotalDataGridViewTextBoxColumn.DataPropertyName = "IVATotal";
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.iVATotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.iVATotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.iVATotalDataGridViewTextBoxColumn.FillWeight = 70.68504F;
             this.iVATotalDataGridViewTextBoxColumn.HeaderText = "IVA";
             this.iVATotalDataGridViewTextBoxColumn.Name = "iVATotalDataGridViewTextBoxColumn";
@@ -508,9 +514,9 @@
             // netoGravadoTotalDataGridViewTextBoxColumn
             // 
             this.netoGravadoTotalDataGridViewTextBoxColumn.DataPropertyName = "NetoGravadoTotal";
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.netoGravadoTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.netoGravadoTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.netoGravadoTotalDataGridViewTextBoxColumn.FillWeight = 57.10493F;
             this.netoGravadoTotalDataGridViewTextBoxColumn.HeaderText = "Neto gravado";
             this.netoGravadoTotalDataGridViewTextBoxColumn.Name = "netoGravadoTotalDataGridViewTextBoxColumn";
@@ -520,9 +526,9 @@
             // precioProductoDataGridViewTextBoxColumn
             // 
             this.precioProductoDataGridViewTextBoxColumn.DataPropertyName = "PrecioProducto";
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.precioProductoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.precioProductoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.precioProductoDataGridViewTextBoxColumn.FillWeight = 46.60554F;
             this.precioProductoDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioProductoDataGridViewTextBoxColumn.Name = "precioProductoDataGridViewTextBoxColumn";
@@ -541,9 +547,9 @@
             // subTotalDataGridViewTextBoxColumn
             // 
             this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.subTotalDataGridViewTextBoxColumn.FillWeight = 32.3523F;
             this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
@@ -573,6 +579,10 @@
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.Size = new System.Drawing.Size(124, 20);
             this.tbTotal.TabIndex = 0;
+            // 
+            // BsVenta
+            // 
+            this.BsVenta.DataSource = typeof(LaTienda.Dominio.Venta);
             // 
             // label9
             // 
@@ -675,15 +685,39 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(866, 45);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
-            // BsVenta
+            // BsCliente
             // 
-            this.BsVenta.DataSource = typeof(LaTienda.Dominio.Venta);
+            this.BsCliente.DataSource = typeof(LaTienda.Dominio.Cliente);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.LbVenta, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(18, 12);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(860, 38);
+            this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // LbVenta
+            // 
+            this.LbVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LbVenta.AutoSize = true;
+            this.LbVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbVenta.Location = new System.Drawing.Point(401, 9);
+            this.LbVenta.Name = "LbVenta";
+            this.LbVenta.Size = new System.Drawing.Size(57, 20);
+            this.LbVenta.TabIndex = 0;
+            this.LbVenta.Text = "Venta";
             // 
             // RegistrarVentaVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 517);
+            this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.groupBoxDetalleProductos);
             this.Controls.Add(this.groupBoxProducto);
@@ -702,8 +736,11 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVDetalleVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineaDeVentaBindingSource)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BsVenta)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BsCliente)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -762,5 +799,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.BindingSource BsVenta;
+        private System.Windows.Forms.BindingSource BsCliente;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label LbVenta;
     }
 }
