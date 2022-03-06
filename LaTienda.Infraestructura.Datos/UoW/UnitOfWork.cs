@@ -9,7 +9,7 @@ namespace LaTienda.Infraestructura.Datos
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly TiendaContext _context;
+        private TiendaContext _context = new TiendaContext();
         private IGenericRepository<Producto> _productoRepository;
         private IGenericRepository<Marca> _marcaRepository;
         private IGenericRepository<Rubro> _rubroRepository;
@@ -17,10 +17,6 @@ namespace LaTienda.Infraestructura.Datos
         private IGenericRepository<Cliente> _clienteRepository;
         private IGenericRepository<Comprobante> _comprobanteRepository;
 
-        public UnitOfWork(TiendaContext context)
-        {
-            _context = context;
-        }
 
         public IGenericRepository<Producto> ProductoRepository
         {

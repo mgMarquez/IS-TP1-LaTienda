@@ -17,8 +17,7 @@ namespace LaTienda.Presentador
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var context = new TiendaContext();
-            var unitOfWork = new UnitOfWork(context);
+            var unitOfWork = new UnitOfWork();
             //Application.Run(new RegistrarVentaVista(unitOfWork));
             //Application.Run(new GestionarClienteVista(unitOfWork));
             Application.Run(new VistaPrincipal());

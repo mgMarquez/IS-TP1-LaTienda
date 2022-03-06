@@ -20,19 +20,19 @@ namespace LaTienda.Presentador
 
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vista = new GestionarClienteVista(new UnitOfWork(new TiendaContext()));
+            var vista = new GestionarClienteVista(new UnitOfWork());
             vista.ShowDialog();
         }
 
         private void NuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vista = new RegistrarVentaVista(new UnitOfWork(new TiendaContext()));
+            var vista = new RegistrarVentaVista(new UnitOfWork());
             vista.ShowDialog();
         }
 
         private void ProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vista = new GestionarProductoVista(new UnitOfWork(new TiendaContext()));
+            var vista = new GestionarProductoVista(new UnitOfWork());
             vista.ShowDialog();
         }
     }

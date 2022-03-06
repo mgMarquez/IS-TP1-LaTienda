@@ -107,7 +107,7 @@ namespace LaTienda.Presentador
             }
             catch (Exception ex)
             {
-                
+                Console.WriteLine(ex);
             }
 
         }
