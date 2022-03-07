@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionarClienteVista));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStripCliente = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCrear = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonModificar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.labelBuscar = new System.Windows.Forms.Label();
             this.TbBuscar = new System.Windows.Forms.TextBox();
@@ -76,9 +76,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.toolStripCliente, 2);
             this.toolStripCliente.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStripCliente.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
+            this.toolStripButtonCrear,
+            this.toolStripButtonModificar,
+            this.toolStripButtonEliminar,
             this.toolStripLabel1});
             this.toolStripCliente.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStripCliente.Location = new System.Drawing.Point(0, 1);
@@ -88,41 +88,44 @@
             this.toolStripCliente.TabIndex = 0;
             this.toolStripCliente.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripButtonCrear
             // 
-            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.toolStripButton1.Size = new System.Drawing.Size(36, 32);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButtonCrear.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonCrear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCrear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCrear.Image")));
+            this.toolStripButtonCrear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonCrear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCrear.Name = "toolStripButtonCrear";
+            this.toolStripButtonCrear.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.toolStripButtonCrear.Size = new System.Drawing.Size(36, 32);
+            this.toolStripButtonCrear.Text = "Crear";
+            this.toolStripButtonCrear.Click += new System.EventHandler(this.ToolStripButtonCrear_Click);
             // 
-            // toolStripButton2
+            // toolStripButtonModificar
             // 
-            this.toolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.toolStripButton2.Size = new System.Drawing.Size(36, 32);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButtonModificar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonModificar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonModificar.Image")));
+            this.toolStripButtonModificar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonModificar.Name = "toolStripButtonModificar";
+            this.toolStripButtonModificar.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.toolStripButtonModificar.Size = new System.Drawing.Size(36, 32);
+            this.toolStripButtonModificar.Text = "Modificar";
+            this.toolStripButtonModificar.Click += new System.EventHandler(this.toolStripButtonModificar_Click);
             // 
-            // toolStripButton3
+            // toolStripButtonEliminar
             // 
-            this.toolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.toolStripButton3.Size = new System.Drawing.Size(36, 32);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButtonEliminar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEliminar.Image")));
+            this.toolStripButtonEliminar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEliminar.Name = "toolStripButtonEliminar";
+            this.toolStripButtonEliminar.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.toolStripButtonEliminar.Size = new System.Drawing.Size(36, 32);
+            this.toolStripButtonEliminar.Text = "Eliminar";
+            this.toolStripButtonEliminar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
             // 
             // toolStripLabel1
             // 
@@ -239,9 +242,9 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStrip toolStripCliente;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCrear;
+        private System.Windows.Forms.ToolStripButton toolStripButtonModificar;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEliminar;
         private System.Windows.Forms.Label labelBuscar;
         private System.Windows.Forms.TextBox TbBuscar;
         private System.Windows.Forms.DataGridView DgvCliente;

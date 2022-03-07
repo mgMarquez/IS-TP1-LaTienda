@@ -38,5 +38,36 @@ namespace LaTienda.Presentador
             var filtro = TbBuscar.Text;
             _controlador.BuscarClientes(filtro);
         }
+
+        private void ToolStripButtonCrear_Click(object sender, EventArgs e)
+        {
+            var vistaCliente = new ClienteVista();
+            vistaCliente.EventoConfirmar += _controlador.CrearCliente;
+            vistaCliente.MostrarCliente(new Cliente());
+            vistaCliente.VistaCrear();
+            vistaCliente.ShowDialog();
+        }
+
+        private void toolStripButtonModificar_Click(object sender, EventArgs e)
+        {
+            Cliente clienteActual = DgvCliente.CurrentRow?.DataBoundItem as Cliente;
+            if (clienteActual == null) return;
+            var vistaCliente = new ClienteVista();
+            vistaCliente.EventoConfirmar += _controlador.ModificarCliente;
+            vistaCliente.MostrarCliente(clienteActual);
+            vistaCliente.VistaModificar();
+            vistaCliente.ShowDialog();
+        }
+
+        private void toolStripButtonEliminar_Click(object sender, EventArgs e)
+        {
+            Cliente clienteActual = DgvCliente.CurrentRow?.DataBoundItem as Cliente;
+            if (clienteActual == null) return;
+            var vistaCliente = new ClienteVista();
+            vistaCliente.EventoConfirmar += _controlador.EliminarCliente;
+            vistaCliente.MostrarCliente(clienteActual);
+            vistaCliente.VistaEliminar();
+            vistaCliente.ShowDialog();
+        }
     }
 }
