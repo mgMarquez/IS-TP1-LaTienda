@@ -15,53 +15,28 @@ namespace LaTienda.Presentador
     public partial class GestionarClienteVista : Form, IGestionarClienteVista
     {
         private readonly ControladorGestionarCliente _controlador;
-        private Cliente _cliente;
-        public int IdClienteGestionar { private get; set; }
 
         public GestionarClienteVista(IUnitOfWork unitOfWork)
         {
             _controlador = new ControladorGestionarCliente(unitOfWork, this);
             InitializeComponent();
-            CbCondicionTributaria.DataSource = Enum.GetValues(typeof(CondicionTributaria));
-            CbTipoDocumento.DataSource = Enum.GetValues(typeof(TipoDocumento));
-            _controlador.Iniciar(IdClienteGestionar);
+            BuscarClientes();
         }
 
-        public void MostrarCliente(Cliente cliente)
+        public void MostrarListaClientes(List<Cliente> clientes)
         {
-            try
-            {
-                _cliente = cliente ?? throw new ArgumentNullException();
-                BsCliente.DataSource = _cliente;
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+            DgvCliente.DataSource = clientes;
         }
 
-        private void BtCancelar_Click(object sender, EventArgs e)
+        private void TbBuscar_TextChanged(object sender, EventArgs e)
         {
-            _cliente = new Cliente();
+            BuscarClientes();
         }
 
-        private void BtSalir_Click(object sender, EventArgs e)
+        private void BuscarClientes()
         {
-            this.Dispose();
-        }
-
-        private void BtBuscar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                _cliente = _controlador.BuscarClientePorNroDocumento(Convert.ToInt64(TbNroDocumento.Text));
-                BsCliente.DataSource = _cliente;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se encontro ningun cliente con ese nro de documento.", ex.Message);
-            }
+            var filtro = TbBuscar.Text;
+            _controlador.BuscarClientes(filtro);
         }
     }
 }
