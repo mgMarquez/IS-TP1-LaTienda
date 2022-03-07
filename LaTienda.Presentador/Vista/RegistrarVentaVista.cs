@@ -101,5 +101,10 @@ namespace LaTienda.Presentador
         {
             BsCliente.DataSource = cliente;
         }
+
+        public void MensajeInformativo(string msj)
+        {
+            MessageBox.Show(msj, "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

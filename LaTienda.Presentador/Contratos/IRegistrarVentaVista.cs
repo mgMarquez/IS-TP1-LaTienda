@@ -16,5 +16,6 @@ namespace LaTienda.Presentador
         void MostrarDetalleDeVenta(List<LineaDeVenta> detalleVenta);
         void MostrarCliente(Cliente cliente);
         void MostrarTotalAPagar(Venta venta);
+        void MensajeInformativo(string msj);
     }
 }

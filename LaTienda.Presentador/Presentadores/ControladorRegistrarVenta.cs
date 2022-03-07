@@ -81,13 +81,21 @@ namespace LaTienda.Presentador
 
         public void AgregarProductoVenta(Color color, Talle talle, int cantidad)
         {
-            _ventaActual.AgregarProducto(_productoActual, color, talle, cantidad);
-            _vista.MostrarDetalleDeVenta(_ventaActual.DetalleVenta);
+            try
+            {
 
-            var total = _ventaActual.Total;
-            var netoGravado = _ventaActual.NetoGravado;
-            var iva = _ventaActual.IVA;
-            _vista.MostrarTotalAPagar(_ventaActual);
+                _ventaActual.AgregarProducto(_productoActual, color, talle, cantidad);
+                _vista.MostrarDetalleDeVenta(_ventaActual.DetalleVenta);
+
+                var total = _ventaActual.Total;
+                var netoGravado = _ventaActual.NetoGravado;
+                var iva = _ventaActual.IVA;
+                _vista.MostrarTotalAPagar(_ventaActual);
+            }
+            catch (Exception ex)
+            {
+                _vista.MensajeInformativo(ex.Message);
+            }
         }
 
 
