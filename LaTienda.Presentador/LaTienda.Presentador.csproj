@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Contratos\IGestionarClienteVista.cs" />
     <Compile Include="Presentadores\ControladorGestionarCliente.cs" />
     <Compile Include="VistaPrincipal.cs">
       <SubType>Form</SubType>
@@ -80,6 +81,12 @@
     <Compile Include="Presentadores\ControladorRegistrarVenta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\ClienteVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ClienteVista.Designer.cs">
+      <DependentUpon>ClienteVista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\GestionarClienteVista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,7 +102,7 @@
     <Compile Include="Contratos\IAutenticarUsuarioVista.cs" />
     <Compile Include="Contratos\IGestionarProductoVista.cs" />
     <Compile Include="Contratos\IRegistrarVentaVista.cs" />
-    <Compile Include="Contratos\IGestionarClienteVista.cs" />
+    <Compile Include="Contratos\IClienteVista.cs" />
     <Compile Include="Vista\RegistrarVentaVista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +121,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\ClienteVista.resx">
+      <DependentUpon>ClienteVista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\GestionarClienteVista.resx">
       <DependentUpon>GestionarClienteVista.cs</DependentUpon>
     </EmbeddedResource>

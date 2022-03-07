@@ -21,6 +21,7 @@ namespace LaTienda.Presentador
             _controladorRegistrarVenta = new ControladorRegistrarVenta(unitOfWork, this);
             _controladorRegistrarVenta.IniciarVenta();
             InitializeComponent();
+            _controladorRegistrarVenta.MostrarCliente();
         }
 
         public void MostrarDetalleDeVenta(List<LineaDeVenta> detalleVenta)
@@ -98,7 +99,7 @@ namespace LaTienda.Presentador
 
         public void MostrarCliente(Cliente cliente)
         {
-            throw new NotImplementedException();
+            BsCliente.DataSource = cliente;
         }
     }
 }

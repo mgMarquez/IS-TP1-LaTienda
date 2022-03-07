@@ -32,6 +32,7 @@ namespace LaTienda.Presentador
                 {
                     TipoDocumento = TipoDocumento.Otro,
                     RazonSocial = "Anónimo",
+                    Domicilio = string.Empty,
                     CondicionTributaria = CondicionTributaria.ConsumidorFinal
                 },
                 PuntoDeVenta = new PuntoDeVenta()
@@ -134,6 +135,11 @@ namespace LaTienda.Presentador
                 }
 
             }
+        }
+
+        public void MostrarCliente()
+        {
+            _vista.MostrarCliente(_ventaActual.Cliente);
         }
 
     }

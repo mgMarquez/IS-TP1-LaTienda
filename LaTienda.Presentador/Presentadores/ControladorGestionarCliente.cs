@@ -34,18 +34,21 @@ namespace LaTienda.Presentador
             _unitOfWork.ClienteRepository.Update(clienteModificado);
         }
 
-        internal void Iniciar(int idClienteGestionar)
+        public void BuscarClientes(string filtro)
         {
-            Cliente cliente;
-            if (idClienteGestionar == 0)
+            var filtroMinusculas = filtro.ToLower();
+            List<Cliente> clientes;
+            if (string.IsNullOrEmpty(filtro))
             {
-                cliente = new Cliente();
+                clientes = _unitOfWork.ClienteRepository.GetAll().ToList();
             }
             else
             {
-                cliente = BuscarClientePorID(idClienteGestionar);
+                clientes = _unitOfWork.ClienteRepository
+                    .Find(c => c.NroDocumento.ToString().Contains(filtroMinusculas) || c.RazonSocial.ToLower().Contains(filtroMinusculas)).ToList();
             }
-            _vista.MostrarCliente(cliente);
+
+            _vista.MostrarListaClientes(clientes);
         }
 
         public void EliminarCliente(int idCliente)
@@ -57,7 +60,7 @@ namespace LaTienda.Presentador
         {
             return _unitOfWork.ClienteRepository
                 .Find(cl => cl.NroDocumento == NroDocumentoCliente)
-                .First() ?? throw new NullReferenceException();            
+                .First() ?? throw new NullReferenceException();
         }
     }
 }
