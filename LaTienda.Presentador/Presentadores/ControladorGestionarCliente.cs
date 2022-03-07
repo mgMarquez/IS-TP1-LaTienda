@@ -27,11 +27,13 @@ namespace LaTienda.Presentador
         public void CrearCliente(Cliente cliente)
         {
             _unitOfWork.ClienteRepository.Create(cliente);
+            _unitOfWork.Save();
         }
 
         public void ModificarCliente(Cliente clienteModificado)
         {
             _unitOfWork.ClienteRepository.Update(clienteModificado);
+            _unitOfWork.Save();
         }
 
         public void BuscarClientes(string filtro)
@@ -51,9 +53,15 @@ namespace LaTienda.Presentador
             _vista.MostrarListaClientes(clientes);
         }
 
+        public void EliminarCliente(Cliente cliente)
+        {
+            EliminarCliente(cliente.ClienteID);
+        }
+
         public void EliminarCliente(int idCliente)
         {
             _unitOfWork.ClienteRepository.Delete(idCliente);
+            _unitOfWork.Save();
         }
 
         public Cliente BuscarClientePorNroDocumento(long NroDocumentoCliente)
