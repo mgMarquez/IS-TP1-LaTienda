@@ -9,10 +9,10 @@ namespace LaTienda.Dominio
     public class Cliente
     {
         public int ClienteID { get; set; }
-        public TipoDocumento TipoDocumento { get; set; } 
+        public TipoDocumento TipoDocumento { get; set; } = TipoDocumento.DNI;
         public long NroDocumento { get; set; }
         public string RazonSocial { get; set; }
         public string Domicilio { get; set; }
-        public CondicionTributaria CondicionTributaria { get; set; }
+        public CondicionTributaria CondicionTributaria { get; set; } = CondicionTributaria.ConsumidorFinal;
     }
 }
