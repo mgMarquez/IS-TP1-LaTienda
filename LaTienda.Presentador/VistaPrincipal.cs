@@ -20,8 +20,13 @@ namespace LaTienda.Presentador
 
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vista = new GestionarClienteVista(new UnitOfWork());
-            vista.ShowDialog();
+            //var vista = new ClienteVista(new UnitOfWork());
+            var vista = new GestionarClienteVista(new UnitOfWork())
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized                
+            };
+            vista.Show();
         }
 
         private void NuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)

@@ -29,280 +29,210 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.labelGestionarCliente = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionarClienteVista));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtAceptar = new System.Windows.Forms.Button();
-            this.BtCancelar = new System.Windows.Forms.Button();
-            this.BtSalir = new System.Windows.Forms.Button();
-            this.groupBoxCliente = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.TbNroDocumento = new System.Windows.Forms.TextBox();
+            this.toolStripCliente = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonCrear = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonModificar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonEliminar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.labelBuscar = new System.Windows.Forms.Label();
+            this.TbBuscar = new System.Windows.Forms.TextBox();
+            this.DgvCliente = new System.Windows.Forms.DataGridView();
+            this.nroDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condicionTributariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BsCliente = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TbRazonSocial = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.CbCondicionTributaria = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TbDomicilio = new System.Windows.Forms.TextBox();
-            this.CbTipoDocumento = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BtBuscar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.groupBoxCliente.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.toolStripCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BsCliente)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelGestionarCliente
-            // 
-            this.labelGestionarCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelGestionarCliente.AutoSize = true;
-            this.labelGestionarCliente.Location = new System.Drawing.Point(227, 7);
-            this.labelGestionarCliente.Name = "labelGestionarCliente";
-            this.labelGestionarCliente.Size = new System.Drawing.Size(146, 20);
-            this.labelGestionarCliente.TabIndex = 0;
-            this.labelGestionarCliente.Text = "Gestionar cliente";
-            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.labelGestionarCliente, 0, 0);
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.toolStripCliente);
+            this.tableLayoutPanel1.Controls.Add(this.labelBuscar);
+            this.tableLayoutPanel1.Controls.Add(this.TbBuscar);
+            this.tableLayoutPanel1.Controls.Add(this.DgvCliente);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 34);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(621, 374);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // tableLayoutPanel4
+            // toolStripCliente
             // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.BtAceptar, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.BtCancelar, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.BtSalir, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 213);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(600, 45);
-            this.tableLayoutPanel4.TabIndex = 5;
+            this.toolStripCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStripCliente, 2);
+            this.toolStripCliente.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripCliente.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonCrear,
+            this.toolStripButtonModificar,
+            this.toolStripButtonEliminar,
+            this.toolStripLabel1});
+            this.toolStripCliente.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.toolStripCliente.Location = new System.Drawing.Point(0, 1);
+            this.toolStripCliente.Name = "toolStripCliente";
+            this.toolStripCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripCliente.Size = new System.Drawing.Size(621, 35);
+            this.toolStripCliente.TabIndex = 0;
+            this.toolStripCliente.Text = "toolStrip1";
             // 
-            // BtAceptar
+            // toolStripButtonCrear
             // 
-            this.BtAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtAceptar.Location = new System.Drawing.Point(512, 11);
-            this.BtAceptar.Name = "BtAceptar";
-            this.BtAceptar.Size = new System.Drawing.Size(75, 23);
-            this.BtAceptar.TabIndex = 3;
-            this.BtAceptar.Text = "Aceptar";
-            this.BtAceptar.UseVisualStyleBackColor = true;
+            this.toolStripButtonCrear.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonCrear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCrear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCrear.Image")));
+            this.toolStripButtonCrear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonCrear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCrear.Name = "toolStripButtonCrear";
+            this.toolStripButtonCrear.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.toolStripButtonCrear.Size = new System.Drawing.Size(36, 32);
+            this.toolStripButtonCrear.Text = "Crear";
+            this.toolStripButtonCrear.Click += new System.EventHandler(this.ToolStripButtonCrear_Click);
             // 
-            // BtCancelar
+            // toolStripButtonModificar
             // 
-            this.BtCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtCancelar.Location = new System.Drawing.Point(412, 11);
-            this.BtCancelar.Name = "BtCancelar";
-            this.BtCancelar.Size = new System.Drawing.Size(75, 23);
-            this.BtCancelar.TabIndex = 2;
-            this.BtCancelar.Text = "Cancelar";
-            this.BtCancelar.UseVisualStyleBackColor = true;
-            this.BtCancelar.Click += new System.EventHandler(this.BtCancelar_Click);
+            this.toolStripButtonModificar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonModificar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonModificar.Image")));
+            this.toolStripButtonModificar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonModificar.Name = "toolStripButtonModificar";
+            this.toolStripButtonModificar.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.toolStripButtonModificar.Size = new System.Drawing.Size(36, 32);
+            this.toolStripButtonModificar.Text = "Modificar";
+            this.toolStripButtonModificar.Click += new System.EventHandler(this.toolStripButtonModificar_Click);
             // 
-            // BtSalir
+            // toolStripButtonEliminar
             // 
-            this.BtSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtSalir.Location = new System.Drawing.Point(12, 11);
-            this.BtSalir.Name = "BtSalir";
-            this.BtSalir.Size = new System.Drawing.Size(75, 23);
-            this.BtSalir.TabIndex = 0;
-            this.BtSalir.Text = "Salir";
-            this.BtSalir.UseVisualStyleBackColor = true;
-            this.BtSalir.Click += new System.EventHandler(this.BtSalir_Click);
+            this.toolStripButtonEliminar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEliminar.Image")));
+            this.toolStripButtonEliminar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEliminar.Name = "toolStripButtonEliminar";
+            this.toolStripButtonEliminar.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.toolStripButtonEliminar.Size = new System.Drawing.Size(36, 32);
+            this.toolStripButtonEliminar.Text = "Eliminar";
+            this.toolStripButtonEliminar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
             // 
-            // groupBoxCliente
+            // toolStripLabel1
             // 
-            this.groupBoxCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxCliente.Controls.Add(this.tableLayoutPanel2);
-            this.groupBoxCliente.Location = new System.Drawing.Point(12, 52);
-            this.groupBoxCliente.Name = "groupBoxCliente";
-            this.groupBoxCliente.Size = new System.Drawing.Size(600, 159);
-            this.groupBoxCliente.TabIndex = 6;
-            this.groupBoxCliente.TabStop = false;
-            this.groupBoxCliente.Text = "Cliente";
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(146, 32);
+            this.toolStripLabel1.Text = "Gestionar clientes";
             // 
-            // tableLayoutPanel2
+            // labelBuscar
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.TbNroDocumento, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.TbRazonSocial, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.CbCondicionTributaria, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.TbDomicilio, 3, 2);
-            this.tableLayoutPanel2.Controls.Add(this.CbTipoDocumento, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.BtBuscar, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 19);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(588, 134);
-            this.tableLayoutPanel2.TabIndex = 2;
+            this.labelBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelBuscar.AutoSize = true;
+            this.labelBuscar.Location = new System.Drawing.Point(22, 42);
+            this.labelBuscar.Name = "labelBuscar";
+            this.labelBuscar.Size = new System.Drawing.Size(40, 13);
+            this.labelBuscar.TabIndex = 1;
+            this.labelBuscar.Text = "Buscar";
             // 
-            // TbNroDocumento
+            // TbBuscar
             // 
-            this.TbNroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbNroDocumento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "NroDocumento", true));
-            this.TbNroDocumento.Location = new System.Drawing.Point(109, 12);
-            this.TbNroDocumento.Name = "TbNroDocumento";
-            this.TbNroDocumento.Size = new System.Drawing.Size(180, 20);
-            this.TbNroDocumento.TabIndex = 0;
+            this.TbBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbBuscar.Location = new System.Drawing.Point(88, 41);
+            this.TbBuscar.Name = "TbBuscar";
+            this.TbBuscar.Size = new System.Drawing.Size(530, 20);
+            this.TbBuscar.TabIndex = 2;
+            this.TbBuscar.TextChanged += new System.EventHandler(this.TbBuscar_TextChanged);
+            // 
+            // DgvCliente
+            // 
+            this.DgvCliente.AutoGenerateColumns = false;
+            this.DgvCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nroDocumentoDataGridViewTextBoxColumn,
+            this.tipoDocumentoDataGridViewTextBoxColumn,
+            this.razonSocialDataGridViewTextBoxColumn,
+            this.domicilioDataGridViewTextBoxColumn,
+            this.condicionTributariaDataGridViewTextBoxColumn});
+            this.tableLayoutPanel1.SetColumnSpan(this.DgvCliente, 2);
+            this.DgvCliente.DataSource = this.BsCliente;
+            this.DgvCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvCliente.GridColor = System.Drawing.Color.LightSteelBlue;
+            this.DgvCliente.Location = new System.Drawing.Point(3, 63);
+            this.DgvCliente.MultiSelect = false;
+            this.DgvCliente.Name = "DgvCliente";
+            this.DgvCliente.ReadOnly = true;
+            this.DgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvCliente.Size = new System.Drawing.Size(615, 308);
+            this.DgvCliente.TabIndex = 3;
+            // 
+            // nroDocumentoDataGridViewTextBoxColumn
+            // 
+            this.nroDocumentoDataGridViewTextBoxColumn.DataPropertyName = "NroDocumento";
+            this.nroDocumentoDataGridViewTextBoxColumn.HeaderText = "NroDocumento";
+            this.nroDocumentoDataGridViewTextBoxColumn.Name = "nroDocumentoDataGridViewTextBoxColumn";
+            this.nroDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroDocumentoDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // tipoDocumentoDataGridViewTextBoxColumn
+            // 
+            this.tipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "TipoDocumento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "TipoDocumento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
+            this.tipoDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDocumentoDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // razonSocialDataGridViewTextBoxColumn
+            // 
+            this.razonSocialDataGridViewTextBoxColumn.DataPropertyName = "RazonSocial";
+            this.razonSocialDataGridViewTextBoxColumn.HeaderText = "RazonSocial";
+            this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
+            this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
+            this.razonSocialDataGridViewTextBoxColumn.Width = 92;
+            // 
+            // domicilioDataGridViewTextBoxColumn
+            // 
+            this.domicilioDataGridViewTextBoxColumn.DataPropertyName = "Domicilio";
+            this.domicilioDataGridViewTextBoxColumn.HeaderText = "Domicilio";
+            this.domicilioDataGridViewTextBoxColumn.Name = "domicilioDataGridViewTextBoxColumn";
+            this.domicilioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.domicilioDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // condicionTributariaDataGridViewTextBoxColumn
+            // 
+            this.condicionTributariaDataGridViewTextBoxColumn.DataPropertyName = "CondicionTributaria";
+            this.condicionTributariaDataGridViewTextBoxColumn.HeaderText = "CondicionTributaria";
+            this.condicionTributariaDataGridViewTextBoxColumn.Name = "condicionTributariaDataGridViewTextBoxColumn";
+            this.condicionTributariaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.condicionTributariaDataGridViewTextBoxColumn.Width = 123;
             // 
             // BsCliente
             // 
             this.BsCliente.DataSource = typeof(LaTienda.Dominio.Cliente);
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nro documento";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Razon social";
-            // 
-            // TbRazonSocial
-            // 
-            this.TbRazonSocial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbRazonSocial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "RazonSocial", true));
-            this.TbRazonSocial.Location = new System.Drawing.Point(109, 56);
-            this.TbRazonSocial.Name = "TbRazonSocial";
-            this.TbRazonSocial.Size = new System.Drawing.Size(180, 20);
-            this.TbRazonSocial.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Condición tributaria";
-            // 
-            // CbCondicionTributaria
-            // 
-            this.CbCondicionTributaria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CbCondicionTributaria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "CondicionTributaria", true));
-            this.CbCondicionTributaria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbCondicionTributaria.FormattingEnabled = true;
-            this.CbCondicionTributaria.Location = new System.Drawing.Point(109, 100);
-            this.CbCondicionTributaria.Name = "CbCondicionTributaria";
-            this.CbCondicionTributaria.Size = new System.Drawing.Size(180, 21);
-            this.CbCondicionTributaria.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(349, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Domicilio";
-            // 
-            // TbDomicilio
-            // 
-            this.TbDomicilio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbDomicilio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "Domicilio", true));
-            this.TbDomicilio.Location = new System.Drawing.Point(404, 101);
-            this.TbDomicilio.Name = "TbDomicilio";
-            this.TbDomicilio.Size = new System.Drawing.Size(181, 20);
-            this.TbDomicilio.TabIndex = 0;
-            // 
-            // CbTipoDocumento
-            // 
-            this.CbTipoDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CbTipoDocumento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "TipoDocumento", true));
-            this.CbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbTipoDocumento.FormattingEnabled = true;
-            this.CbTipoDocumento.Location = new System.Drawing.Point(404, 55);
-            this.CbTipoDocumento.Name = "CbTipoDocumento";
-            this.CbTipoDocumento.Size = new System.Drawing.Size(181, 21);
-            this.CbTipoDocumento.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(299, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tipo de documento";
-            // 
-            // BtBuscar
-            // 
-            this.BtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtBuscar.Location = new System.Drawing.Point(295, 10);
-            this.BtBuscar.Name = "BtBuscar";
-            this.BtBuscar.Size = new System.Drawing.Size(103, 23);
-            this.BtBuscar.TabIndex = 3;
-            this.BtBuscar.Text = "Buscar";
-            this.BtBuscar.UseVisualStyleBackColor = true;
-            this.BtBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
-            // 
             // GestionarClienteVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 270);
-            this.Controls.Add(this.groupBoxCliente);
-            this.Controls.Add(this.tableLayoutPanel4);
+            this.ClientSize = new System.Drawing.Size(621, 374);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "GestionarClienteVista";
-            this.Text = "La tienda - Gestionar cliente";
+            this.Text = "Gestionar clientes";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.groupBoxCliente.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.toolStripCliente.ResumeLayout(false);
+            this.toolStripCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BsCliente)).EndInit();
             this.ResumeLayout(false);
 
@@ -310,25 +240,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelGestionarCliente;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button BtAceptar;
-        private System.Windows.Forms.Button BtCancelar;
-        private System.Windows.Forms.GroupBox groupBoxCliente;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox TbNroDocumento;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox CbTipoDocumento;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TbRazonSocial;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TbDomicilio;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox CbCondicionTributaria;
-        private System.Windows.Forms.Button BtBuscar;
-        private System.Windows.Forms.Button BtSalir;
+        private System.Windows.Forms.ToolStrip toolStripCliente;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCrear;
+        private System.Windows.Forms.ToolStripButton toolStripButtonModificar;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEliminar;
+        private System.Windows.Forms.Label labelBuscar;
+        private System.Windows.Forms.TextBox TbBuscar;
+        private System.Windows.Forms.DataGridView DgvCliente;
         private System.Windows.Forms.BindingSource BsCliente;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroDocumentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn condicionTributariaDataGridViewTextBoxColumn;
     }
 }

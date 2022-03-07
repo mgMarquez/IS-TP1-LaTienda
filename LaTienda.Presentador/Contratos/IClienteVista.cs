@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace LaTienda.Presentador
 {
-    public interface IGestionarClienteVista
+    public interface IClienteVista
     {
-        void MostrarListaClientes(List<Cliente> clientes);
+        void MostrarCliente(Cliente cliente);
     }
 }

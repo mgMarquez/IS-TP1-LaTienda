@@ -41,7 +41,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bsProducto = new System.Windows.Forms.BindingSource(this.components);
             this.tbCodigo = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.tbStock = new System.Windows.Forms.TextBox();
             this.bsStock = new System.Windows.Forms.BindingSource(this.components);
             this.cbColor = new System.Windows.Forms.ComboBox();
@@ -59,6 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.btBuscarProducto = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBoxDetalleProductos = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGVDetalleVenta = new System.Windows.Forms.DataGridView();
@@ -88,6 +88,11 @@
             this.BsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.LbVenta = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.BtBuscar = new System.Windows.Forms.Button();
             this.groupBoxProducto.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadProductos)).BeginInit();
@@ -211,17 +216,6 @@
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.Size = new System.Drawing.Size(280, 20);
             this.tbCodigo.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label8.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label8, 2);
-            this.label8.Location = new System.Drawing.Point(402, 111);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Agregar la cantidad de productos:";
             // 
             // tbStock
             // 
@@ -382,6 +376,17 @@
             this.btBuscarProducto.Text = "Buscar";
             this.btBuscarProducto.UseVisualStyleBackColor = true;
             this.btBuscarProducto.Click += new System.EventHandler(this.BtBuscarProducto_Click);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label8.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label8, 2);
+            this.label8.Location = new System.Drawing.Point(402, 111);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(167, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Agregar la cantidad de productos:";
             // 
             // groupBoxDetalleProductos
             // 
@@ -691,26 +696,88 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 6;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.Controls.Add(this.LbVenta, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label13, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.textBox2, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.textBox3, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.textBox4, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.BtBuscar, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(18, 12);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(860, 38);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // LbVenta
             // 
-            this.LbVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LbVenta.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.LbVenta.AutoSize = true;
             this.LbVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbVenta.Location = new System.Drawing.Point(401, 9);
+            this.LbVenta.Location = new System.Drawing.Point(3, 9);
             this.LbVenta.Name = "LbVenta";
             this.LbVenta.Size = new System.Drawing.Size(57, 20);
             this.LbVenta.TabIndex = 0;
             this.LbVenta.Text = "Venta";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(343, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 20);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Cliente:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "RazonSocial", true));
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(443, 9);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(134, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "NroDocumento", true));
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(583, 9);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(134, 20);
+            this.textBox3.TabIndex = 1;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "CondicionTributaria", true));
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(723, 9);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(134, 20);
+            this.textBox4.TabIndex = 1;
+            // 
+            // BtBuscar
+            // 
+            this.BtBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtBuscar.Location = new System.Drawing.Point(283, 7);
+            this.BtBuscar.Name = "BtBuscar";
+            this.BtBuscar.Size = new System.Drawing.Size(54, 23);
+            this.BtBuscar.TabIndex = 2;
+            this.BtBuscar.Text = "Buscar";
+            this.BtBuscar.UseVisualStyleBackColor = true;
             // 
             // RegistrarVentaVista
             // 
@@ -802,5 +869,10 @@
         private System.Windows.Forms.BindingSource BsCliente;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label LbVenta;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button BtBuscar;
     }
 }
