@@ -39,7 +39,6 @@
             this.labelBuscar = new System.Windows.Forms.Label();
             this.TbBuscar = new System.Windows.Forms.TextBox();
             this.DgvProducto = new System.Windows.Forms.DataGridView();
-            this.BsProducto = new System.Windows.Forms.BindingSource(this.components);
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +49,7 @@
             this.netoGravadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iVADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDeVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BsProducto = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStripCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducto)).BeginInit();
@@ -186,10 +186,6 @@
             this.DgvProducto.Size = new System.Drawing.Size(615, 308);
             this.DgvProducto.TabIndex = 3;
             // 
-            // BsProducto
-            // 
-            this.BsProducto.DataSource = typeof(LaTienda.Dominio.Producto);
-            // 
             // codigoDataGridViewTextBoxColumn
             // 
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
@@ -269,6 +265,10 @@
             this.precioDeVentaDataGridViewTextBoxColumn.Name = "precioDeVentaDataGridViewTextBoxColumn";
             this.precioDeVentaDataGridViewTextBoxColumn.ReadOnly = true;
             this.precioDeVentaDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // BsProducto
+            // 
+            this.BsProducto.DataSource = typeof(LaTienda.Dominio.Producto);
             // 
             // GestionarProductoVista
             // 

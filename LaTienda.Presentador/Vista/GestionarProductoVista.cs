@@ -41,33 +41,48 @@ namespace LaTienda.Presentador
 
         private void ToolStripButtonCrear_Click(object sender, EventArgs e)
         {
-            //var vistaCliente = new ClienteVista();
-            //vistaCliente.EventoConfirmar += _controlador.CrearCliente;
-            //vistaCliente.MostrarCliente(new Cliente());
-            //vistaCliente.VistaCrear();
-            //vistaCliente.ShowDialog();
+            var vistaProducto = new ProductoVista();
+            var marcas = _controlador.BuscarMarcasDisponibles();
+            var rubros = _controlador.BuscarRubrosDisponibles();            
+            vistaProducto.VistaCrear();
+            vistaProducto.MostrarMarcas(marcas);
+            vistaProducto.MostrarRubros(rubros);
+            vistaProducto.MostrarProducto(new Producto());
+            vistaProducto.EventoConfirmar += _controlador.CrearProducto;
+            vistaProducto.ShowDialog();
+            BuscarProductos();
         }
 
         private void ToolStripButtonModificar_Click(object sender, EventArgs e)
         {
-            //Cliente clienteActual = DgvCliente.CurrentRow?.DataBoundItem as Cliente;
-            //if (clienteActual == null) return;
-            //var vistaCliente = new ClienteVista();
-            //vistaCliente.EventoConfirmar += _controlador.ModificarCliente;
-            //vistaCliente.MostrarCliente(clienteActual);
-            //vistaCliente.VistaModificar();
-            //vistaCliente.ShowDialog();
+            Producto productoActual = DgvProducto.CurrentRow?.DataBoundItem as Producto;
+            if (productoActual == null) return;
+            var vistaProducto = new ProductoVista();
+            var marcas = _controlador.BuscarMarcasDisponibles();
+            var rubros = _controlador.BuscarRubrosDisponibles();
+            vistaProducto.VistaModificar();
+            vistaProducto.MostrarMarcas(marcas);
+            vistaProducto.MostrarRubros(rubros);
+            vistaProducto.MostrarProducto(productoActual);
+            vistaProducto.EventoConfirmar += _controlador.ModificarProducto;
+            vistaProducto.ShowDialog();
+            BuscarProductos();
         }
 
         private void ToolStripButtonEliminar_Click(object sender, EventArgs e)
         {
-            //Cliente clienteActual = DgvCliente.CurrentRow?.DataBoundItem as Cliente;
-            //if (clienteActual == null) return;
-            //var vistaCliente = new ClienteVista();
-            //vistaCliente.EventoConfirmar += _controlador.EliminarCliente;
-            //vistaCliente.MostrarCliente(clienteActual);
-            //vistaCliente.VistaEliminar();
-            //vistaCliente.ShowDialog();
+            Producto productoActual = DgvProducto.CurrentRow?.DataBoundItem as Producto;
+            if (productoActual == null) return;
+            var vistaProducto = new ProductoVista();
+            var marcas = new List<Marca> { productoActual.Marca};
+            var rubros = new List<Rubro> { productoActual.Rubro};
+            vistaProducto.VistaEliminar();
+            vistaProducto.MostrarMarcas(marcas);
+            vistaProducto.MostrarRubros(rubros);
+            vistaProducto.MostrarProducto(productoActual);
+            vistaProducto.EventoConfirmar += _controlador.EliminarProducto;
+            vistaProducto.ShowDialog();
+            BuscarProductos();
         }
     }
 }
