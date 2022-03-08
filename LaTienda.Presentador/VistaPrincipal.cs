@@ -31,13 +31,21 @@ namespace LaTienda.Presentador
 
         private void NuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vista = new RegistrarVentaVista(new UnitOfWork());
-            vista.ShowDialog();
+            var vista = new RegistrarVentaVista(new UnitOfWork())
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+            vista.Show();
         }
 
         private void ProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vista = new GestionarProductoVista(new UnitOfWork());
+            var vista = new GestionarProductoVista(new UnitOfWork())
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
             vista.ShowDialog();
         }
     }
