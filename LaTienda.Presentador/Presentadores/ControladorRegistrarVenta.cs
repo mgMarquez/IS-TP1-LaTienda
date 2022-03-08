@@ -98,8 +98,6 @@ namespace LaTienda.Presentador
             }
         }
 
-
-
         public void FinalizarVenta()
         {
 
@@ -150,5 +148,20 @@ namespace LaTienda.Presentador
             _vista.MostrarCliente(_ventaActual.Cliente);
         }
 
+        public void AsignarClienteVenta(long nroDocumento)
+        {
+            try
+            {
+                Cliente cliente = _unitOfWork.ClienteRepository
+                        .Find(c => c.NroDocumento == nroDocumento)
+                        .FirstOrDefault();
+                _ventaActual.Cliente = cliente ?? throw new Exception("No se econtró un cliente con ese numero de documento");
+                MostrarCliente();
+            }
+            catch (Exception ex)
+            {
+                _vista.MensajeInformativo(ex.Message);
+            }
+        }
     }
 }
