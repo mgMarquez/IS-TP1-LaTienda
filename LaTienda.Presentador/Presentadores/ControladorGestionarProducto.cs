@@ -40,6 +40,23 @@ namespace LaTienda.Presentador
             _unitOfWork.Save();
         }
 
+        internal void BuscarProductos(string filtro)
+        {
+            var filtroMinusculas = filtro.ToLower();
+            List<Producto> productos;
+            if (string.IsNullOrEmpty(filtro))
+            {
+                productos = _unitOfWork.ProductoRepository.GetAll().ToList();
+            }
+            else
+            {
+                productos = _unitOfWork.ProductoRepository
+                    .Find(c => c.Codigo.ToString().Contains(filtroMinusculas) || c.Descripcion.ToLower().Contains(filtroMinusculas)).ToList();
+            }
+            _vista.MostrarListaProductos(productos);
+             
+        }
+
         public void ModificarProducto(int productoId, int codigo, string descripcion, double costo, double porcentajeDeIva,
             double margenGanancia, int codigoMarca, int codigoRubro)
         {
