@@ -12,7 +12,6 @@ namespace LaTienda.Presentador
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IGestionarProductoVista _vista;
-        private Producto _productoActual;
 
         public ControladorGestionarProducto(IUnitOfWork unitOfWork, IGestionarProductoVista vista)
         {
@@ -20,27 +19,40 @@ namespace LaTienda.Presentador
             _vista = vista;
         }
 
-        public void IngresarNuevoProducto(int codigo, string descripcion, double costo,
-            double porcentajeDeIVA, double margenGanancia, int codigoMarca, int codigoRubro)
+        public void CrearProducto(Producto productoNuevo)
         {
-            var marca = _unitOfWork.MarcaRepository.GetById(codigoMarca);
-            var rubro = _unitOfWork.RubroRepository.GetById(codigoRubro);
-            var porcentajeDeIva = ReglaDeNegocio.PorcentajeDeIVA;
-            var producto = new Producto()
-            {
-                Codigo = codigo,
-                Descripcion = descripcion,
-                Costo = costo,
-                PorcentajeDeIva = porcentajeDeIva,
-                MargenDeGanancia = margenGanancia,
-                Marca = marca,
-                Rubro = rubro
-            };
-            _unitOfWork.ProductoRepository.Create(producto);
+            _unitOfWork.ProductoRepository.Create(productoNuevo);
             _unitOfWork.Save();
         }
 
-        internal void BuscarProductos(string filtro)
+        public void ModificarProducto(Producto productoModificado)
+        {
+            _unitOfWork.ProductoRepository.Update(productoModificado);
+            _unitOfWork.Save();
+        }
+
+        public void EliminarProducto(Producto producto)
+        {
+            EliminarProducto(producto.ProductoID);
+        }
+
+        public void EliminarProducto(int idProducto)
+        {
+            _unitOfWork.ProductoRepository.Delete(idProducto);
+            _unitOfWork.Save();
+        }
+
+        public List<Marca> BuscarMarcasDisponibles()
+        {
+            return _unitOfWork.MarcaRepository.GetAll().ToList();
+        }
+
+        public List<Rubro> BuscarRubrosDisponibles()
+        {
+            return _unitOfWork.RubroRepository.GetAll().ToList();
+        }
+
+        public void BuscarProductos(string filtro)
         {
             var filtroMinusculas = filtro.ToLower();
             List<Producto> productos;
@@ -54,42 +66,6 @@ namespace LaTienda.Presentador
                     .Find(c => c.Codigo.ToString().Contains(filtroMinusculas) || c.Descripcion.ToLower().Contains(filtroMinusculas)).ToList();
             }
             _vista.MostrarListaProductos(productos);
-             
         }
-
-        public void ModificarProducto(int productoId, int codigo, string descripcion, double costo, double porcentajeDeIva,
-            double margenGanancia, int codigoMarca, int codigoRubro)
-        {
-            var producto = _unitOfWork.ProductoRepository.GetById(productoId);
-            var marca = _unitOfWork.MarcaRepository.GetById(codigoMarca);
-            var rubro = _unitOfWork.RubroRepository.GetById(codigoRubro);
-            var productoModificado = new Producto()
-            {
-                Codigo = codigo,
-                Descripcion = descripcion,
-                Costo = costo,
-                PorcentajeDeIva = porcentajeDeIva,
-                MargenDeGanancia = margenGanancia,
-                Marca = marca,
-                Rubro = rubro
-            };
-            producto.ActualizarProducto(productoModificado);
-            _unitOfWork.ProductoRepository.Update(producto);
-            _unitOfWork.Save();
-        }
-
-        public void BuscarProducto(int codigo)
-        {
-            var producto = _unitOfWork.ProductoRepository.GetById(codigo);
-            _productoActual = producto;
-        }
-
-
-        public void EliminarProducto(int codigoProducto)
-        {
-            var producto = _unitOfWork.ProductoRepository.GetById(codigoProducto);
-            _unitOfWork.ProductoRepository.Delete(producto);
-        }
-
     }
 }
