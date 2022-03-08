@@ -46,6 +46,7 @@ namespace LaTienda.Presentador
             vistaCliente.MostrarCliente(new Cliente());
             vistaCliente.VistaCrear();
             vistaCliente.ShowDialog();
+            BuscarClientes();
         }
 
         private void ToolStripButtonModificar_Click(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace LaTienda.Presentador
             vistaCliente.MostrarCliente(clienteActual);
             vistaCliente.VistaModificar();
             vistaCliente.ShowDialog();
+            BuscarClientes();
         }
 
         private void ToolStripButtonEliminar_Click(object sender, EventArgs e)
@@ -68,6 +70,7 @@ namespace LaTienda.Presentador
             vistaCliente.MostrarCliente(clienteActual);
             vistaCliente.VistaEliminar();
             vistaCliente.ShowDialog();
+            BuscarClientes();
         }
     }
 }
