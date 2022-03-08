@@ -45,7 +45,6 @@ namespace LaTienda.Presentador
 
         private void BtConfirmar_Click(object sender, EventArgs e)
         {
-            var c = BsCliente.Current as Cliente;
             EventoConfirmar?.Invoke(_cliente);
             this.Close();
         }
