@@ -33,7 +33,7 @@ namespace LaTienda.Infraestructura.Datos
             _dbSet.Remove(entity);
         }
 
-        public void Delete(int id)
+        public void Delete(Object id)
         {
             TEntity entityToDelete = _dbSet.Find(id);
             Delete(entityToDelete);
@@ -49,7 +49,7 @@ namespace LaTienda.Infraestructura.Datos
             return _dbSet.ToList();
         }
 
-        public TEntity GetById(int id)
+        public TEntity GetById(Object id)
         {
             return _dbSet.Find(id);
         }
