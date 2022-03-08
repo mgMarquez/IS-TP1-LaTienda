@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxProducto = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -89,9 +89,9 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.LbVenta = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TbNroDocumento = new System.Windows.Forms.TextBox();
+            this.TbRazonSocial = new System.Windows.Forms.TextBox();
+            this.TbCondicionTributaria = new System.Windows.Forms.TextBox();
             this.BtBuscar = new System.Windows.Forms.Button();
             this.groupBoxProducto.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -127,12 +127,12 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btAgregarProducto, 5, 4);
             this.tableLayoutPanel1.Controls.Add(this.nudCantidadProductos, 4, 4);
@@ -168,7 +168,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 6);
+            this.label1.Location = new System.Drawing.Point(57, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 1;
@@ -177,7 +177,7 @@
             // btAgregarProducto
             // 
             this.btAgregarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btAgregarProducto.Location = new System.Drawing.Point(738, 107);
+            this.btAgregarProducto.Location = new System.Drawing.Point(735, 107);
             this.btAgregarProducto.Name = "btAgregarProducto";
             this.btAgregarProducto.Size = new System.Drawing.Size(75, 22);
             this.btAgregarProducto.TabIndex = 2;
@@ -188,7 +188,7 @@
             // nudCantidadProductos
             // 
             this.nudCantidadProductos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nudCantidadProductos.Location = new System.Drawing.Point(593, 108);
+            this.nudCantidadProductos.Location = new System.Drawing.Point(587, 108);
             this.nudCantidadProductos.Name = "nudCantidadProductos";
             this.nudCantidadProductos.Size = new System.Drawing.Size(78, 20);
             this.nudCantidadProductos.TabIndex = 0;
@@ -199,9 +199,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.textBox1, 2);
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProducto, "PrecioDeVenta", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(575, 55);
+            this.textBox1.Location = new System.Drawing.Point(569, 55);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 20);
+            this.textBox1.Size = new System.Drawing.Size(288, 20);
             this.textBox1.TabIndex = 5;
             // 
             // bsProducto
@@ -212,9 +212,9 @@
             // 
             this.tbCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.tbCodigo, 2);
-            this.tbCodigo.Location = new System.Drawing.Point(123, 3);
+            this.tbCodigo.Location = new System.Drawing.Point(103, 3);
             this.tbCodigo.Name = "tbCodigo";
-            this.tbCodigo.Size = new System.Drawing.Size(280, 20);
+            this.tbCodigo.Size = new System.Drawing.Size(287, 20);
             this.tbCodigo.TabIndex = 0;
             // 
             // tbStock
@@ -222,9 +222,9 @@
             this.tbStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbStock.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStock, "CantidadEnStock", true));
             this.tbStock.Enabled = false;
-            this.tbStock.Location = new System.Drawing.Point(695, 81);
+            this.tbStock.Location = new System.Drawing.Point(689, 81);
             this.tbStock.Name = "tbStock";
-            this.tbStock.Size = new System.Drawing.Size(162, 20);
+            this.tbStock.Size = new System.Drawing.Size(168, 20);
             this.tbStock.TabIndex = 0;
             // 
             // bsStock
@@ -237,9 +237,9 @@
             this.cbColor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStock, "Color", true));
             this.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbColor.FormattingEnabled = true;
-            this.cbColor.Location = new System.Drawing.Point(409, 81);
+            this.cbColor.Location = new System.Drawing.Point(396, 81);
             this.cbColor.Name = "cbColor";
-            this.cbColor.Size = new System.Drawing.Size(160, 21);
+            this.cbColor.Size = new System.Drawing.Size(167, 21);
             this.cbColor.TabIndex = 3;
             this.cbColor.SelectedValueChanged += new System.EventHandler(this.CbColor_SelectedValueChanged);
             // 
@@ -247,7 +247,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(487, 58);
+            this.label10.Location = new System.Drawing.Point(481, 58);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 4;
@@ -257,7 +257,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(654, 84);
+            this.label7.Location = new System.Drawing.Point(648, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 1;
@@ -269,9 +269,9 @@
             this.cbTalle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStock, "Talle", true));
             this.cbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTalle.FormattingEnabled = true;
-            this.cbTalle.Location = new System.Drawing.Point(123, 81);
+            this.cbTalle.Location = new System.Drawing.Point(103, 81);
             this.cbTalle.Name = "cbTalle";
-            this.cbTalle.Size = new System.Drawing.Size(160, 21);
+            this.cbTalle.Size = new System.Drawing.Size(167, 21);
             this.cbTalle.TabIndex = 3;
             this.cbTalle.SelectedValueChanged += new System.EventHandler(this.CbTalle_SelectedValueChanged);
             // 
@@ -279,7 +279,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(372, 84);
+            this.label6.Location = new System.Drawing.Point(359, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 1;
@@ -289,7 +289,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 32);
+            this.label2.Location = new System.Drawing.Point(61, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 1;
@@ -301,9 +301,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.tbRubro, 2);
             this.tbRubro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsRubro, "Descripcion", true));
             this.tbRubro.Enabled = false;
-            this.tbRubro.Location = new System.Drawing.Point(123, 29);
+            this.tbRubro.Location = new System.Drawing.Point(103, 29);
             this.tbRubro.Name = "tbRubro";
-            this.tbRubro.Size = new System.Drawing.Size(280, 20);
+            this.tbRubro.Size = new System.Drawing.Size(287, 20);
             this.tbRubro.TabIndex = 0;
             // 
             // bsRubro
@@ -314,7 +314,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(532, 32);
+            this.label3.Location = new System.Drawing.Point(526, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 1;
@@ -326,9 +326,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.tbMarca, 2);
             this.tbMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMarca, "Descripcion", true));
             this.tbMarca.Enabled = false;
-            this.tbMarca.Location = new System.Drawing.Point(575, 29);
+            this.tbMarca.Location = new System.Drawing.Point(569, 29);
             this.tbMarca.Name = "tbMarca";
-            this.tbMarca.Size = new System.Drawing.Size(282, 20);
+            this.tbMarca.Size = new System.Drawing.Size(288, 20);
             this.tbMarca.TabIndex = 0;
             // 
             // bsMarca
@@ -339,7 +339,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(87, 84);
+            this.label5.Location = new System.Drawing.Point(67, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 1;
@@ -349,7 +349,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 58);
+            this.label4.Location = new System.Drawing.Point(34, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 1;
@@ -361,15 +361,15 @@
             this.tableLayoutPanel1.SetColumnSpan(this.tbDescripcion, 2);
             this.tbDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProducto, "Descripcion", true));
             this.tbDescripcion.Enabled = false;
-            this.tbDescripcion.Location = new System.Drawing.Point(123, 55);
+            this.tbDescripcion.Location = new System.Drawing.Point(103, 55);
             this.tbDescripcion.Name = "tbDescripcion";
-            this.tbDescripcion.Size = new System.Drawing.Size(280, 20);
+            this.tbDescripcion.Size = new System.Drawing.Size(287, 20);
             this.tbDescripcion.TabIndex = 0;
             // 
             // btBuscarProducto
             // 
-            this.btBuscarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btBuscarProducto.Location = new System.Drawing.Point(451, 3);
+            this.btBuscarProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btBuscarProducto.Location = new System.Drawing.Point(396, 3);
             this.btBuscarProducto.Name = "btBuscarProducto";
             this.btBuscarProducto.Size = new System.Drawing.Size(75, 20);
             this.btBuscarProducto.TabIndex = 2;
@@ -382,7 +382,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.label8, 2);
-            this.label8.Location = new System.Drawing.Point(402, 111);
+            this.label8.Location = new System.Drawing.Point(396, 111);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(167, 13);
             this.label8.TabIndex = 1;
@@ -507,9 +507,9 @@
             // iVATotalDataGridViewTextBoxColumn
             // 
             this.iVATotalDataGridViewTextBoxColumn.DataPropertyName = "IVATotal";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.iVATotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.iVATotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.iVATotalDataGridViewTextBoxColumn.FillWeight = 70.68504F;
             this.iVATotalDataGridViewTextBoxColumn.HeaderText = "IVA";
             this.iVATotalDataGridViewTextBoxColumn.Name = "iVATotalDataGridViewTextBoxColumn";
@@ -519,9 +519,9 @@
             // netoGravadoTotalDataGridViewTextBoxColumn
             // 
             this.netoGravadoTotalDataGridViewTextBoxColumn.DataPropertyName = "NetoGravadoTotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.netoGravadoTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.netoGravadoTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.netoGravadoTotalDataGridViewTextBoxColumn.FillWeight = 57.10493F;
             this.netoGravadoTotalDataGridViewTextBoxColumn.HeaderText = "Neto gravado";
             this.netoGravadoTotalDataGridViewTextBoxColumn.Name = "netoGravadoTotalDataGridViewTextBoxColumn";
@@ -531,9 +531,9 @@
             // precioProductoDataGridViewTextBoxColumn
             // 
             this.precioProductoDataGridViewTextBoxColumn.DataPropertyName = "PrecioProducto";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.precioProductoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.precioProductoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.precioProductoDataGridViewTextBoxColumn.FillWeight = 46.60554F;
             this.precioProductoDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioProductoDataGridViewTextBoxColumn.Name = "precioProductoDataGridViewTextBoxColumn";
@@ -552,9 +552,9 @@
             // subTotalDataGridViewTextBoxColumn
             // 
             this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.subTotalDataGridViewTextBoxColumn.FillWeight = 32.3523F;
             this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
@@ -696,7 +696,8 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.ColumnCount = 6;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
@@ -706,9 +707,9 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.Controls.Add(this.LbVenta, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label13, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBox2, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBox3, 4, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBox4, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.TbNroDocumento, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.TbRazonSocial, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.TbCondicionTributaria, 5, 0);
             this.tableLayoutPanel4.Controls.Add(this.BtBuscar, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(18, 12);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -739,35 +740,34 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Cliente:";
             // 
-            // textBox2
+            // TbNroDocumento
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "RazonSocial", true));
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(443, 9);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 20);
-            this.textBox2.TabIndex = 1;
+            this.TbNroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbNroDocumento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "NroDocumento", true));
+            this.TbNroDocumento.Location = new System.Drawing.Point(443, 9);
+            this.TbNroDocumento.Name = "TbNroDocumento";
+            this.TbNroDocumento.Size = new System.Drawing.Size(134, 20);
+            this.TbNroDocumento.TabIndex = 1;
             // 
-            // textBox3
+            // TbRazonSocial
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "NroDocumento", true));
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(583, 9);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 20);
-            this.textBox3.TabIndex = 1;
+            this.TbRazonSocial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbRazonSocial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "RazonSocial", true));
+            this.TbRazonSocial.Enabled = false;
+            this.TbRazonSocial.Location = new System.Drawing.Point(583, 9);
+            this.TbRazonSocial.Name = "TbRazonSocial";
+            this.TbRazonSocial.Size = new System.Drawing.Size(134, 20);
+            this.TbRazonSocial.TabIndex = 1;
             // 
-            // textBox4
+            // TbCondicionTributaria
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "CondicionTributaria", true));
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(723, 9);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(134, 20);
-            this.textBox4.TabIndex = 1;
+            this.TbCondicionTributaria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbCondicionTributaria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BsCliente, "CondicionTributaria", true));
+            this.TbCondicionTributaria.Enabled = false;
+            this.TbCondicionTributaria.Location = new System.Drawing.Point(723, 9);
+            this.TbCondicionTributaria.Name = "TbCondicionTributaria";
+            this.TbCondicionTributaria.Size = new System.Drawing.Size(134, 20);
+            this.TbCondicionTributaria.TabIndex = 1;
             // 
             // BtBuscar
             // 
@@ -778,6 +778,7 @@
             this.BtBuscar.TabIndex = 2;
             this.BtBuscar.Text = "Buscar";
             this.BtBuscar.UseVisualStyleBackColor = true;
+            this.BtBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
             // 
             // RegistrarVentaVista
             // 
@@ -870,9 +871,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label LbVenta;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TbNroDocumento;
+        private System.Windows.Forms.TextBox TbRazonSocial;
+        private System.Windows.Forms.TextBox TbCondicionTributaria;
         private System.Windows.Forms.Button BtBuscar;
     }
 }

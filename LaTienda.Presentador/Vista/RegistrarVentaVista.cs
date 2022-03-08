@@ -14,14 +14,14 @@ namespace LaTienda.Presentador
 {
     public partial class RegistrarVentaVista : Form, IRegistrarVentaVista
     {
-        private readonly ControladorRegistrarVenta _controladorRegistrarVenta;
+        private readonly ControladorRegistrarVenta _controlador;
 
         public RegistrarVentaVista(IUnitOfWork unitOfWork)
         {
-            _controladorRegistrarVenta = new ControladorRegistrarVenta(unitOfWork, this);
-            _controladorRegistrarVenta.IniciarVenta();
+            _controlador = new ControladorRegistrarVenta(unitOfWork, this);
+            _controlador.IniciarVenta();
             InitializeComponent();
-            _controladorRegistrarVenta.MostrarCliente();
+            _controlador.MostrarCliente();
         }
 
         public void MostrarDetalleDeVenta(List<LineaDeVenta> detalleVenta)
@@ -40,19 +40,19 @@ namespace LaTienda.Presentador
         private void BtBuscarProducto_Click(object sender, EventArgs e)
         {
             int codigoProducto = Convert.ToInt32(tbCodigo.Text);
-            _controladorRegistrarVenta.BuscarProducto(codigoProducto);
+            _controlador.BuscarProducto(codigoProducto);
         }
 
         private void CbTalle_SelectedValueChanged(object sender, EventArgs e)
         {
             if (!(cbTalle.SelectedItem is Talle talleSeleccionado)) return;
-            _controladorRegistrarVenta.SeleccionarTalle(talleSeleccionado);
+            _controlador.SeleccionarTalle(talleSeleccionado);
         }
 
         private void CbColor_SelectedValueChanged(object sender, EventArgs e)
         {
             if (!(cbColor.SelectedItem is Dominio.Color colorSeleccionado)) return;
-            _controladorRegistrarVenta.SeleccionarColor(colorSeleccionado);
+            _controlador.SeleccionarColor(colorSeleccionado);
         }
 
         public void MostrarTallesDisponibles(List<Talle> tallesDisponibles)
@@ -75,7 +75,7 @@ namespace LaTienda.Presentador
             int cantidadAgregar = (int)nudCantidadProductos.Value;
             var color = cbColor.SelectedItem as Dominio.Color;
             var talle = cbTalle.SelectedItem as Talle;
-            _controladorRegistrarVenta.AgregarProductoVenta(color, talle, cantidadAgregar);
+            _controlador.AgregarProductoVenta(color, talle, cantidadAgregar);
         }
 
         public void MostrarTotalAPagar(Venta venta)
@@ -94,7 +94,7 @@ namespace LaTienda.Presentador
 
         private void BtAceptar_Click(object sender, EventArgs e)
         {
-            _controladorRegistrarVenta.FinalizarVenta();
+            _controlador.FinalizarVenta();
         }
 
         public void MostrarCliente(Cliente cliente)
@@ -105,6 +105,14 @@ namespace LaTienda.Presentador
         public void MensajeInformativo(string msj)
         {
             MessageBox.Show(msj, "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtBuscar_Click(object sender, EventArgs e)
+        {
+            var esNumero = Int64.TryParse(TbNroDocumento.Text, out long nroDocumento);
+            if (!esNumero) return;
+            _controlador.AsignarClienteVenta(nroDocumento);
+            BsCliente.ResetBindings(false);
         }
     }
 }
