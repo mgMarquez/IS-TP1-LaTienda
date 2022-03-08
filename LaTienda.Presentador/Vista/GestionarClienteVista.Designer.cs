@@ -112,7 +112,7 @@
             this.toolStripButtonModificar.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.toolStripButtonModificar.Size = new System.Drawing.Size(36, 32);
             this.toolStripButtonModificar.Text = "Modificar";
-            this.toolStripButtonModificar.Click += new System.EventHandler(this.toolStripButtonModificar_Click);
+            this.toolStripButtonModificar.Click += new System.EventHandler(this.ToolStripButtonModificar_Click);
             // 
             // toolStripButtonEliminar
             // 
@@ -125,7 +125,7 @@
             this.toolStripButtonEliminar.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.toolStripButtonEliminar.Size = new System.Drawing.Size(36, 32);
             this.toolStripButtonEliminar.Text = "Eliminar";
-            this.toolStripButtonEliminar.Click += new System.EventHandler(this.toolStripButtonEliminar_Click);
+            this.toolStripButtonEliminar.Click += new System.EventHandler(this.ToolStripButtonEliminar_Click);
             // 
             // toolStripLabel1
             // 

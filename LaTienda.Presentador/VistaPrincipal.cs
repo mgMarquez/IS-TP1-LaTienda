@@ -20,7 +20,6 @@ namespace LaTienda.Presentador
 
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //var vista = new ClienteVista(new UnitOfWork());
             var vista = new GestionarClienteVista(new UnitOfWork())
             {
                 MdiParent = this,
@@ -46,7 +45,7 @@ namespace LaTienda.Presentador
                 MdiParent = this,
                 WindowState = FormWindowState.Maximized
             };
-            vista.ShowDialog();
+            vista.Show();
         }
     }
 }

@@ -87,17 +87,23 @@
     <Compile Include="Vista\ClienteVista.Designer.cs">
       <DependentUpon>ClienteVista.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\GestionarProductoVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\GestionarProductoVista.Designer.cs">
+      <DependentUpon>GestionarProductoVista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\GestionarClienteVista.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\GestionarClienteVista.Designer.cs">
       <DependentUpon>GestionarClienteVista.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\GestionarProductoVista.cs">
+    <Compile Include="Vista\ProductoVista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\GestionarProductoVista.Designer.cs">
-      <DependentUpon>GestionarProductoVista.cs</DependentUpon>
+    <Compile Include="Vista\ProductoVista.Designer.cs">
+      <DependentUpon>ProductoVista.cs</DependentUpon>
     </Compile>
     <Compile Include="Contratos\IAutenticarUsuarioVista.cs" />
     <Compile Include="Contratos\IGestionarProductoVista.cs" />
@@ -124,11 +130,14 @@
     <EmbeddedResource Include="Vista\ClienteVista.resx">
       <DependentUpon>ClienteVista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\GestionarProductoVista.resx">
+      <DependentUpon>GestionarProductoVista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\GestionarClienteVista.resx">
       <DependentUpon>GestionarClienteVista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\GestionarProductoVista.resx">
-      <DependentUpon>GestionarProductoVista.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\ProductoVista.resx">
+      <DependentUpon>ProductoVista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\RegistrarVentaVista.resx">
       <DependentUpon>RegistrarVentaVista.cs</DependentUpon>

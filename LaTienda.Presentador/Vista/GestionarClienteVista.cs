@@ -48,7 +48,7 @@ namespace LaTienda.Presentador
             vistaCliente.ShowDialog();
         }
 
-        private void toolStripButtonModificar_Click(object sender, EventArgs e)
+        private void ToolStripButtonModificar_Click(object sender, EventArgs e)
         {
             Cliente clienteActual = DgvCliente.CurrentRow?.DataBoundItem as Cliente;
             if (clienteActual == null) return;
@@ -59,7 +59,7 @@ namespace LaTienda.Presentador
             vistaCliente.ShowDialog();
         }
 
-        private void toolStripButtonEliminar_Click(object sender, EventArgs e)
+        private void ToolStripButtonEliminar_Click(object sender, EventArgs e)
         {
             Cliente clienteActual = DgvCliente.CurrentRow?.DataBoundItem as Cliente;
             if (clienteActual == null) return;
