@@ -23,5 +23,10 @@ namespace LaTienda.Dominio
             RubroID = rubroID;
             Descripcion = descripcion;
         }
+
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

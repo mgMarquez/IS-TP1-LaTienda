@@ -23,5 +23,10 @@ namespace LaTienda.Dominio
             MarcaID = marcaID;
             Descripcion = descripcion;
         }
+
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }
