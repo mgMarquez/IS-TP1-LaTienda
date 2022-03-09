@@ -44,14 +44,13 @@ namespace LaTienda.Dominio
             }
         }
         
-        public void QuitarProducto(Producto producto, Color color, Talle talle)
+        public void QuitarProducto(LineaDeVenta lineaDeVenta)
         {
-            var lineaDeVenta = DetalleVenta
-                .Find(lv => lv.Producto == producto && lv.Talle == talle && lv.Color == color);
-            if(lineaDeVenta != null)
-            {
-                DetalleVenta.Remove(lineaDeVenta);
-            }
+            //var lineaDeVenta = DetalleVenta
+            //    .Find(lv => lv.Producto == producto && lv.Talle == talle && lv.Color == color);
+            if (lineaDeVenta == null)
+                throw new Exception("No se seleccionó ninguna linea de venta para quitar");            
+            DetalleVenta.Remove(lineaDeVenta);            
         }
 
         public void FinalizarVenta(TipoComprobante tipoComprobante)
