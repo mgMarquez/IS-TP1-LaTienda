@@ -34,5 +34,10 @@ namespace LaTienda.Dominio
             PorcentajeDeIva = productoActualizado.PorcentajeDeIva;
             MargenDeGanancia = productoActualizado.MargenDeGanancia;
         }
+
+        public override string ToString()
+        {
+            return $"{Descripcion} - marca: {Marca}";
+        }
     }
 }
