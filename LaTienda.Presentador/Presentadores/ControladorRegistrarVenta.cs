@@ -143,6 +143,20 @@ namespace LaTienda.Presentador
             }
         }
 
+        public void QuitarLineaDeVenta(LineaDeVenta lineaDeVentaSeleccionada)
+        {
+            try
+            {
+                _ventaActual.QuitarProducto(lineaDeVentaSeleccionada);
+                _vista.MostrarDetalleDeVenta(_ventaActual.DetalleVenta);
+            }
+            catch (Exception ex)
+            {
+                _vista.MensajeInformativo(ex.Message);
+            }
+
+        }
+
         public void MostrarCliente()
         {
             _vista.MostrarCliente(_ventaActual.Cliente);
