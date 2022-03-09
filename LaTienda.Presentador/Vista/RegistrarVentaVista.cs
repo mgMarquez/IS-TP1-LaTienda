@@ -72,7 +72,7 @@ namespace LaTienda.Presentador
 
         private void BtAgregarProducto_Click(object sender, EventArgs e)
         {
-            int cantidadAgregar = (int)nudCantidadProductos.Value;
+            int cantidadAgregar = Convert.ToInt32(TbCantidadAgregar.Text);
             var color = cbColor.SelectedItem as Dominio.Color;
             var talle = cbTalle.SelectedItem as Talle;
             _controlador.AgregarProductoVenta(color, talle, cantidadAgregar);
@@ -113,6 +113,13 @@ namespace LaTienda.Presentador
             if (!esNumero) return;
             _controlador.AsignarClienteVenta(nroDocumento);
             BsCliente.ResetBindings(false);
+        }
+
+        private void BtQuitar_Click(object sender, EventArgs e)
+        {
+            LineaDeVenta lineaDeVentaSeleccionada = dataGVDetalleVenta.CurrentRow.DataBoundItem as LineaDeVenta;
+            if (lineaDeVentaSeleccionada == null) return;
+            _controlador.QuitarLineaDeVenta(lineaDeVentaSeleccionada);
         }
     }
 }
