@@ -87,6 +87,10 @@
     <Compile Include="Migrations\202203060035554_NuevaEntidad-Comprobante.designer.cs">
       <DependentUpon>202203060035554_NuevaEntidad-Comprobante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203090240120_NuevasEntidades-talle-color.cs" />
+    <Compile Include="Migrations\202203090240120_NuevasEntidades-talle-color.designer.cs">
+      <DependentUpon>202203090240120_NuevasEntidades-talle-color.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistencia\TiendaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -258,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203060035554_NuevaEntidad-Comprobante.resx">
       <DependentUpon>202203060035554_NuevaEntidad-Comprobante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203090240120_NuevasEntidades-talle-color.resx">
+      <DependentUpon>202203090240120_NuevasEntidades-talle-color.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

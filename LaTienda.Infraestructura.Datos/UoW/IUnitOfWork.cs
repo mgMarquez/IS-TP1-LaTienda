@@ -15,6 +15,9 @@ namespace LaTienda.Infraestructura.Datos
         IGenericRepository<Stock> StockRepository { get; }
         IGenericRepository<Cliente> ClienteRepository { get; }
         IGenericRepository<Comprobante> ComprobanteRepository { get; }
+        IGenericRepository<Talle> TalleRepository { get; }
+        IGenericRepository<Color> ColorRepository { get; }
+
         void Save();
     }
 }

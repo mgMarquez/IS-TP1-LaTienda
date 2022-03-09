@@ -16,6 +16,8 @@ namespace LaTienda.Infraestructura.Datos
         private IGenericRepository<Stock> _stockRepository;
         private IGenericRepository<Cliente> _clienteRepository;
         private IGenericRepository<Comprobante> _comprobanteRepository;
+        private IGenericRepository<Talle> _talleRepository;
+        private IGenericRepository<Color> _colorRepository;
 
 
         public IGenericRepository<Producto> ProductoRepository
@@ -83,6 +85,22 @@ namespace LaTienda.Infraestructura.Datos
             get
             {
                 return _comprobanteRepository = _comprobanteRepository ?? new Repository<Comprobante>(_context);
+            }
+        }
+
+        public IGenericRepository<Talle> TalleRepository
+        {
+            get
+            {
+                return _talleRepository = _talleRepository ?? new Repository<Talle>(_context);
+            }
+        }
+
+        public IGenericRepository<Color> ColorRepository
+        {
+            get
+            {
+                return _colorRepository = _colorRepository ?? new Repository<Color>(_context);
             }
         }
 
