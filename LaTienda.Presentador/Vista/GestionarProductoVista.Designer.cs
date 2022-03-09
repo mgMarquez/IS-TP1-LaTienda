@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionarProductoVista));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStripCliente = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonCrear = new System.Windows.Forms.ToolStripButton();
@@ -39,17 +45,17 @@
             this.labelBuscar = new System.Windows.Forms.Label();
             this.TbBuscar = new System.Windows.Forms.TextBox();
             this.DgvProducto = new System.Windows.Forms.DataGridView();
+            this.BsProducto = new System.Windows.Forms.BindingSource(this.components);
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.porcentajeDeIvaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.margenDeGananciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rubroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.margenDeGananciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.netoGravadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porcentajeDeIvaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iVADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDeVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BsProducto = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStripCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducto)).BeginInit();
@@ -161,17 +167,17 @@
             // DgvProducto
             // 
             this.DgvProducto.AutoGenerateColumns = false;
-            this.DgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
-            this.costoDataGridViewTextBoxColumn,
-            this.porcentajeDeIvaDataGridViewTextBoxColumn,
-            this.margenDeGananciaDataGridViewTextBoxColumn,
             this.marcaDataGridViewTextBoxColumn,
             this.rubroDataGridViewTextBoxColumn,
+            this.costoDataGridViewTextBoxColumn,
+            this.margenDeGananciaDataGridViewTextBoxColumn,
             this.netoGravadoDataGridViewTextBoxColumn,
+            this.porcentajeDeIvaDataGridViewTextBoxColumn,
             this.iVADataGridViewTextBoxColumn,
             this.precioDeVentaDataGridViewTextBoxColumn});
             this.tableLayoutPanel1.SetColumnSpan(this.DgvProducto, 2);
@@ -186,13 +192,16 @@
             this.DgvProducto.Size = new System.Drawing.Size(615, 308);
             this.DgvProducto.TabIndex = 3;
             // 
+            // BsProducto
+            // 
+            this.BsProducto.DataSource = typeof(LaTienda.Dominio.Producto);
+            // 
             // codigoDataGridViewTextBoxColumn
             // 
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
             this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
             this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
             this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoDataGridViewTextBoxColumn.Width = 65;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
@@ -200,31 +209,6 @@
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 88;
-            // 
-            // costoDataGridViewTextBoxColumn
-            // 
-            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
-            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
-            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
-            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.costoDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // porcentajeDeIvaDataGridViewTextBoxColumn
-            // 
-            this.porcentajeDeIvaDataGridViewTextBoxColumn.DataPropertyName = "PorcentajeDeIva";
-            this.porcentajeDeIvaDataGridViewTextBoxColumn.HeaderText = "PorcentajeDeIva";
-            this.porcentajeDeIvaDataGridViewTextBoxColumn.Name = "porcentajeDeIvaDataGridViewTextBoxColumn";
-            this.porcentajeDeIvaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.porcentajeDeIvaDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // margenDeGananciaDataGridViewTextBoxColumn
-            // 
-            this.margenDeGananciaDataGridViewTextBoxColumn.DataPropertyName = "MargenDeGanancia";
-            this.margenDeGananciaDataGridViewTextBoxColumn.HeaderText = "MargenDeGanancia";
-            this.margenDeGananciaDataGridViewTextBoxColumn.Name = "margenDeGananciaDataGridViewTextBoxColumn";
-            this.margenDeGananciaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.margenDeGananciaDataGridViewTextBoxColumn.Width = 128;
             // 
             // marcaDataGridViewTextBoxColumn
             // 
@@ -232,7 +216,6 @@
             this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
             this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
             this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.marcaDataGridViewTextBoxColumn.Width = 62;
             // 
             // rubroDataGridViewTextBoxColumn
             // 
@@ -240,35 +223,66 @@
             this.rubroDataGridViewTextBoxColumn.HeaderText = "Rubro";
             this.rubroDataGridViewTextBoxColumn.Name = "rubroDataGridViewTextBoxColumn";
             this.rubroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rubroDataGridViewTextBoxColumn.Width = 61;
+            // 
+            // costoDataGridViewTextBoxColumn
+            // 
+            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // margenDeGananciaDataGridViewTextBoxColumn
+            // 
+            this.margenDeGananciaDataGridViewTextBoxColumn.DataPropertyName = "MargenDeGanancia";
+            dataGridViewCellStyle2.Format = "p";
+            dataGridViewCellStyle2.NullValue = null;
+            this.margenDeGananciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.margenDeGananciaDataGridViewTextBoxColumn.HeaderText = "MargenDeGanancia";
+            this.margenDeGananciaDataGridViewTextBoxColumn.Name = "margenDeGananciaDataGridViewTextBoxColumn";
+            this.margenDeGananciaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // netoGravadoDataGridViewTextBoxColumn
             // 
             this.netoGravadoDataGridViewTextBoxColumn.DataPropertyName = "NetoGravado";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.netoGravadoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.netoGravadoDataGridViewTextBoxColumn.HeaderText = "NetoGravado";
             this.netoGravadoDataGridViewTextBoxColumn.Name = "netoGravadoDataGridViewTextBoxColumn";
             this.netoGravadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.netoGravadoDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // porcentajeDeIvaDataGridViewTextBoxColumn
+            // 
+            this.porcentajeDeIvaDataGridViewTextBoxColumn.DataPropertyName = "PorcentajeDeIva";
+            dataGridViewCellStyle4.Format = "p";
+            dataGridViewCellStyle4.NullValue = null;
+            this.porcentajeDeIvaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.porcentajeDeIvaDataGridViewTextBoxColumn.HeaderText = "PorcentajeDeIva";
+            this.porcentajeDeIvaDataGridViewTextBoxColumn.Name = "porcentajeDeIvaDataGridViewTextBoxColumn";
+            this.porcentajeDeIvaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // iVADataGridViewTextBoxColumn
             // 
             this.iVADataGridViewTextBoxColumn.DataPropertyName = "IVA";
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.iVADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.iVADataGridViewTextBoxColumn.HeaderText = "IVA";
             this.iVADataGridViewTextBoxColumn.Name = "iVADataGridViewTextBoxColumn";
             this.iVADataGridViewTextBoxColumn.ReadOnly = true;
-            this.iVADataGridViewTextBoxColumn.Width = 49;
             // 
             // precioDeVentaDataGridViewTextBoxColumn
             // 
             this.precioDeVentaDataGridViewTextBoxColumn.DataPropertyName = "PrecioDeVenta";
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.precioDeVentaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.precioDeVentaDataGridViewTextBoxColumn.HeaderText = "PrecioDeVenta";
             this.precioDeVentaDataGridViewTextBoxColumn.Name = "precioDeVentaDataGridViewTextBoxColumn";
             this.precioDeVentaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precioDeVentaDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // BsProducto
-            // 
-            this.BsProducto.DataSource = typeof(LaTienda.Dominio.Producto);
             // 
             // GestionarProductoVista
             // 
@@ -302,12 +316,12 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn porcentajeDeIvaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn margenDeGananciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rubroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn margenDeGananciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn netoGravadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn porcentajeDeIvaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iVADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDeVentaDataGridViewTextBoxColumn;
     }

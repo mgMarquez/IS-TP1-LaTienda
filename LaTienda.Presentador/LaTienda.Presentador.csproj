@@ -69,8 +69,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Contratos\IGestionarClienteVista.cs" />
+    <Compile Include="Contratos\IGestionarStockVista.cs" />
     <Compile Include="Contratos\IProductoVista.cs" />
+    <Compile Include="Contratos\IStockVista.cs" />
     <Compile Include="Presentadores\ControladorGestionarCliente.cs" />
+    <Compile Include="Presentadores\ControladorGestionarStock.cs" />
     <Compile Include="VistaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +91,12 @@
     <Compile Include="Vista\ClienteVista.Designer.cs">
       <DependentUpon>ClienteVista.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\GestionarStockVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\GestionarStockVista.Designer.cs">
+      <DependentUpon>GestionarStockVista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\GestionarProductoVista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +108,12 @@
     </Compile>
     <Compile Include="Vista\GestionarClienteVista.Designer.cs">
       <DependentUpon>GestionarClienteVista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\StockVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\StockVista.Designer.cs">
+      <DependentUpon>StockVista.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\ProductoVista.cs">
       <SubType>Form</SubType>
@@ -131,11 +146,17 @@
     <EmbeddedResource Include="Vista\ClienteVista.resx">
       <DependentUpon>ClienteVista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\GestionarStockVista.resx">
+      <DependentUpon>GestionarStockVista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\GestionarProductoVista.resx">
       <DependentUpon>GestionarProductoVista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\GestionarClienteVista.resx">
       <DependentUpon>GestionarClienteVista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\StockVista.resx">
+      <DependentUpon>StockVista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\ProductoVista.resx">
       <DependentUpon>ProductoVista.cs</DependentUpon>

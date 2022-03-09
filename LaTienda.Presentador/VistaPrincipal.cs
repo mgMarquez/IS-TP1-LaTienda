@@ -47,5 +47,15 @@ namespace LaTienda.Presentador
             };
             vista.Show();
         }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var vista = new GestionarStockVista(new UnitOfWork())
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+            vista.Show();
+        }
     }
 }
