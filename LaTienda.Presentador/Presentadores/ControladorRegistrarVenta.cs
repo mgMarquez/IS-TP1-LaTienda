@@ -106,13 +106,13 @@ namespace LaTienda.Presentador
                 if (_ventaActual.DetalleVenta == null) throw new ArgumentNullException();
                 GenerarComprobante();
                 ServicioAFIP.SolicitarAutorizacionComprobante(_ventaActual.Comprobante);
-                if (_ventaActual.Comprobante.CAE == "") return; // TODO: lanzar excepción
+                if (_ventaActual.Comprobante.CAE == "") throw new Exception("El CAE no puede ser vacio, la generación del CAE fue rechazada o no se puede comunicar con el sistema de AFIP");
                 _unitOfWork.ComprobanteRepository.Create(_ventaActual.Comprobante);
                 _unitOfWork.Save();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                _vista.MensajeInformativo(ex.Message);
             }
 
         }
