@@ -83,10 +83,8 @@ namespace LaTienda.Presentador
         {
             try
             {
-
                 _ventaActual.AgregarProducto(_productoActual, color, talle, cantidad);
                 _vista.MostrarDetalleDeVenta(_ventaActual.DetalleVenta);
-
                 var total = _ventaActual.Total;
                 var netoGravado = _ventaActual.NetoGravado;
                 var iva = _ventaActual.IVA;
@@ -100,7 +98,6 @@ namespace LaTienda.Presentador
 
         public void FinalizarVenta()
         {
-
             try
             {
                 if (_ventaActual.DetalleVenta == null) throw new ArgumentNullException();
@@ -114,7 +111,6 @@ namespace LaTienda.Presentador
             {
                 _vista.MensajeInformativo(ex.Message);
             }
-
         }
 
         public void GenerarComprobante()
@@ -139,7 +135,6 @@ namespace LaTienda.Presentador
                         _ventaActual.FinalizarVenta(TipoComprobante.FacturaB);
                         break;
                 }
-
             }
         }
 
@@ -154,7 +149,6 @@ namespace LaTienda.Presentador
             {
                 _vista.MensajeInformativo(ex.Message);
             }
-
         }
 
         public void MostrarCliente()

@@ -27,7 +27,10 @@ namespace LaTienda.Dominio
 
         public void AgregarProducto(Producto producto, Color color, Talle talle, int cantidad)
         {
-            if (cantidad <= 0) throw new ArgumentOutOfRangeException("Cantidad", "La cantidad de productos debe ser mayor a cero.");
+            if (cantidad <= 0)
+                throw new ArgumentOutOfRangeException("Cantidad", "La cantidad de productos debe ser mayor a cero.");
+            if (producto == null || color == null || talle == null)
+                throw new Exception("Para agregar un detalle de producto se debe elegir el producto, el talle y el color");
             var lineaDeVenta = new LineaDeVenta(producto, color, talle, cantidad);
             var yaExiste = DetalleVenta
                 .Find(lv => lv.Producto == producto && 
