@@ -34,7 +34,7 @@ namespace LaTienda.Presentador
         {
             bsProducto.DataSource = productoEnStock;
             bsMarca.DataSource = productoEnStock.Marca;
-            bsRubro.DataSource = productoEnStock.Rubro;            
+            bsRubro.DataSource = productoEnStock.Rubro;
         }
 
         private void BtBuscarProducto_Click(object sender, EventArgs e)
@@ -72,7 +72,12 @@ namespace LaTienda.Presentador
 
         private void BtAgregarProducto_Click(object sender, EventArgs e)
         {
-            int cantidadAgregar = (int)nudCantidadProductos.Value;
+            var esNumero = int.TryParse(TbCantidadAgregar.Text, out int cantidadAgregar);
+            if (!esNumero)
+            {
+                MensajeInformativo("Se debe ingresar un numero entero indicando la cantidad deseada.");
+                return;
+            }
             var color = cbColor.SelectedItem as Dominio.Color;
             var talle = cbTalle.SelectedItem as Talle;
             _controlador.AgregarProductoVenta(color, talle, cantidadAgregar);
@@ -80,9 +85,6 @@ namespace LaTienda.Presentador
 
         public void MostrarTotalAPagar(Venta venta)
         {
-            //tbTotal.Text = Convert.ToString(total);            
-            //tbIva.Text = Convert.ToString(iva);            
-            //tbNeto.Text = Convert.ToString(netoGravado);
             BsVenta.DataSource = venta;
             BsVenta.ResetBindings(false);
         }
@@ -113,6 +115,13 @@ namespace LaTienda.Presentador
             if (!esNumero) return;
             _controlador.AsignarClienteVenta(nroDocumento);
             BsCliente.ResetBindings(false);
+        }
+
+        private void BtQuitar_Click(object sender, EventArgs e)
+        {
+            LineaDeVenta lineaDeVentaSeleccionada = dataGVDetalleVenta.CurrentRow.DataBoundItem as LineaDeVenta;
+            if (lineaDeVentaSeleccionada == null) return;
+            _controlador.QuitarLineaDeVenta(lineaDeVentaSeleccionada);
         }
     }
 }
